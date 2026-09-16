@@ -119,6 +119,18 @@
   .loop b{ color:var(--ink); }
   @media(max-width:640px){ .tiers{ grid-template-columns:1fr; } .tier{ border-right:none; border-bottom:1px solid var(--line); } .tier:last-child{ border-bottom:none; } }
 
+  /* ===== flow diagram ===== */
+  .flowbox{ margin:30px 0; background:var(--panel); border:1px solid var(--line); padding:26px 24px 22px; }
+  .flow-title{ display:block; font-family:'Noto Sans TC',sans-serif; font-size:13px; font-weight:700; color:var(--ink); margin-bottom:18px; }
+  .flow-step{ display:flex; flex-direction:column; align-items:center; }
+  .flow-card{ width:100%; border:1px solid var(--line); background:var(--bg); padding:14px 18px; font-family:'Noto Sans TC',sans-serif; font-size:13.5px; color:var(--ink); line-height:1.8; text-align:center; }
+  .flow-card b{ color:var(--gold); font-weight:700; }
+  .flow-card span{ display:block; margin-top:4px; color:var(--grey); font-size:12.5px; }
+  .flow-arrow{ position:relative; padding:10px 0 14px; font-family:'Noto Sans TC',sans-serif; font-size:11.5px; color:var(--grey-lt); }
+  .flow-arrow::before{ content:"▾"; display:block; text-align:center; color:var(--red); font-size:14px; margin-bottom:2px; }
+  .flow-end{ text-align:center; font-family:'Noto Serif TC',serif; font-size:15px; font-weight:700; color:var(--ink); padding:6px 0 18px; border-bottom:1px solid var(--line); margin-bottom:16px; }
+  .flow-note{ font-family:'Noto Sans TC',sans-serif; font-size:13px; color:var(--grey); line-height:1.85; margin:0; }
+
   /* ===== timeline ===== */
   .legend{ display:flex; flex-wrap:wrap; gap:8px 22px; margin:20px 0 4px; font-family:'Noto Sans TC',sans-serif; font-size:12.5px; color:var(--grey-lt); }
   .legend span{ display:inline-flex; align-items:center; gap:8px; }
@@ -286,23 +298,47 @@
         <div class="tier">
           <span class="step">Tier 1 · 地方</span>
           <h4>發現、評估、轉介</h4>
-          <p class="org">Kommunalt barnevern<br>地方兒少福利（俗稱 Barnevernet）</p>
-          <p>第一線社工發現個案、做初步評估與基層輔導。當家庭已有危機、但未到強制安置的程度時，由他們向區域層級申請高強度處遇。地方社工<b>不自己執行</b> MST。</p>
+          <p class="org">Kommunalt barnevern<br>地方市鎮兒童福利局（俗稱 Barnevernet）</p>
+          <p>第一線社工在社區發現高風險少年、做初步評估與基層輔導。當家庭已有危機、但未到強制安置的程度時，由地方向區域層級申請調動 MST 團隊進駐。地方社工<b>不自己執行</b> MST；為落實地方責任，接受治療的每個家庭，地方政府須共同分擔少部分固定月費，其餘由中央全額補助。</p>
         </div>
         <div class="tier">
-          <span class="step">Tier 2 · 區域</span>
-          <h4>養專責治療團隊</h4>
-          <p class="org">Bufetat（5 個區域）<br>兒童、青少年與家庭事務署</p>
-          <p>2004 年成立的國家兒少福利機關，約 5,000 名員工。MST、FFT 這類高強度方案的治療團隊就編制在這裡，需地方轉介才啟動；並設 26 個區域專業團隊作為地方政府的對口。</p>
+          <span class="step">Tier 2 · 中央／區域</span>
+          <h4>政策、出資、養團隊</h4>
+          <p class="org">Bufdir（中央）→ Bufetat（5 個區域）<br>兒童、青年與家庭事務局／署</p>
+          <p>Bufdir 是隸屬兒童與家庭部的全國最高行政與預算主責單位，由其下轄的五個區域分局 Bufetat（2004 年成立、約 5,000 名員工）直接聘僱、營運並管理各地 MST 團隊，治療師與督導的薪資、24 小時輪值的夜間津貼，全數由中央公共預算支付；另設 26 個區域專業團隊作為地方政府的對口。</p>
         </div>
         <div class="tier">
           <span class="step">Tier 3 · 國家</span>
-          <h4>管方法、管認證、管資料</h4>
+          <h4>技術、證照、品管</h4>
           <p class="org">NUBU（6 名區域協調員）<br>國家兒童與青少年發展中心</p>
-          <p>方案的所有權人與品質守門人：負責改編模式、訓練與認證治療師、測量遵循度、維護全國成效資料庫。區域協調員協助判斷個案是否適合該療法，並督導臨床執行不偏離實證。</p>
+          <p>挪威指定 NUBU 為 MST 的技術產權擁有者（License Holder），而非直接向美國購買商業授權：負責治療師與督導的初階培訓（5 天）、每季技術考核／複訓（Booster Sessions）、核發臨床證照，並持續進行實證研究與成效追蹤，確保干預品質不隨時間失真。</p>
         </div>
       </div>
       <div class="loop"><b>回饋迴路：</b>實務現場累積的去識別化個案資料回流到 NUBU 的研究部門，用來檢驗這些方法在挪威本地家庭身上是否真的有效、對哪些族群需要調整；研究結果再轉成政策建議送回主管部會。挪威兒少福利體系近年最常被質疑的「過早把孩子帶離原生家庭」與「對新移民家庭的文化敏感度」，正是這條迴路要處理的問題——引進 PMTO、MST 這類在家處遇，本身就是「盡可能讓孩子留在家中」這個改革目標的技術配套。</div>
+
+      <div class="flowbox">
+        <span class="flow-title">挪威 MST 主責單位的協同運作流程</span>
+        <div class="flow-step">
+          <div class="flow-card">
+            <b>【技術與品管】</b>NUBU 研究中心<br><span>提供初階培訓、每季技術考核、核發證照</span>
+          </div>
+          <div class="flow-arrow">培訓與技術支援</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-card">
+            <b>【政策與出資】</b>中央 Bufdir → 地方 Bufetat<br><span>負責編列預算、設立並管理各地 MST 團隊</span>
+          </div>
+          <div class="flow-arrow">派駐專業團隊</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-card">
+            <b>【個案來源】</b>地方市鎮 Barnevern<br><span>在社區第一線發現高風險少年，評估後提出轉介</span>
+          </div>
+          <div class="flow-arrow">24/7 閃電戰干預</div>
+        </div>
+        <div class="flow-end">【高風險少年與家庭】</div>
+        <p class="flow-note">第一線社工（Barnevern）發現問題 → 中央部會（Bufdir／Bufetat）出錢出人 → 國家級專家（NUBU）給技術，三方各司其職，形成一套高度公共化、制度化、且去商業化的國家級家庭干預網。</p>
+      </div>
 
       <h2 class="sec"><span class="eyebrow">Timeline</span>方案與機構的二十七年</h2>
       <p class="sec-dek">實心圓點為關鍵轉折點。</p>
@@ -628,6 +664,7 @@
           <li><b>「約 76% 的青少年風險因子顯著降低」</b>：未能對應到具體研究。2021 年 1,674 人的軌跡分析描述為「絕大多數青少年呈現高度且持續的改善」，但未見 76% 這個比例；引用時建議改用可追溯的原始描述。</li>
           <li><b>1999 年成立的是「行為專案計畫」（Atferdsprosjektet）</b>，「行為中心」（Atferdssenteret）是 2003 年才依部會與奧斯陸大學的協議成立的常設機構，兩者常被混為一談。</li>
           <li><b>地方社工並不親自執行 MST</b>：MST、FFT 的治療師編制在國家層級的 Bufetat 專門團隊，地方兒少福利負責發現與轉介。走進家裡的是專責治療師，不是兼辦的地方社工。</li>
+          <li><b>MST 團隊數：24 支 vs 21 支</b>：機構科普圖表資料記載 Bufetat 目前設立並管理 <b>24 支</b> MST 團隊，與學術追蹤研究記載「1999–2003 年間建立 25 個團隊、現行運作 <b>21 個</b>」在數字上有出入，可能反映統計時間點或計算基準不同（例如是否計入暫時停運或整併中的團隊）。本頁兩個數字併陳，未強行統一。</li>
         </ul>
         <p>此外，MST-CAN 在挪威的確切啟動年份未見於公開英文文獻，本頁因此未標年份。</p>
       </div>
