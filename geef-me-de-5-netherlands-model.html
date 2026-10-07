@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</title>
+<meta name="description" content="荷蘭「Geef me de 5」方法、適性教育法、2Tango 輔助科技與神經多樣性運動，以及台灣可以借鏡的關鍵決定。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FDF8F1;
+    --panel:#FFFFFF;
+    --panel-soft:#FFF3E8;
+    --panel-teal:#EAF6F4;
+    --panel-yellow:#FFF7E2;
+    --ink:#2E241C;
+    --ink-soft:#5B4F42;
+    --grey:#8C8072;
+    --coral:#FF6B4A;
+    --coral-deep:#E6512F;
+    --teal:#2AA39A;
+    --teal-deep:#1D7F78;
+    --yellow:#E7A400;
+    --line:#EDE2D2;
+  }
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    line-height:1.95;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 24px; }
+  a{ color:var(--coral-deep); }
+
+  .masthead{ padding:20px 0; border-bottom:2px solid var(--line); }
+  .masthead .row{ max-width:720px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .masthead .logo{ font-weight:900; font-size:16px; color:var(--ink); }
+  .masthead .logo span{ color:var(--coral); }
+  .masthead .pill{ font-size:12px; color:var(--teal-deep); background:var(--panel-teal); padding:5px 12px; border-radius:999px; font-weight:700; white-space:nowrap; }
+
+  .hero{ padding:44px 0 8px; }
+  .kicker{ display:inline-block; font-size:13px; font-weight:700; color:var(--coral-deep); background:var(--panel-soft); padding:5px 14px; border-radius:999px; margin-bottom:18px; }
+  .hero h1{ font-size:clamp(26px,6vw,38px); font-weight:900; line-height:1.5; margin:0; letter-spacing:.01em; }
+  .hero .deck{ margin-top:18px; font-size:16.5px; color:var(--ink-soft); line-height:1.95; }
+
+  .takeaway{ margin:34px 0; background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:24px 24px 22px; box-shadow:0 4px 16px rgba(46,36,28,.05); }
+  .takeaway .ttl{ font-size:15px; font-weight:900; color:var(--ink); margin-bottom:14px; display:flex; align-items:center; gap:8px; }
+  .takeaway ul{ margin:0; padding:0; list-style:none; }
+  .takeaway li{ position:relative; padding:0 0 12px 30px; font-size:14.5px; color:var(--ink-soft); line-height:1.85; }
+  .takeaway li:last-child{ padding-bottom:0; }
+  .takeaway li::before{ content:"✓"; position:absolute; left:0; top:1px; width:20px; height:20px; background:var(--teal); color:#fff; border-radius:50%; font-size:12px; display:flex; align-items:center; justify-content:center; font-weight:700; }
+
+  .article{ padding:8px 0 30px; font-size:16px; }
+  .article p{ margin:0 0 22px; color:var(--ink); }
+  .article p.lead{ font-size:17px; color:var(--ink-soft); }
+  h2.sec{ font-size:clamp(20px,4vw,25px); font-weight:900; line-height:1.5; margin:50px 0 8px; color:var(--ink); display:flex; align-items:flex-start; gap:10px; }
+  h2.sec .ico{ font-size:.9em; }
+  .sec-dek{ font-size:14px; color:var(--grey); margin:0 0 22px; line-height:1.85; }
+  .article p.sec-dek{ color:var(--grey); font-size:14px; }
+  h3.sub{ font-size:16.5px; font-weight:700; margin:28px 0 10px; color:var(--ink); display:flex; align-items:center; gap:8px; }
+
+  .quote{ margin:26px 0; background:var(--panel-teal); border-radius:16px; padding:22px 24px; position:relative; }
+  .quote p, .article .quote p{ margin:0; font-family:'Noto Serif TC',serif; font-size:17px; line-height:1.85; font-weight:700; color:var(--teal-deep); }
+  .quote cite{ display:block; margin-top:10px; font-family:'Noto Sans TC',sans-serif; font-style:normal; font-size:12px; color:var(--grey); }
+
+  .statcard{ margin:26px 0; display:flex; align-items:center; gap:20px; background:var(--panel-soft); border-radius:16px; padding:20px 24px; flex-wrap:wrap; }
+  .statcard .num{ font-size:44px; font-weight:900; color:var(--coral-deep); line-height:1; }
+  .statcard .num small{ font-size:18px; font-weight:700; }
+  .statcard .desc{ flex:1 1 200px; font-size:14px; color:var(--ink-soft); line-height:1.85; }
+  .statcard .desc b{ color:var(--ink); }
+
+  .checklist{ margin:22px 0; padding:0; list-style:none; }
+  .checklist li{ position:relative; padding:12px 0 12px 30px; border-bottom:1px solid var(--line); font-size:14.5px; color:var(--ink-soft); line-height:1.85; }
+  .checklist li:last-child{ border-bottom:none; }
+  .checklist li::before{ content:"●"; position:absolute; left:0; top:14px; color:var(--coral); font-size:8px; }
+  .checklist li b{ color:var(--ink); }
+
+  .note{ font-size:13px; color:var(--grey); background:var(--panel); border:1px dashed var(--line); border-radius:12px; padding:14px 16px; margin:22px 0; line-height:1.85; }
+  .note b{ color:var(--ink-soft); }
+  .note.alert{ border-style:solid; border-color:#F7D3C8; background:var(--panel-soft); color:var(--ink-soft); }
+
+  .tiers{ margin:24px 0; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+  .tier{ border-radius:16px; padding:18px 16px; }
+  .tier.t1{ background:var(--panel-yellow); }
+  .tier.t2{ background:var(--panel-soft); }
+  .tier.t3{ background:var(--panel-teal); }
+  .tier .step{ font-size:11px; font-weight:900; letter-spacing:.06em; color:var(--ink-soft); opacity:.7; }
+  .tier h4{ font-size:15px; font-weight:900; margin:6px 0 6px; color:var(--ink); }
+  .tier p, .article .tier p{ font-size:12.5px; color:var(--ink-soft); line-height:1.75; margin:0; }
+  .tier p.tw{ margin-top:8px; font-weight:700; color:var(--teal-deep); }
+  @media(max-width:600px){ .tiers{ grid-template-columns:1fr; } }
+
+  .flow{ margin:24px 0; background:var(--panel); border-radius:18px; padding:22px 22px 18px; border:1px solid var(--line); }
+  .flow .step{ display:flex; align-items:flex-start; gap:14px; padding:10px 0; }
+  .flow .step .dot{ width:28px; height:28px; border-radius:50%; background:var(--coral); color:#fff; font-weight:900; font-size:13px; display:flex; align-items:center; justify-content:center; flex:none; margin-top:1px; }
+  .flow .step:nth-child(2) .dot{ background:var(--teal); }
+  .flow .step:nth-child(3) .dot{ background:var(--yellow); }
+  .flow .step:nth-child(4) .dot{ background:var(--teal-deep); }
+  .flow .step:nth-child(5) .dot{ background:var(--coral-deep); }
+  .flow .step .txt{ font-size:14px; color:var(--ink-soft); line-height:1.75; padding-top:2px; }
+  .flow .step .txt b{ color:var(--ink); }
+  .flow-note{ margin-top:12px; padding-top:14px; border-top:1px dashed var(--line); font-size:13px; color:var(--grey); line-height:1.85; }
+
+  .tl{ margin:22px 0; }
+  .tl-item{ display:grid; grid-template-columns:62px 1fr; gap:16px; padding:16px 0; border-bottom:1px solid var(--line); }
+  .tl-item:last-child{ border-bottom:none; }
+  .tl-item .yr{ font-weight:900; font-size:14px; color:var(--coral-deep); padding-top:1px; }
+  .tl-item h4{ font-size:15px; font-weight:700; margin:0 0 4px; color:var(--ink); }
+  .tl-item p, .article .tl-item p{ font-size:13.5px; color:var(--ink-soft); line-height:1.8; margin:0; }
+
+  .case{ margin:24px 0; background:var(--panel); border-radius:18px; padding:22px; border:1px solid var(--line); }
+  .case .chip{ display:inline-block; font-size:11px; font-weight:700; color:var(--coral-deep); background:var(--panel-soft); padding:4px 12px; border-radius:999px; margin-bottom:12px; }
+  .case h4{ font-size:16.5px; font-weight:900; margin:0 0 14px; }
+  .case .block{ margin-bottom:14px; }
+  .case .block .k{ font-size:12px; font-weight:700; color:var(--teal-deep); margin-bottom:4px; }
+  .case .block p, .article .case .block p{ margin:0; font-size:14px; color:var(--ink-soft); line-height:1.85; }
+  .case .block ul, .case .block ol{ margin:6px 0 0; padding-left:1.2em; font-size:14px; color:var(--ink-soft); line-height:1.85; }
+  .case .block li{ margin-bottom:6px; }
+  .case .block li b{ color:var(--ink); }
+  .case .verified, .article .case .verified{ margin:14px 0 0; padding-top:12px; border-top:1px dashed var(--line); font-size:12.5px; color:var(--grey); line-height:1.85; }
+
+  .facts10{ margin:22px 0; }
+  .fact10{ display:grid; grid-template-columns:38px 1fr; gap:14px; padding:18px 0; border-bottom:1px solid var(--line); }
+  .fact10:last-child{ border-bottom:none; }
+  .fact10 .n{ width:32px; height:32px; border-radius:50%; background:var(--panel-teal); color:var(--teal-deep); font-weight:900; font-size:13px; display:flex; align-items:center; justify-content:center; }
+  .fact10.warn .n{ background:var(--panel-soft); color:var(--coral-deep); }
+  .fact10 .q, .article .fact10 .q{ font-size:14.5px; font-weight:700; color:var(--ink); margin:0 0 6px; line-height:1.7; }
+  .fact10 .a, .article .fact10 .a{ font-size:13.5px; color:var(--ink-soft); line-height:1.85; margin:0; }
+  .fact10 .a b{ color:var(--ink); }
+  .fact10 .vs{ display:block; margin-top:4px; }
+  .fact10 .bad{ color:var(--grey); text-decoration:line-through; text-decoration-color:rgba(140,128,114,.5); }
+  .fact10 .good{ color:var(--teal-deep); font-weight:700; }
+
+  .twcard{ margin:20px 0; background:var(--panel); border-radius:16px; padding:20px 22px; border:1px solid var(--line); }
+  .twcard h4{ font-size:15px; font-weight:900; margin:0 0 12px; }
+  .twcard .row{ display:grid; grid-template-columns:1fr 1fr; gap:14px 20px; }
+  .twcard .col .k{ display:block; font-size:11.5px; font-weight:700; color:var(--coral-deep); margin-bottom:6px; }
+  .twcard .col p, .article .twcard .col p{ font-size:13.5px; color:var(--ink-soft); line-height:1.8; margin:0; }
+  @media(max-width:600px){ .twcard .row{ grid-template-columns:1fr; } }
+
+  .closing-note{ margin:40px 0; background:var(--panel-soft); border-radius:20px; padding:28px 26px; text-align:left; }
+  .closing-note h3{ font-size:18px; font-weight:900; margin:0 0 12px; color:var(--coral-deep); }
+  .closing-note p, .article .closing-note p{ font-size:15px; color:var(--ink-soft); line-height:1.95; margin:0 0 12px; }
+  .closing-note p:last-child{ margin-bottom:0; }
+
+  .verify{ margin:36px 0 0; background:var(--panel); border-radius:14px; padding:18px 20px; border:1px solid var(--line); }
+  .verify .lbl{ font-size:12px; font-weight:700; color:var(--grey); margin-bottom:10px; display:block; }
+  .verify p, .article .verify p{ font-size:12.5px; color:var(--grey); line-height:1.85; margin:0 0 8px; }
+  .verify ul{ margin:0 0 8px; padding-left:1.2em; font-size:12px; color:var(--grey); line-height:1.85; }
+  .verify li{ margin-bottom:6px; }
+  .verify b{ color:var(--ink-soft); }
+
+  .sources{ margin-top:24px; padding-top:18px; border-top:1px solid var(--line); }
+  .sources .lbl{ font-size:11.5px; font-weight:700; color:var(--grey); }
+  .sources ol{ margin:10px 0 0; padding-left:1.2em; font-size:11.5px; color:var(--grey); line-height:1.9; }
+  .sources li{ margin-bottom:5px; }
+  .sources a{ color:var(--grey); text-decoration:underline; text-decoration-color:var(--line); }
+
+  footer{ padding:30px 0 60px; font-size:12px; color:var(--grey); }
+
+  @media(max-width:560px){
+    .wrap, .masthead .row{ padding:0 18px; }
+    h2.sec{ margin-top:40px; }
+    .statcard .num{ font-size:36px; }
+    .masthead .logo{ font-size:14px; }
+  }
+
+  /* series */
+  a.logo{ text-decoration:none; }
+  .next-read{ display:block; margin:36px 0 0; background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:22px 24px; text-decoration:none; color:inherit; box-shadow:0 4px 16px rgba(46,36,28,.05); transition:transform .15s ease, box-shadow .15s ease; }
+  .next-read:hover{ transform:translateY(-2px); box-shadow:0 8px 22px rgba(46,36,28,.09); }
+  .next-read .lbl{ font-size:12px; font-weight:700; color:var(--coral-deep); }
+  .next-read h4{ font-size:17px; font-weight:900; line-height:1.6; margin:6px 0 8px; color:var(--ink); }
+  .next-read p, .article .next-read p{ font-size:13.5px; color:var(--ink-soft); line-height:1.85; margin:0; }
+  .next-read .go{ display:block; margin-top:12px; font-size:13px; font-weight:700; color:var(--teal-deep); }
+  .series-back{ display:inline-block; margin-top:16px; font-size:13px; font-weight:700; color:var(--teal-deep); text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="row">
+    <a class="logo" href="./">別國爸媽怎麼做<span>．</span>國際筆記</a>
+    <div class="pill">荷蘭．教育觀察</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="kicker">深度報導・荷蘭特殊教育</span>
+    <h1>孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</h1>
+    <p class="deck">在台灣，孩子「不配合」時，大人常問：「他為什麼不聽話？」在荷蘭，有一群老師和家長改問另一個問題：「我是不是還沒有把事情說清楚？」問這個問題的大人，會先檢查自己的說明，再處理孩子的行為。</p>
+  </section>
+
+  <div class="takeaway">
+    <div class="ttl">📌 讀完這篇，你會知道</div>
+    <ul>
+      <li>荷蘭廣為使用的「Geef me de 5」（給我 5），是哪五個問題</li>
+      <li>這五個問題，怎麼用在家裡和教室裡</li>
+      <li>荷蘭的法律、科技和社會倡議，怎麼跟這套方法配合</li>
+      <li>這套方法的證據有多強、還缺什麼</li>
+      <li>台灣的家長、學校和政策，可以從哪裡開始</li>
+    </ul>
+  </div>
+
+  <article class="article">
+
+    <div class="quote">
+      <p>「如果孩子做不到，代表大人還沒有用他大腦聽得懂的方式，把事情說清楚。」</p>
+      <cite>—— 荷蘭「Geef me de 5」方法的核心主張</cite>
+    </div>
+
+    <!-- 1 -->
+    <h2 class="sec"><span class="ico">🎒</span>下課鐘響，他為什麼不肯站起來？</h2>
+    <p class="sec-dek">先從一個很常見的教室畫面說起。</p>
+
+    <p class="lead">下課鐘響了。全班都跑去操場，只有一個孩子還坐在位子上。老師叫了兩次，他不動。第三次，他開始大叫。</p>
+
+    <p>你可能會覺得這孩子在反抗。他也可能是不知道下一步：「下課」之後要去哪裡、做什麼、跟誰，什麼時候回來。</p>
+
+    <h3 class="sub">🧩 大腦接收到的，是一堆散落的拼圖</h3>
+    <p>荷蘭特教專家 Colette de Bruin 從這樣的畫面出發。她認為，自閉症孩子的大腦接收資訊時，比較像拿到一堆散落的拼圖。一般人會自動把拼圖拼起來，猜出「下課就是去操場玩」；但他們很難自己拼。</p>
+    <p>少了一塊拼圖，孩子會不安；不安累積下來，大人看到的就是「行為問題」。</p>
+
+    <div class="quote">
+      <p>先補上缺的拼圖，再看孩子的行為。</p>
+    </div>
+
+    <h3 class="sub">📚 從一本書，到全國 30 多個授權機構</h3>
+    <p>2004 年，她把這套想法寫成《Geef me de 5》一書。二十多年後，荷蘭有 30 多個機構取得授權，在學校、照護機構和地方政府推廣這套方法。</p>
+
+    <!-- 2 -->
+    <h2 class="sec"><span class="ico">🧩</span>五個問題，把「行為」翻譯成「資訊」</h2>
+    <p class="sec-dek">「Geef me de 5」的意思是「給我 5」。「5」指五個荷蘭文以 W 開頭的問題，也就是大人交代事情時要補齊的五塊資訊。</p>
+
+    <p>交代事情之前，先對照這五題：</p>
+
+    <div class="facts10">
+      <div class="fact10">
+        <div class="n">1</div>
+        <div>
+          <p class="q">什麼（Wat）：要做的事是什麼？</p>
+          <p class="a"><span class="bad">「去寫作業」</span> → <span class="good">「寫數學課本第 5 頁，第 1 到 5 題」</span></p>
+        </div>
+      </div>
+      <div class="fact10">
+        <div class="n">2</div>
+        <div>
+          <p class="q">怎麼做（Hoe）：一步一步的順序是什麼？</p>
+          <p class="a"><span class="bad">「好好寫」</span> → <span class="good">「先拿鉛筆，寫完第 1 題，再寫第 2 題」</span></p>
+        </div>
+      </div>
+      <div class="fact10">
+        <div class="n">3</div>
+        <div>
+          <p class="q">在哪裡（Waar）：確切的位置在哪？</p>
+          <p class="a"><span class="bad">「去寫」</span> → <span class="good">「坐在你房間的書桌前」</span></p>
+        </div>
+      </div>
+      <div class="fact10 warn">
+        <div class="n">4</div>
+        <div>
+          <p class="q">什麼時候（Wanneer）：什麼時候開始、怎樣算「做完」？</p>
+          <p class="a"><span class="bad">「寫完再說」</span> → <span class="good">「5 題都寫上答案，就算做完」</span></p>
+          <p class="a vs">大人最常漏掉這一題。你說「寫完」，心裡有個標準；孩子聽到的，是一個看不到盡頭的任務。</p>
+        </div>
+      </div>
+      <div class="fact10">
+        <div class="n">5</div>
+        <div>
+          <p class="q">誰（Wie）：誰做、跟誰、不會時找誰？</p>
+          <p class="a"><span class="bad">「不會就問」</span> → <span class="good">「不會寫就來客廳找媽媽」</span></p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub">🧰 三個常用的小工具</h3>
+    <ul class="checklist">
+      <li><b>大人說話的方式</b>：句子要短；只講看得到的動作；說「要做什麼」，不說「不要做什麼」。例如不說「不要跑」，改說「用走的」。</li>
+      <li><b>情緒計</b>：一把 1 到 5 級、從綠色到深紅色的尺。擦傷是 1 級，火災是 5 級。當孩子覺得「世界末日」，大人可以陪他對照：這件事真的是幾級？</li>
+      <li><b>崩潰時的處理順序</b>：見下方五個步驟。</li>
+    </ul>
+
+    <div class="flow">
+      <div class="step"><div class="dot">1</div><div class="txt"><b>大人先穩住自己</b>：不把自己的焦慮或怒氣，變成孩子的另一個刺激。</div></div>
+      <div class="step"><div class="dot">2</div><div class="txt"><b>句子變得更短</b>：不問「你怎麼了？」，只給簡單、肯定的指令。</div></div>
+      <div class="step"><div class="dot">3</div><div class="txt"><b>帶到安靜的地方</b>：給孩子空間和時間，讓身體慢慢平靜。</div></div>
+      <div class="step"><div class="dot">4</div><div class="txt"><b>給一個不用動腦的小任務</b>：例如「把這張紙撕成小片」，讓注意力有地方放。</div></div>
+      <div class="step"><div class="dot">5</div><div class="txt"><b>平靜後再回頭</b>：用五個問題，一起找出少了哪一塊拼圖，下次提早補上。</div></div>
+      <div class="flow-note">孩子還在崩潰時，聽不進你講的道理。先讓他平靜，再一起找原因。</div>
+    </div>
+
+    <div class="note">💬 <b>值得繼續想的問題：</b>台灣特教老師對結構化教學、視覺化行程都不陌生。Geef me de 5 多做了一步：讓家長、老師和照護者學同一套說法。在荷蘭，基礎課程是 4 天、每班最多 24 人，而且刻意讓老師和家長坐在同一個教室裡。孩子在家和在學校，聽到同一種說明方式。</div>
+
+    <!-- 3 -->
+    <h2 class="sec"><span class="ico">🏠</span>如果發生在你家、你的教室</h2>
+    <p class="sec-dek">以下兩個故事，是依照 Geef me de 5 的方法原則寫成的「示範情境」，不是真實個案。</p>
+
+    <div class="case">
+      <span class="chip">示範情境 A</span>
+      <h4>週六的動物園，因為下雨取消了</h4>
+      <div class="block">
+        <div class="k">情況</div>
+        <p>小宇 8 歲，已經期待週六去動物園一整個禮拜。週六早上下大雨，爸爸說：「今天不去了，改天再去。」小宇開始尖叫、摔東西。</p>
+      </div>
+      <div class="block">
+        <div class="k">常見的反應</div>
+        <p>「下雨又不是我的錯！你大叫也沒有用！」</p>
+      </div>
+      <div class="block">
+        <div class="k">用五個問題重新看</div>
+        <p>對小宇來說，週六本來有完整的五塊拼圖。爸爸一句「改天」，拿走了「什麼時候」，也讓「今天要做什麼」變成空白。小宇不知道接下來要做什麼，只能用尖叫表達慌張。</p>
+      </div>
+      <div class="block">
+        <div class="k">可以怎麼做</div>
+        <ol>
+          <li>先穩住自己，用短句：<b>「小宇，坐在沙發上。」</b></li>
+          <li>平靜一點後，拿出情緒計：<b>「動物園取消是 2 級，可以補回來。」</b></li>
+          <li>補上新的五塊拼圖：<b>「下週六去動物園。今天下午，我們在客廳一起看動物圖鑑。」</b></li>
+          <li>在日曆上畫一個記號，讓「下週六」看得到。</li>
+        </ol>
+      </div>
+      <p class="verified">情境中的處理步驟，依據 Geef me de 5 公開的方法原則（五個問題、情緒計、崩潰處理順序）編寫；人物為虛構。</p>
+    </div>
+
+    <div class="case">
+      <span class="chip">示範情境 B</span>
+      <h4>班導請假，代課老師來了</h4>
+      <div class="block">
+        <div class="k">情況</div>
+        <p>週三早上，班導請假，由代課老師上課。小芸一進教室就躲到角落，不肯坐下。</p>
+      </div>
+      <div class="block">
+        <div class="k">用五個問題重新看</div>
+        <p>「誰」變了。小芸不確定今天的規則，是不是也跟著變了。</p>
+      </div>
+      <div class="block">
+        <div class="k">可以怎麼做</div>
+        <ul>
+          <li><b>變動前先預告</b>：如果前一天就知道要請假，班導可以先說：「明天是王老師上課。你一樣坐自己的位子，一樣上國語。」</li>
+          <li><b>來不及預告時</b>：先用短句補上這幾塊拼圖，再請她坐下。</li>
+        </ul>
+      </div>
+      <p class="verified">「變動前先預告」是 Geef me de 5 在學校與家庭中強調的做法；人物與情節為虛構。</p>
+    </div>
+
+    <!-- 4 -->
+    <h2 class="sec"><span class="ico">🏛️</span>荷蘭用法律，把「調整」的責任交給學校</h2>
+    <p class="sec-dek">荷蘭政府用法律，要求學校負起調整的責任。</p>
+
+    <p>2014 年 8 月，荷蘭開始實施《適性教育法》（Passend Onderwijs）。法律規定：<b>學校有「照護義務」。</b></p>
+    <p>意思是，當一個孩子需要額外支持，學校不能只回一句「我們沒辦法」。學校必須幫他找到合適的位置，可以是原來的學校、另一所普通學校，或特教學校。找學校的負擔，從家長身上移到了學校身上。</p>
+    <p>配合這個義務，荷蘭有幾個台灣家長聽了會覺得眼熟的設計：</p>
+
+    <div class="tiers">
+      <div class="tier t1">
+        <span class="step">每個孩子</span>
+        <h4>發展計畫（OPP）</h4>
+        <p>寫下孩子的學習目標與支持方式，每年檢視，家長有同意權。</p>
+        <p class="tw">台灣類似：IEP</p>
+      </div>
+      <div class="tier t2">
+        <span class="step">每所學校</span>
+        <h4>校內輔導協調者（IB）</h4>
+        <p>專人幫老師想辦法、找資源，整合校內外的支持。</p>
+        <p class="tw">台灣類似：特教組長、資源班老師</p>
+      </div>
+      <div class="tier t3">
+        <span class="step">每個區域</span>
+        <h4>區域學校聯盟</h4>
+        <p>幾所學校一起管經費，決定孩子是否轉介特教學校。</p>
+        <p class="tw">台灣類似：縣市鑑輔會</p>
+      </div>
+    </div>
+
+    <p>教室裡也有具體的環境調整，例如安靜空間、抗噪耳機，以及考試延長時間。</p>
+
+    <div class="note alert">❗ <b>立法之後，問題還在。</b>2020 年，荷蘭政府委託的五年評估指出：學校建好了制度，但評估者「在教室裡還看不太到效果」。老師覺得負擔變重；因為學校接不住而長期在家的孩子，人數也沒有減少。</div>
+
+    <!-- 5 -->
+    <h2 class="sec"><span class="ico">📱</span>溝通，不該只靠孩子努力</h2>
+    <p class="sec-dek">五個問題請大人「翻譯」給孩子聽。孩子想表達的話，也需要管道。</p>
+
+    <p>荷蘭社會學家 Tjerk Feitsma 提出一個詞：「溝通稅」。意思是，神經多元的人為了配合大多數人的說話方式，每天都要多付出一份力氣。這份力氣，就像一筆看不見的稅。</p>
+    <p>他和夥伴成立了社會企業 2Tango，想讓這筆稅少一點。他們開發的 SIGNS 系列工具包括：</p>
+
+    <ul class="checklist">
+      <li><b>生存手語</b>：由自閉症者參與設計的簡單手勢。孩子太累、說不出話時，還是可以表達「我需要休息」。</li>
+      <li><b>手勢訊息 App</b>：用手勢符號傳訊息，讓家人之間多一條不用開口的管道。</li>
+      <li><b>智慧手錶功能</b>：用手腕動作傳送訊息。</li>
+    </ul>
+
+    <p>他們設計這些工具，是想讓孩子身邊的人接受不只一種表達方式。</p>
+
+    <div class="note">💬 <b>要留意的地方：</b>這些工具已獲荷蘭的創新獎項與基金支持，但實際有多少家庭在用、效果如何，目前還沒有公開的評估數據。</div>
+
+    <!-- 6 -->
+    <h2 class="sec"><span class="ico">🗓️</span>這股觀念，怎麼走到今天？</h2>
+    <p class="sec-dek">「神經多樣性」這個詞，和荷蘭有很深的淵源。</p>
+
+    <div class="tl">
+      <div class="tl-item">
+        <div class="yr">1996</div>
+        <div>
+          <h4>自閉症者有了自己發聲的地方</h4>
+          <p>荷蘭工程師 Martijn Dekker 成立由自閉症者自己經營的線上社群。兩年後，「神經多樣性」一詞正式被提出。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2004</div>
+        <div>
+          <h4>《Geef me de 5》出版</h4>
+          <p>「先理解、再調整」有了一套家長聽得懂的方法。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2014</div>
+        <div>
+          <h4>《適性教育法》上路</h4>
+          <p>學校有義務為需要支持的孩子找到合適的位置。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2018</div>
+        <div>
+          <h4>神經多樣性驕傲日誕生</h4>
+          <p>Tjerk Feitsma 成立荷蘭神經多樣性基金會，主張「神經多樣性指的是我們每個人」。依主辦單位資料，2025 年已有 58 個國家一起慶祝。</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2025</div>
+        <div>
+          <h4>觀念走進國會</h4>
+          <p>荷蘭國會通過動議，要求建立制度排除高強度 ABA 治療（詳見文末延伸討論）。</p>
+        </div>
+      </div>
+    </div>
+
+    <p>當社會公開慶祝「不一樣」，你在學校或親戚面前提出「請調整環境」，也會比較有底氣。</p>
+
+    <!-- 7 -->
+    <h2 class="sec"><span class="ico">🔍</span>先別急著照抄：證據還有多遠？</h2>
+    <p class="sec-dek">荷蘭很多人用這套方法，但研究者還沒證明它有效。引進國外方法前，先看證據。</p>
+
+    <div class="facts10">
+      <div class="fact10">
+        <div class="n">1</div>
+        <div>
+          <p class="q">追蹤 1,216 個家庭（2012–2020）：孩子的行為問題明顯減少</p>
+          <p class="a"><b>還不夠的地方：</b>沒有對照組；測的是機構的整套治療，不只是這個方法。</p>
+        </div>
+      </div>
+      <div class="fact10">
+        <div class="n">2</div>
+        <div>
+          <p class="q">比較 50 個等待中與 50 個已完成的家庭（2012）：完成的家庭，爸媽教養壓力較低</p>
+          <p class="a"><b>還不夠的地方：</b>不是隨機分組，也沒有前後對比。</p>
+        </div>
+      </div>
+      <div class="fact10">
+        <div class="n">3</div>
+        <div>
+          <p class="q">照護機構研究（2016–2018）：照護人員壓力下降、衝突變少</p>
+          <p class="a"><b>還不夠的地方：</b>觀察的是大人，不是孩子的學習。</p>
+        </div>
+      </div>
+    </div>
+
+    <p>這些結果看起來樂觀，但還不能下定論。另外要留意三件事：</p>
+
+    <div class="facts10">
+      <div class="fact10 warn">
+        <div class="n">!</div>
+        <div>
+          <p class="q">還沒有「黃金標準」的實驗</p>
+          <p class="a">也就是隨機把家庭分成兩組，比較有沒有用這個方法的差別。荷蘭的官方有效方案資料庫，也還沒將它單獨列入。</p>
+        </div>
+      </div>
+      <div class="fact10 warn">
+        <div class="n">!</div>
+        <div>
+          <p class="q">大腦的解釋還在爭論</p>
+          <p class="a">荷蘭精神醫療期刊的書評認為，「拼圖」式的大腦理論很有趣，但還不夠充分；宣傳也偏樂觀。</p>
+        </div>
+      </div>
+      <div class="fact10 warn">
+        <div class="n">!</div>
+        <div>
+          <p class="q">「結構」與「自主」的拉鋸</p>
+          <p class="a">把五個問題都說清楚很有幫助；但如果每件事都由大人安排好，孩子自己做選擇的空間在哪裡？這是神經多樣性倡議者可能會提出的問題。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">💬 <b>值得繼續想的問題：</b>好用的方法，如果沒有足夠的老師時間、專業支持和跨部門合作，還是無法保證每個孩子都留在教室裡。荷蘭立法六年後的評估，已經看到這個問題。</div>
+
+    <!-- 8 -->
+    <h2 class="sec"><span class="ico">🎯</span>台灣可以借鏡的幾個關鍵決定</h2>
+    <p class="sec-dek">台灣可以先學一個想法：把孩子的行為當成訊號，找出哪裡缺了資訊。再學一個做法：讓家裡和學校用同一套說法。</p>
+
+    <div class="twcard">
+      <h4>一、家長：先問「我少說了哪一塊」</h4>
+      <div class="row">
+        <div class="col"><span class="k">荷蘭怎麼做</span><p>用五個問題預告行程；變動前先說；用情緒計把感受量化。</p></div>
+        <div class="col"><span class="k">台灣可以做</span><p>下次孩子崩潰時，先問自己「我少說了哪一塊」，再問孩子發生什麼事。</p></div>
+      </div>
+    </div>
+
+    <div class="twcard">
+      <h4>二、學校：讓老師和家長學同一套語言</h4>
+      <div class="row">
+        <div class="col"><span class="k">荷蘭怎麼做</span><p>老師和家長一起上課；有專人協調；發展計畫每年檢視。</p></div>
+        <div class="col"><span class="k">台灣可以做</span><p>在 IEP 會議中，寫清楚「怎樣算做完」和「不會時找誰」；特教研習開放家長參加。</p></div>
+      </div>
+    </div>
+
+    <div class="twcard">
+      <h4>三、政策：把訓練當成預防投資</h4>
+      <div class="row">
+        <div class="col"><span class="k">荷蘭怎麼做</span><p>用法律規定學校的照護義務；地方政府把家長與老師的訓練，視為預防投資。</p></div>
+        <div class="col"><span class="k">台灣可以做</span><p>追蹤神經多元學生中輟、拒學的資料；引進國外方法時，同步做本地成效評估。</p></div>
+      </div>
+    </div>
+
+    <div class="statcard">
+      <div class="num">€498 <small>vs</small> €12,000</div>
+      <div class="desc">荷蘭地方政府的算法：一個人上基礎課程約 <b>498 歐元</b>；一個家庭若走到密集照護，可能要花上約 <b>12,000 歐元</b>。先投資讓大人讀懂孩子，反而比較省。</div>
+    </div>
+
+    <p>台灣也要看見荷蘭的教訓：只引進工具，而不補足人力和合作機制，很可能會走到同樣的落差。</p>
+    <p>對研究者來說，這也是一個機會：如果台灣引進這套方法時，從一開始就設計有對照組的研究，就有機會補上國際上還缺的那塊證據。</p>
+
+    <!-- 9 -->
+    <h2 class="sec"><span class="ico">📎</span>延伸討論：荷蘭國會的 ABA 動議</h2>
+    <p class="sec-dek">ABA（應用行為分析）是台灣早療常見的方法之一。荷蘭國會在 2025 年對它做了一個決定。這個決定很容易讀錯，以下先把事實分清楚。</p>
+
+    <div class="twcard">
+      <h4>原始動議 vs. 修正版動議</h4>
+      <div class="row">
+        <div class="col"><span class="k">原始動議（24170-370，2025/9/9）</span><p>提案人 Agnes Joseph 議員要求：每週超過 1 小時的 ABA，不再用公費補助。<br><b>結果：</b>沒有交付表決，由修正版取代。</p></div>
+        <div class="col"><span class="k">修正版動議（24170-379，2025/9/23）</span><p>改為要求：先建立全國的監督與登記制度，再據以排除高強度 ABA。<br><b>結果：</b>以 139 票對 11 票通過。</p></div>
+      </div>
+    </div>
+
+    <p>動議引用了荷蘭精神醫學會新指引對「傳統 ABA」的保留意見，也提到國際自閉症社群的反對聲音。讀這件事時，有三點要先分清楚：</p>
+
+    <ul class="checklist">
+      <li><b>動議不是法律</b>：它是國會對政府提出的要求。政府後來怎麼做，目前還查不到公開資料。</li>
+      <li><b>限制的是高強度，不是所有 ABA</b>：界線是每週 1 小時。</li>
+      <li><b>各國看法不同</b>：ABA 包含很多不同做法，各國專業指引的立場也不一致。</li>
+    </ul>
+
+    <p>如果你的孩子正在接受 ABA，這份動議沒有否定你的選擇。你可以拿它和治療師討論兩件事：一週做多久，以及孩子自己的感受。</p>
+
+    <!-- closing -->
+    <div class="closing-note">
+      <h3>給正在努力讀懂孩子的你</h3>
+      <p>如果你每天都在猶豫自己是不是太嚴、太鬆，或永遠猜不到孩子下一秒會怎樣，荷蘭的經驗也許可以讓你先鬆一口氣。</p>
+      <p>孩子崩潰時，常常只是少了一塊拼圖，你和孩子都沒有做錯什麼。</p>
+      <p>補拼圖的責任，也該由學校和政府一起分擔。荷蘭讓學校、政府、科技業者和倡議團體一起承擔這件事，台灣可以朝這個方向走。</p>
+    </div>
+
+    <a class="next-read" href="nubu-norway-model.html">
+      <span class="lbl">延伸閱讀・挪威篇</span>
+      <h4>挪威怎麼讓快要「壞掉」的孩子，留在家裡？</h4>
+      <p>挪威用「多系統治療」（MST），讓治療師到家裡陪家長，24 小時接電話，一起撐過孩子最難的三到五個月。</p>
+      <span class="go">繼續讀 →</span>
+    </a>
+    <a class="series-back" href="./">← 回到「別國爸媽怎麼做」系列首頁</a>
+
+    <div class="verify">
+      <span class="lbl">資料查證說明</span>
+      <p>本文以「荷蘭模式」研究筆記的 43 筆資料為主，並用公開資料交叉查證。以下幾項目前只見於筆記彙整，尚未找到一手出處，引用時請保留彈性：</p>
+      <ul>
+        <li><b>58 個國家：</b>神經多樣性驕傲日的參與國家數，來自主辦單位相關資料。</li>
+        <li><b>研究數據：</b>Geef me de 5 各研究的原始出處與完整數據，尚待取得原始報告核對。</li>
+        <li><b>長期在家的孩子：</b>荷蘭最新一年度的人數，本文未引用具體數字。</li>
+        <li><b>ABA 動議</b>的表決結果，已以荷蘭眾議院官方頁面核實。</li>
+        <li>兩個示範情境中的「小宇」「小芸」為虛構人物，依方法原則寫成，不是真實個案。</li>
+      </ul>
+    </div>
+
+    <div class="sources">
+      <span class="lbl">參考來源</span>
+      <ol>
+        <li><a href="https://www.geefmede5.nl/" target="_blank" rel="noopener">Geef me de 5 官方網站</a></li>
+        <li><a href="https://cdn.i-pulse.nl/geefmede5/userfiles/gemeenten/informatiesheet-gemeenten---treffende-aanpak-bij-autisme-def.pdf" target="_blank" rel="noopener">Geef me de 5：給地方政府的說明資料（課程費用、研究摘要）</a></li>
+        <li><a href="https://www.2tango.org" target="_blank" rel="noopener">2Tango 官方網站</a></li>
+        <li><a href="https://berthub.eu/tkconv/getraw/2020D44087" target="_blank" rel="noopener">《適性教育法》2020 年評估報告摘要（荷蘭國會文件）</a></li>
+        <li><a href="https://www.tweedekamer.nl/kamerstukken/moties/detail?id=2025Z17540&amp;did=2025D40992" target="_blank" rel="noopener">荷蘭眾議院：ABA 修正版動議 24170-379 與表決結果</a></li>
+        <li><a href="https://www.eerstekamer.nl/behandeling/20250909/motie_van_het_lid_joseph_over_aba/document3/f=/vmqnci8rxlzh.pdf" target="_blank" rel="noopener">ABA 原始動議 24170-370 全文</a></li>
+      </ol>
+    </div>
+
+  </article>
+
+  <footer>編按：本文整理自「荷蘭模式」研究筆記與多份 Geef me de 5、2Tango、荷蘭國會相關公開資料，以教育普及為目的重新編寫，力求好讀，也力求誠實標註查無出處之處。</footer>
+
+</div>
+</body>
+</html>

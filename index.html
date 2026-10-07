@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>別國爸媽怎麼做：神經多元教養的國際筆記</title>
+<meta name="description" content="整理挪威、荷蘭等國陪伴神經多元孩子的做法，寫給台灣的家長、老師與研究者。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FDF8F1;
+    --panel:#FFFFFF;
+    --panel-soft:#FFF3E8;
+    --panel-teal:#EAF6F4;
+    --panel-yellow:#FFF7E2;
+    --ink:#2E241C;
+    --ink-soft:#5B4F42;
+    --grey:#8C8072;
+    --coral:#FF6B4A;
+    --coral-deep:#E6512F;
+    --teal:#2AA39A;
+    --teal-deep:#1D7F78;
+    --yellow:#E7A400;
+    --line:#EDE2D2;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Noto Sans TC',sans-serif;
+    line-height:1.95;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:720px; margin:0 auto; padding:0 24px; }
+
+  .masthead{ padding:20px 0; border-bottom:2px solid var(--line); }
+  .masthead .row{ max-width:720px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .masthead .logo{ font-weight:900; font-size:16px; color:var(--ink); text-decoration:none; }
+  .masthead .logo span{ color:var(--coral); }
+  .masthead .pill{ font-size:12px; color:var(--teal-deep); background:var(--panel-teal); padding:5px 12px; border-radius:999px; font-weight:700; white-space:nowrap; }
+
+  .hero{ padding:52px 0 8px; }
+  .kicker{ display:inline-block; font-size:13px; font-weight:700; color:var(--coral-deep); background:var(--panel-soft); padding:5px 14px; border-radius:999px; margin-bottom:18px; }
+  .hero h1{ font-size:clamp(28px,6.5vw,42px); font-weight:900; line-height:1.45; margin:0; letter-spacing:.01em; }
+  .hero h1 small{ display:block; font-size:.55em; font-weight:700; color:var(--ink-soft); margin-top:6px; }
+  .hero .deck{ margin-top:18px; font-size:16.5px; color:var(--ink-soft); line-height:1.95; }
+
+  .sec-ttl{ font-size:15px; font-weight:900; margin:44px 0 6px; display:flex; align-items:center; gap:8px; }
+  .sec-dek{ font-size:13.5px; color:var(--grey); margin:0 0 18px; }
+
+  .card{ display:block; margin:0 0 18px; background:var(--panel); border:1px solid var(--line); border-radius:20px; padding:24px 24px 22px; text-decoration:none; color:inherit; box-shadow:0 4px 16px rgba(46,36,28,.05); transition:transform .15s ease, box-shadow .15s ease; }
+  .card:hover{ transform:translateY(-2px); box-shadow:0 10px 26px rgba(46,36,28,.09); }
+  .card .top{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+  .card .flag{ font-size:22px; line-height:1; }
+  .card .chip{ font-size:11.5px; font-weight:700; padding:4px 12px; border-radius:999px; }
+  .card .chip.c1{ color:var(--coral-deep); background:var(--panel-soft); }
+  .card .chip.c2{ color:var(--teal-deep); background:var(--panel-teal); }
+  .card h2{ font-size:clamp(18px,4vw,21px); font-weight:900; line-height:1.55; margin:0 0 8px; color:var(--ink); }
+  .card p{ font-size:14.5px; color:var(--ink-soft); line-height:1.85; margin:0; }
+  .card .tags{ margin-top:14px; display:flex; flex-wrap:wrap; gap:8px; }
+  .card .tags span{ font-size:12px; color:var(--grey); background:var(--bg); border:1px solid var(--line); padding:2px 10px; border-radius:999px; }
+  .card .go{ display:block; margin-top:14px; font-size:13.5px; font-weight:700; color:var(--teal-deep); }
+
+  .soon{ margin:0 0 18px; border:1.5px dashed var(--line); border-radius:20px; padding:20px 24px; font-size:14px; color:var(--grey); }
+
+  .about{ margin:44px 0 0; background:var(--panel-soft); border-radius:20px; padding:26px; }
+  .about h3{ font-size:17px; font-weight:900; margin:0 0 10px; color:var(--coral-deep); }
+  .about p{ font-size:14.5px; color:var(--ink-soft); line-height:1.95; margin:0 0 10px; }
+  .about p:last-child{ margin-bottom:0; }
+
+  footer{ padding:34px 0 60px; font-size:12px; color:var(--grey); }
+
+  @media(max-width:560px){
+    .wrap, .masthead .row{ padding:0 18px; }
+    .masthead .logo{ font-size:14px; }
+    .card{ padding:20px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="row">
+    <a class="logo" href="./">別國爸媽怎麼做<span>．</span>國際筆記</a>
+    <div class="pill">系列首頁</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <span class="kicker">系列報導・神經多元教養</span>
+    <h1>別國爸媽怎麼做<small>神經多元教養的國際筆記</small></h1>
+    <p class="deck">孩子情緒爆發、學校接不住、資源找不到，這些難題別的國家也遇過。這個系列一次看一個國家，整理他們陪伴神經多元孩子的具體做法，也標出證據還不足的地方，讓你挑適合自家孩子的那一招。</p>
+  </section>
+
+  <div class="sec-ttl">📚 已出刊</div>
+  <p class="sec-dek">點進文章閱讀全文。</p>
+
+  <a class="card" href="geef-me-de-5-netherlands-model.html">
+    <div class="top"><span class="flag">🇳🇱</span><span class="chip c2">荷蘭篇</span></div>
+    <h2>孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</h2>
+    <p>荷蘭的 Geef me de 5 請大人先把「什麼、怎麼做、在哪裡、什麼時候、誰」說清楚，也讓家裡和學校用同一套說法。</p>
+    <div class="tags"><span>自閉症</span><span>日常溝通</span><span>家校合作</span></div>
+    <span class="go">閱讀全文 →</span>
+  </a>
+
+  <a class="card" href="nubu-norway-model.html">
+    <div class="top"><span class="flag">🇳🇴</span><span class="chip c1">挪威篇</span></div>
+    <h2>挪威怎麼讓快要「壞掉」的孩子，留在家裡？</h2>
+    <p>挪威用「多系統治療」（MST），讓治療師到家裡陪家長，24 小時接電話，一起撐過孩子最難的三到五個月。</p>
+    <div class="tags"><span>青少年</span><span>家庭介入</span><span>國家制度</span></div>
+    <span class="go">閱讀全文 →</span>
+  </a>
+
+  <div class="soon">✏️ 下一站整理中，敬請期待。</div>
+
+  <div class="about">
+    <h3>關於這個系列</h3>
+    <p>每篇文章都會寫清楚三件事：那個國家怎麼做、研究證據走到哪裡、台灣可以從哪裡開始。</p>
+    <p>文中引用的數字附上出處；找不到一手資料的地方，會在文末的查證說明裡直接寫出來。</p>
+  </div>
+
+  <footer>編按：本系列整理自各國公開資料與學術文獻，以教育普及為目的重新編寫，內容不構成醫療或法律建議。</footer>
+
+</div>
+</body>
+</html>
