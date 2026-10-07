@@ -78,7 +78,32 @@
     .masthead .logo{ font-size:14px; }
     .card{ padding:20px 18px; }
   }
+
+  /* ===== 系列配色：編輯雜誌版（B 配色＋A 版型） ===== */
+  :root{
+    --bg:#FAFAF7;
+    --panel:#FFFFFF;
+    --panel-soft:#F7EDE9;
+    --panel-teal:#F1EFEA;
+    --panel-yellow:#F4F1EB;
+    --ink:#1C1917;
+    --ink-soft:#44403C;
+    --grey:#57534E;
+    --coral:#B4432A;
+    --coral-deep:#9F3A24;
+    --teal:#44403C;
+    --teal-deep:#1C1917;
+    --yellow:#78716C;
+    --line:#E7E5E4;
+  }
+  .hero h1, h2.sec{ font-family:'Noto Serif TC',serif; font-weight:700; }
+  .note.alert{ border-color:#EBCFC6; }
+  a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; border-radius:6px; }
+  @media (prefers-reduced-motion: reduce){
+    *{ transition:none !important; scroll-behavior:auto !important; }
+  }
 </style>
+
 </head>
 <body>
 
