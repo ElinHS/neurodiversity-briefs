@@ -188,6 +188,29 @@
   .about.sec-editor::before{ background:#F59237; }
   .about.sec-series::before{ background:var(--ink); }
   .about.sec-editor::after, .about.sec-series::after{ display:none; }
+  /* 什麼是神經多樣性：開闔卡片 */
+  .concept{ margin:48px 0 0; padding:0; background:none; border:0; box-shadow:none; }
+  .nd-card{ background:var(--panel); border:1px solid var(--line); border-radius:12px; box-shadow:0 4px 16px rgba(28,25,23,.05); }
+  .nd-card summary{ list-style:none; cursor:pointer; padding:24px; display:block; }
+  .nd-card summary::-webkit-details-marker{ display:none; }
+  .nd-card summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; border-radius:12px; }
+  .nd-head{ display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; }
+  .nd-head h2{ margin:0; }
+  .nd-en{ font-size:14px; font-weight:700; color:var(--grey); }
+  .nd-teaser{ display:block; margin-top:8px; font-size:14px; color:var(--ink-soft); line-height:1.85; }
+  .nd-card[open] .nd-teaser{ display:none; }
+  .nd-toggle{ display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-size:14px; font-weight:700; color:var(--coral-deep); }
+  .nd-toggle .t-open{ display:none; }
+  .nd-card[open] .nd-toggle .t-open{ display:inline; }
+  .nd-card[open] .nd-toggle .t-closed{ display:none; }
+  .nd-plus{ position:relative; width:12px; height:12px; transition:transform .2s ease; }
+  .nd-plus::before, .nd-plus::after{ content:""; position:absolute; background:currentColor; }
+  .nd-plus::before{ left:0; right:0; top:5px; height:2px; }
+  .nd-plus::after{ top:0; bottom:0; left:5px; width:2px; }
+  .nd-card[open] .nd-plus{ transform:rotate(45deg); }
+  .nd-card summary:hover .t-closed, .nd-card summary:hover .t-open{ text-decoration:underline; }
+  .nd-body{ padding:0 24px 24px; }
+  @media(max-width:560px){ .nd-card summary{ padding:20px 18px; } .nd-body{ padding:0 18px 20px; } .concept{ padding:0; } }
 </style>
 
 </head>
@@ -209,8 +232,13 @@
   </section>
 
   <section class="concept" aria-labelledby="nd-ttl">
-    <h2 id="nd-ttl">什麼是神經多樣性？</h2>
-    <p class="en">Neurodiversity</p>
+    <details class="nd-card">
+      <summary>
+        <span class="nd-head"><h2 id="nd-ttl">什麼是神經多樣性？</h2><span class="nd-en">Neurodiversity</span></span>
+        <span class="nd-teaser">每個人大腦的「內建作業系統」本來就長得不一樣。</span>
+        <span class="nd-toggle"><span class="t-closed">展開閱讀</span><span class="t-open">收合</span><span class="nd-plus" aria-hidden="true"></span></span>
+      </summary>
+      <div class="nd-body">
     <p>每個人大腦的「內建作業系統」本來就長得不一樣，這是一種自然的現象。</p>
     <p>就像手機有 Android（安卓）系統、也有 iOS（蘋果）系統，我們不會說哪一個系統是「壞掉」或「生病」的，它們只是運作邏輯不同、擅長的事情不同。同樣的道理，人類的大腦也有很多種版本：</p>
 
@@ -244,6 +272,8 @@
     </div>
 
     <p class="sum">簡單來說，神經多樣性就是把社會上的「不一樣」，從「你有病、你要改」，變成<b>「你很特別，我們來找適合你的方法」</b>。</p>
+      </div>
+    </details>
   </section>
 
   <div class="sec-ttl">已出刊</div>
@@ -272,9 +302,11 @@
     <h3>知識整理人｜10</h3>
     <p>在外商做了二十年廣告，<br>一直在做一件事——把複雜的事，說清楚。</p>
     <p>成為神經多樣性孩子的媽媽之後，我開始發現，<br>特殊教育其實有很多值得被理解、被看見的事，<br>只是資訊往往太分散，也太難懂。</p>
-    <p>所以，我決定用自己最熟悉的方式，做一件事：<br>一個國家、一個國家，<br>去整理他們的制度、研究，以及第一線真正怎麼做，<br>再把這些資料，寫成家長看得懂、也真的用得上的筆記。</p>
-    <p>我不一定有答案，<br>但希望能陪大家一起多知道一點、多想一步，<br>也一起找找看：<br>什麼方法，可能適合我們的孩子。</p>
-    <p>如果你有想法，歡迎來聊聊。<br>如果這些整理對你有一點幫助，<br>也歡迎贊助我喝杯咖啡 ☕️<br>讓我可以繼續把這些重要的事，<br>整理得更清楚，也走得更遠。</p>
+    <p>所以，我決定用自己最熟悉的方式，做一件事：</p>
+    <p>一個國家、一個國家，去整理他們的制度、研究，以及第一線真正怎麼做，<br>再把這些資料，寫成家長看得懂、也真的用得上的筆記。</p>
+    <p>我不一定有答案，但希望能陪大家一起多知道一點、多想一步，<br>也一起找找看：什麼方法，可能適合我們的孩子。</p>
+    <p>如果你有想法，歡迎來聊聊。<br>如果這些整理對你有一點幫助，也歡迎贊助我喝杯咖啡 ☕️</p>
+    <p>讓我可以繼續把這些重要的事，整理得更清楚，也走得更遠。</p>
     <a class="bmc-btn" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">☕️ 請我喝杯咖啡</a>
   </div>
 
