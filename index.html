@@ -211,6 +211,10 @@
   .nd-card summary:hover .t-closed, .nd-card summary:hover .t-open{ text-decoration:underline; }
   .nd-body{ padding:0 24px 24px; }
   @media(max-width:560px){ .nd-card summary{ padding:20px 18px; } .nd-body{ padding:0 18px 20px; } .concept{ padding:0; } }
+  .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:16px; }
+  .cta-row .bmc-btn{ margin-top:0; }
+  .sub-btn{ display:inline-flex; align-items:center; gap:8px; padding:8px 24px; border-radius:999px; border:1px solid var(--ink); background:var(--panel); color:var(--ink); font-size:14px; font-weight:700; text-decoration:none; }
+  .sub-btn:hover{ border-color:#FF6719; color:#C2410C; }
 </style>
 
 </head>
@@ -307,7 +311,7 @@
     <p>我不一定有答案，但希望能陪大家一起多知道一點、多想一步，<br>也一起找找看：什麼方法，可能適合我們的孩子。</p>
     <p>如果你有想法，歡迎來聊聊。<br>如果這些整理對你有一點幫助，也歡迎贊助我喝杯咖啡 ☕️</p>
     <p>讓我可以繼續把這些重要的事，整理得更清楚，也走得更遠。</p>
-    <a class="bmc-btn" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">☕️ 請我喝杯咖啡</a>
+    <div class="cta-row"><a class="bmc-btn" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">☕️ 請我喝杯咖啡</a><a class="sub-btn" href="https://substack.com/@elinhsieh" target="_blank" rel="noopener" aria-label="在 Substack 和我聊聊"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#FF6719" d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>來聊聊</a></div>
   </div>
 
   <div class="about editor sec-series">
