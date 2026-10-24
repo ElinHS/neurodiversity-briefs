@@ -6,6 +6,8 @@
 <title>挪威怎麼讓快要「壞掉」的孩子，留在家裡？｜走進 MST 密集家庭治療現場</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/lxgwwenkaitc-regular.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/lxgwwenkaitc-bold.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -245,9 +247,93 @@
   .masthead .logo-img{ display:block; height:64px; width:auto; }
   .hero h1 .title-img{ display:block; width:100%; max-width:640px; height:auto; }
   @media(max-width:560px){ .masthead .logo-img{ height:48px; } .masthead .row{ flex-direction:column; align-items:flex-start; gap:8px; } }
+
+  /* ===== 設計修正 v3：情境框、大章節號、重點句、展開、手繪圖 ===== */
+  :root{ --scene:#FAF1DE; --hand:'LXGW WenKai TC','Noto Serif TC',serif; }
+
+  /* D. 章節大編號 */
+  h2.sec{ padding-top:0; margin-top:88px; }
+  h2.sec::before{ display:none; }
+  h2.sec .no{ font-family:'Noto Serif TC',serif; font-size:68px; line-height:1; font-weight:900; letter-spacing:0; color:transparent; -webkit-text-stroke:1.6px var(--coral); margin-bottom:14px; }
+  @media(max-width:560px){ h2.sec{ margin-top:72px; } h2.sec .no{ font-size:52px; } }
+
+  /* A. 情境框 */
+  .scene{ position:relative; margin:28px 0 36px; background:var(--scene); border-radius:3px 16px 5px 14px; padding:36px 24px 6px; }
+  .scene::before{ content:attr(data-label); position:absolute; top:-13px; left:18px; font-family:var(--hand); font-size:15px; font-weight:700; letter-spacing:.06em; color:#fff; background:var(--ink); padding:2px 12px; border-radius:3px; transform:rotate(-2deg); }
+  .article .scene p{ font-family:var(--hand); font-size:18.5px; line-height:2; color:var(--ink); margin:0 0 22px; }
+  .scene .spot{ float:right; width:150px; margin:-8px -4px 8px 16px; }
+  .scene::after{ content:""; display:block; clear:both; }
+  @media(max-width:560px){ .scene{ padding:34px 18px 4px; } .scene .spot{ width:112px; } .article .scene p{ font-size:17.5px; } }
+
+  /* 示範情境卡片，與情境框同一套語言 */
+  .case{ position:relative; background:var(--scene); border:0; border-radius:3px 16px 5px 14px; padding:36px 24px 24px; margin:36px 0; }
+  .case .chip{ position:absolute; top:-13px; left:18px; margin:0; font-family:var(--hand); font-size:15px; font-weight:700; letter-spacing:.06em; color:#fff; background:var(--ink); padding:2px 12px; border-radius:3px; transform:rotate(-2deg); }
+  .case h4{ font-family:var(--hand); font-size:21px; font-weight:700; }
+  .case .verified{ border-top-color:rgba(28,25,23,.18); }
+
+  /* D. 重點句 */
+  .article p.pull{ margin:44px 0 40px; font-family:'Noto Serif TC',serif; font-weight:900; font-size:clamp(21px,4.8vw,26px); line-height:1.7; color:var(--ink); }
+  .article p.pull::before{ content:""; display:block; width:56px; height:12px; margin-bottom:14px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 12'%3E%3Cpath d='M2 7 Q9 1 16 6 T30 6 T44 6 T54 5' fill='none' stroke='%23B4432A' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat; }
+  .article p.pull span{ background:linear-gradient(transparent 60%, rgba(180,67,42,.2) 60%, rgba(180,67,42,.2) 90%, transparent 90%); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+
+  /* E. 展開／收合 */
+  details.more{ margin:28px 0; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); }
+  details.more > summary{ list-style:none; cursor:pointer; position:relative; padding:16px 44px 16px 0; font-size:17px; font-weight:700; line-height:1.6; color:var(--ink); }
+  details.more > summary::-webkit-details-marker{ display:none; }
+  details.more > summary small{ display:block; margin-top:2px; font-size:13px; font-weight:400; color:var(--grey); }
+  details.more > summary::after{ content:"＋"; position:absolute; right:6px; top:50%; transform:translateY(-50%); width:28px; height:28px; border:1.5px solid var(--coral); border-radius:50%; color:var(--coral); font-size:16px; line-height:25px; text-align:center; }
+  details.more[open] > summary::after{ content:"－"; }
+  details.more > summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+  details.more .more-body{ padding:4px 0 8px; }
+  .sources details > summary{ cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); list-style:none; }
+  .sources details > summary::-webkit-details-marker{ display:none; }
+  .sources details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--coral); }
+  .sources details[open] > summary::after{ content:"　收合 －"; }
+
+  /* 手繪圖 */
+  .fig{ margin:40px 0; }
+  .fig .fig-ttl{ font-family:var(--hand); font-size:19px; font-weight:700; line-height:1.6; margin:0 0 12px; color:var(--ink); }
+  .fig svg{ display:block; width:100%; height:auto; overflow:visible; }
+  .fig figcaption{ margin-top:14px; padding-left:14px; border-left:2px solid var(--line); font-size:13px; line-height:1.85; color:var(--grey); }
+  svg .ink{ fill:none; stroke:var(--ink); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+  svg .ink-c{ fill:none; stroke:var(--coral); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  svg .dash{ stroke-dasharray:5 6; }
+  svg .fill-c{ fill:var(--coral); }
+  svg .fill-ink{ fill:var(--ink); }
+  svg .fill-paper{ fill:var(--bg); }
+  svg .hatch{ fill:url(#hatch); }
+  svg .rough{ filter:url(#rough); }
+  svg text{ font-family:var(--hand); fill:var(--ink); }
+  svg text.c{ fill:var(--coral); }
+  svg text.g{ fill:var(--grey); }
+  svg text.b{ font-weight:700; }
+
+  /* C. 光譜圖 */
+  .spectrum .axis{ position:relative; display:flex; justify-content:space-between; margin:0 6px 18px; padding-bottom:6px; border-bottom:2px solid var(--ink); font-family:var(--hand); font-size:17px; font-weight:700; }
+  .spectrum .axis::before, .spectrum .axis::after{ content:""; position:absolute; bottom:-7px; width:11px; height:11px; border-top:2px solid var(--ink); border-left:2px solid var(--ink); }
+  .spectrum .axis::before{ left:-2px; transform:rotate(-45deg); }
+  .spectrum .axis::after{ right:-2px; transform:rotate(135deg); }
+  .spectrum .axis-m{ display:none; }
+  .spectrum ol{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .spectrum li svg{ width:100%; max-width:120px; margin:0 auto 8px; }
+  .spectrum h5{ margin:0 0 4px; font-family:var(--hand); font-size:18px; font-weight:700; line-height:1.5; color:var(--ink); text-align:center; }
+  .spectrum .how, .article .spectrum .how{ margin:0 0 8px; font-size:13.5px; line-height:1.75; color:var(--ink-soft); text-align:center; }
+  .spectrum .tw, .article .spectrum .tw{ margin:0; padding-top:8px; border-top:1px dashed var(--line); font-size:12.5px; line-height:1.75; color:var(--grey); text-align:center; }
+  .spectrum .tw b{ color:var(--coral-deep); }
+  @media(max-width:600px){
+    .spectrum .axis{ display:none; }
+    .spectrum .axis-m{ display:block; margin:0 0 12px; font-family:var(--hand); font-size:16px; font-weight:700; color:var(--ink); }
+    .spectrum ol{ grid-template-columns:1fr; gap:0; border-left:2px solid var(--ink); margin-left:6px; }
+    .spectrum li{ display:grid; grid-template-columns:76px 1fr; gap:4px 14px; align-items:start; padding:12px 0 12px 14px; border-bottom:1px solid var(--line); }
+    .spectrum li:last-child{ border-bottom:0; }
+    .spectrum li svg{ grid-row:span 3; margin:4px 0 0; }
+    .spectrum h5, .spectrum .how, .article .spectrum .how, .spectrum .tw, .article .spectrum .tw{ text-align:left; }
+  }
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#F7E3DC"/><line x1="0" y1="0" x2="0" y2="7" stroke="#B4432A" stroke-width="2.2"/></pattern></defs></svg>
+
 
   <header class="masthead">
     <div class="row">
@@ -276,7 +362,10 @@
 
     <article class="article">
 
-      <p class="lead">半夜三點，電話響了。一位媽媽打來，說兒子又在家裡摔東西。在挪威，接起這通電話的，是一套國家級的支援系統。</p>
+      <div class="scene" data-label="情境">
+        <svg class="spot" viewBox="0 0 150 120" aria-hidden="true"><g class="ink rough"><circle cx="44" cy="54" r="30"/><path d="M44 54 V32 M44 54 H60"/><path d="M44 27 V30 M71 54 H68 M44 81 V78 M17 54 H20"/><rect x="88" y="30" width="36" height="66" rx="6"/><path d="M100 88 H112"/></g><g class="ink-c rough"><path d="M80 44 Q76 56 80 68"/><path d="M73 40 Q67 56 73 72"/><path d="M132 44 Q136 56 132 68"/><path d="M139 40 Q145 56 139 72"/></g></svg>
+        <p>半夜三點，電話響了。一位媽媽打來，說兒子又在家裡摔東西。在挪威，接起這通電話的，是一套國家級的支援系統。</p>
+      </div>
 
       <p>這套系統叫做「多系統治療」（Multisystemic Therapy，簡稱 MST）。挪威從 1999 年開始建立，主管單位是「國家兒童與青少年發展中心」（NUBU）。它的想法很簡單：與其把孩子送進機構，不如把資源送進家裡，陪家長學會照顧好自己的孩子。</p>
 
@@ -285,7 +374,19 @@
 
       <h3 class="sub">一個治療師，只帶四到六個家庭</h3>
       <p>台灣的社工常常一個人要顧幾十個個案。MST 的一個小組，由一位督導和三到四位碩士以上的治療師組成，每位治療師同時只服務四到六個家庭。個案少，治療師才有時間深入了解每一個家庭。</p>
-      <p>就像吃藥要吃到足夠的劑量才有效，家庭服務也需要足夠的「劑量」：見面夠頻繁、陪伴夠深入，才可能改變一個家的相處方式。</p>
+      <figure class="fig">
+        <div class="fig-ttl">個案量，決定陪伴的密度</div>
+        <svg viewBox="0 0 560 250" role="img" aria-label="示意圖：左邊一位 MST 治療師只負責四到六個家庭；右邊一個人負責幾十個個案">
+<g class="rough"><path class="ink dash" d="M120 104 L38 148"/><path class="ink dash" d="M120 104 L56 88"/><path class="ink dash" d="M120 104 L120 60"/><path class="ink dash" d="M120 104 L184 88"/><path class="ink dash" d="M120 104 L202 148"/><path class="ink" d="M26.0 132.0 L38.0 118.0 L50.0 132.0 V148.0 H26.0 Z"/><path class="ink" d="M44.0 72.0 L56.0 58.0 L68.0 72.0 V88.0 H44.0 Z"/><path class="ink" d="M108.0 44.0 L120.0 30.0 L132.0 44.0 V60.0 H108.0 Z"/><path class="ink" d="M172.0 72.0 L184.0 58.0 L196.0 72.0 V88.0 H172.0 Z"/><path class="ink" d="M190.0 132.0 L202.0 118.0 L214.0 132.0 V148.0 H190.0 Z"/><circle class="ink" cx="120" cy="113.0" r="11.0" /><path class="ink" d="M120 124.0 V167.0 M106.0 150.0 L120 132.0 L134.0 150.0 M111.0 200 L120 167.0 L129.0 200"/></g>
+<g class="rough"><path class="ink" d="M353.8 45.0 L362.5 34.9 L371.1 45.0 V56.5 H353.8 Z"/><path class="ink" d="M390.3 53.5 L398.9 43.4 L407.6 53.5 V65.0 H390.3 Z"/><path class="ink" d="M315.2 93.9 L323.8 83.9 L332.4 93.9 V105.5 H315.2 Z"/><path class="ink" d="M509.3 159.4 L517.9 149.3 L526.6 159.4 V170.9 H509.3 Z"/><path class="ink" d="M474.5 64.5 L483.1 54.4 L491.7 64.5 V76.0 H474.5 Z"/><path class="ink" d="M422.4 73.5 L431.0 63.4 L439.6 73.5 V85.0 H422.4 Z"/><path class="ink" d="M348.9 180.2 L357.5 170.1 L366.2 180.2 V191.7 H348.9 Z"/><path class="ink" d="M370.6 130.9 L379.3 120.8 L387.9 130.9 V142.4 H370.6 Z"/><path class="ink" d="M466.9 168.2 L475.5 158.2 L484.2 168.2 V179.8 H466.9 Z"/><path class="ink" d="M500.7 42.3 L509.3 32.2 L517.9 42.3 V53.8 H500.7 Z"/><path class="ink" d="M507.2 121.9 L515.9 111.9 L524.5 121.9 V133.5 H507.2 Z"/><path class="ink" d="M336.8 78.1 L345.4 68.0 L354.1 78.1 V89.6 H336.8 Z"/><path class="ink" d="M310.6 130.8 L319.2 120.7 L327.8 130.8 V142.3 H310.6 Z"/><path class="ink" d="M527.4 60.2 L536.0 50.1 L544.7 60.2 V71.7 H527.4 Z"/><path class="ink" d="M474.5 129.0 L483.1 118.9 L491.7 129.0 V140.5 H474.5 Z"/><path class="ink" d="M387.0 185.8 L395.7 175.7 L404.3 185.8 V197.3 H387.0 Z"/><path class="ink" d="M375.5 29.6 L384.2 19.5 L392.8 29.6 V41.1 H375.5 Z"/><path class="ink" d="M310.2 55.9 L318.9 45.8 L327.5 55.9 V67.4 H310.2 Z"/><path class="ink" d="M523.8 97.6 L532.5 87.5 L541.1 97.6 V109.1 H523.8 Z"/><path class="ink" d="M476.4 95.2 L485.1 85.1 L493.7 95.2 V106.7 H476.4 Z"/><path class="ink" d="M521.4 185.8 L530.0 175.7 L538.7 185.8 V197.3 H521.4 Z"/><path class="ink" d="M452.4 35.4 L461.0 25.3 L469.7 35.4 V46.9 H452.4 Z"/><path class="ink" d="M453.1 82.3 L461.7 72.2 L470.4 82.3 V93.8 H453.1 Z"/><path class="ink" d="M302.4 165.5 L311.0 155.4 L319.7 165.5 V177.0 H302.4 Z"/><path class="ink" d="M353.3 107.9 L361.9 97.8 L370.6 107.9 V119.4 H353.3 Z"/><path class="ink" d="M341.0 135.4 L349.6 125.3 L358.2 135.4 V146.9 H341.0 Z"/><path class="ink" d="M374.5 77.4 L383.1 67.3 L391.8 77.4 V88.9 H374.5 Z"/><path class="ink" d="M314.0 190.9 L322.6 180.8 L331.2 190.9 V202.4 H314.0 Z"/><path class="ink" d="M450.1 142.7 L458.7 132.6 L467.4 142.7 V154.2 H450.1 Z"/><path class="ink" d="M416.1 28.2 L424.8 18.1 L433.4 28.2 V39.7 H416.1 Z"/><circle class="ink" cx="420" cy="113.0" r="11.0" /><path class="ink" d="M420 124.0 V167.0 M406.0 150.0 L420 132.0 L434.0 150.0 M411.0 200 L420 167.0 L429.0 200"/></g>
+<text x="120" y="234" font-size="17" text-anchor="middle" class="b">MST：一位治療師 4–6 個家庭</text>
+<text x="420" y="234" font-size="17" text-anchor="middle" class="b">一個人負責幾十個個案時</text>
+</svg>
+        <figcaption>MST 每位治療師同時只服務四到六個家庭；右圖示意一個人要負責幾十個個案的情況。</figcaption>
+      </figure>
+
+      <p class="pull"><span>就像吃藥要吃到足夠的劑量才有效，家庭服務也需要足夠的「劑量」。</span></p>
+      <p>見面夠頻繁、陪伴夠深入，才可能改變一個家的相處方式。</p>
 
       <h3 class="sub">治療師到家裡來，家長不用跑診所</h3>
       <p>MST 不要求家長帶孩子去診所。治療師每週會到家裡、學校、社區兩到三次，必要時每天去。孩子不想寫功課、開始摔東西時，如果治療師剛好在場，就會直接示範：怎麼讓孩子冷靜下來，怎麼用平穩的語氣說清楚界線。</p>
@@ -369,6 +470,7 @@
         <div class="block">
           <div class="k">後來呢</div>
           <p>三到五個月後，治療師用五個指標檢查成果：是不是住在家裡、有沒有上學或工作、有沒有再犯法、有沒有用藥、有沒有暴力行為。結案後，還會在第 6、12、18 個月各追蹤一次。</p>
+          <figure class="fig" style="margin:20px 0 4px"><svg viewBox="0 0 560 110" role="img" aria-label="五個成效指標：住在家裡、上學或工作、沒再犯法、沒有用藥、沒有暴力"><g class="rough"><path class="ink" d="M34 64 V38 L56 20 L78 38 V64 Z M50 64 V50 H62 V64"/><path class="ink-c" d="M76 20 L82 27 L94 12"/></g><text x="56" y="96" font-size="18" text-anchor="middle" class="b">住在家裡</text><g class="rough"><path class="ink" d="M168 30 Q156 22 142 26 V60 Q156 56 168 64 Q180 56 194 60 V26 Q180 22 168 30 V64"/><path class="ink-c" d="M188 20 L194 27 L206 12"/></g><text x="168" y="96" font-size="18" text-anchor="middle" class="b">上學或工作</text><g class="rough"><g transform="rotate(-40 284 34)"><rect class="ink" x="270" y="24" width="28" height="14" rx="3"/></g><path class="ink" d="M278 40 L262 58 M254 66 H286"/><path class="ink-c" d="M300 20 L306 27 L318 12"/></g><text x="280" y="96" font-size="18" text-anchor="middle" class="b">沒再犯法</text><g class="rough"><g transform="rotate(-30 392 44)"><rect class="ink" x="368" y="34" width="48" height="20" rx="10"/><path class="ink" d="M392 34 V54"/></g><path class="ink-c" d="M412 20 L418 27 L430 12"/></g><text x="392" y="96" font-size="18" text-anchor="middle" class="b">沒有用藥</text><g class="rough"><path class="ink" d="M504 62 C474 44 482 18 504 32 C526 18 534 44 504 62 Z"/><path class="ink-c" d="M524 20 L530 27 L542 12"/></g><text x="504" y="96" font-size="18" text-anchor="middle" class="b">沒有暴力</text></svg></figure>
         </div>
         <p class="verified">情境中的制度細節（個案量、24 小時待命、五項成效指標、追蹤期）都有公開資料可查；個案本身是虛構的，請不要引用任何具體數字（例如「逃學率降低八成」）。</p>
       </div>
@@ -425,6 +527,12 @@
           <div><p class="q">引進方法的同時，就編好驗證的預算</p><p class="a">挪威沒有拿美國的研究當自己的證明，導入第五年就做出本國的比較研究。後來國際上開始質疑 MST 時，挪威手上有自己的證據可以回應。</p></div>
         </div>
 
+      </div>
+
+      <details class="more">
+        <summary>再看五個事實（6–10）<small>包括一份國際研究的提醒，以及歐洲人權法院的判決</small></summary>
+        <div class="more-body facts10">
+
         <div class="fact10">
           <div class="n">6</div>
           <div><p class="q">「成功」用五件一般人也看得懂的事來衡量</p><p class="a">住在家裡、有上學或工作、沒再犯法、沒有用藥、沒有暴力，一路追蹤到結案後 18 個月。這比只看「結案率」更有意義，也是整套制度裡最便宜、最容易學的一環。</p></div>
@@ -454,8 +562,8 @@
           <div class="n">10</div>
           <div><p class="q">方法有效，不代表每個處分都正當</p><p class="a">2015 年以來，歐洲人權法院已經在 23 件挪威兒少保護案件中，判定挪威侵害了家庭生活的權利。輸掉的理由幾乎都是程序問題。就算是重視研究證據的系統，也要不斷提醒自己：專業判斷正確，程序也要經得起檢驗。</p></div>
         </div>
-
-      </div>
+        </div>
+      </details>
 
       <h2 class="sec"><span class="no">06</span>台灣可以先學的幾個關鍵決定</h2>
       <p class="sec-dek">挑對幾個決定，比整套搬過來更重要。每張卡片左邊是挪威的做法，右邊是台灣可以著手的地方。</p>
@@ -552,7 +660,7 @@
       </div>
 
       <div class="sources">
-        <span class="lbl">參考來源</span>
+        <details><summary>參考來源（10 筆）</summary>
         <ol>
           <li>Hukkelberg, S., Ogden, T. et al. — <a href="https://link.springer.com/article/10.1007/s10802-020-00735-3">Identification of MST Subgroups with Distinct Trajectories on Ultimate Outcomes in Norway</a>（2021）</li>
           <li>Bjørknes, R. et al. — <a href="https://journals.sagepub.com/doi/10.1177/00111287241287134">Does MST Change Criminogenic Risk Factors? A 10-Year Study Among Norwegian Youths</a></li>
@@ -565,6 +673,7 @@
           <li>司法院 — <a href="https://www.judicial.gov.tw/tw/cp-1887-865612-e5f97-1.html">曝險少年行政輔導先行新制</a>（2023 年 7 月 1 日施行）</li>
           <li>MST Services、Foundations、Children's Village 等機構的 MST 運作說明頁面（一般／美國脈絡）</li>
         </ol>
+        </details>
       </div>
 
     </article>

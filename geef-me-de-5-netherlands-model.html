@@ -7,6 +7,8 @@
 <meta name="description" content="荷蘭「Geef me de 5」方法、適性教育法、2Tango 輔助科技與神經多樣性運動，以及台灣可以借鏡的關鍵決定。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/lxgwwenkaitc-regular.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.2.0/lxgwwenkaitc-bold.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -239,10 +241,94 @@
   .masthead .logo-img{ display:block; height:64px; width:auto; }
   .hero h1 .title-img{ display:block; width:100%; max-width:640px; height:auto; }
   @media(max-width:560px){ .masthead .logo-img{ height:48px; } .masthead .row{ flex-direction:column; align-items:flex-start; gap:8px; } }
+
+  /* ===== 設計修正 v3：情境框、大章節號、重點句、展開、手繪圖 ===== */
+  :root{ --scene:#FAF1DE; --hand:'LXGW WenKai TC','Noto Serif TC',serif; }
+
+  /* D. 章節大編號 */
+  h2.sec{ padding-top:0; margin-top:88px; }
+  h2.sec::before{ display:none; }
+  h2.sec .no{ font-family:'Noto Serif TC',serif; font-size:68px; line-height:1; font-weight:900; letter-spacing:0; color:transparent; -webkit-text-stroke:1.6px var(--coral); margin-bottom:14px; }
+  @media(max-width:560px){ h2.sec{ margin-top:72px; } h2.sec .no{ font-size:52px; } }
+
+  /* A. 情境框 */
+  .scene{ position:relative; margin:28px 0 36px; background:var(--scene); border-radius:3px 16px 5px 14px; padding:36px 24px 6px; }
+  .scene::before{ content:attr(data-label); position:absolute; top:-13px; left:18px; font-family:var(--hand); font-size:15px; font-weight:700; letter-spacing:.06em; color:#fff; background:var(--ink); padding:2px 12px; border-radius:3px; transform:rotate(-2deg); }
+  .article .scene p{ font-family:var(--hand); font-size:18.5px; line-height:2; color:var(--ink); margin:0 0 22px; }
+  .scene .spot{ float:right; width:150px; margin:-8px -4px 8px 16px; }
+  .scene::after{ content:""; display:block; clear:both; }
+  @media(max-width:560px){ .scene{ padding:34px 18px 4px; } .scene .spot{ width:112px; } .article .scene p{ font-size:17.5px; } }
+
+  /* 示範情境卡片，與情境框同一套語言 */
+  .case{ position:relative; background:var(--scene); border:0; border-radius:3px 16px 5px 14px; padding:36px 24px 24px; margin:36px 0; }
+  .case .chip{ position:absolute; top:-13px; left:18px; margin:0; font-family:var(--hand); font-size:15px; font-weight:700; letter-spacing:.06em; color:#fff; background:var(--ink); padding:2px 12px; border-radius:3px; transform:rotate(-2deg); }
+  .case h4{ font-family:var(--hand); font-size:21px; font-weight:700; }
+  .case .verified{ border-top-color:rgba(28,25,23,.18); }
+
+  /* D. 重點句 */
+  .article p.pull{ margin:44px 0 40px; font-family:'Noto Serif TC',serif; font-weight:900; font-size:clamp(21px,4.8vw,26px); line-height:1.7; color:var(--ink); }
+  .article p.pull::before{ content:""; display:block; width:56px; height:12px; margin-bottom:14px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 12'%3E%3Cpath d='M2 7 Q9 1 16 6 T30 6 T44 6 T54 5' fill='none' stroke='%23B4432A' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat; }
+  .article p.pull span{ background:linear-gradient(transparent 60%, rgba(180,67,42,.2) 60%, rgba(180,67,42,.2) 90%, transparent 90%); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+
+  /* E. 展開／收合 */
+  details.more{ margin:28px 0; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); }
+  details.more > summary{ list-style:none; cursor:pointer; position:relative; padding:16px 44px 16px 0; font-size:17px; font-weight:700; line-height:1.6; color:var(--ink); }
+  details.more > summary::-webkit-details-marker{ display:none; }
+  details.more > summary small{ display:block; margin-top:2px; font-size:13px; font-weight:400; color:var(--grey); }
+  details.more > summary::after{ content:"＋"; position:absolute; right:6px; top:50%; transform:translateY(-50%); width:28px; height:28px; border:1.5px solid var(--coral); border-radius:50%; color:var(--coral); font-size:16px; line-height:25px; text-align:center; }
+  details.more[open] > summary::after{ content:"－"; }
+  details.more > summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+  details.more .more-body{ padding:4px 0 8px; }
+  .sources details > summary{ cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); list-style:none; }
+  .sources details > summary::-webkit-details-marker{ display:none; }
+  .sources details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--coral); }
+  .sources details[open] > summary::after{ content:"　收合 －"; }
+
+  /* 手繪圖 */
+  .fig{ margin:40px 0; }
+  .fig .fig-ttl{ font-family:var(--hand); font-size:19px; font-weight:700; line-height:1.6; margin:0 0 12px; color:var(--ink); }
+  .fig svg{ display:block; width:100%; height:auto; overflow:visible; }
+  .fig figcaption{ margin-top:14px; padding-left:14px; border-left:2px solid var(--line); font-size:13px; line-height:1.85; color:var(--grey); }
+  svg .ink{ fill:none; stroke:var(--ink); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+  svg .ink-c{ fill:none; stroke:var(--coral); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
+  svg .dash{ stroke-dasharray:5 6; }
+  svg .fill-c{ fill:var(--coral); }
+  svg .fill-ink{ fill:var(--ink); }
+  svg .fill-paper{ fill:var(--bg); }
+  svg .hatch{ fill:url(#hatch); }
+  svg .rough{ filter:url(#rough); }
+  svg text{ font-family:var(--hand); fill:var(--ink); }
+  svg text.c{ fill:var(--coral); }
+  svg text.g{ fill:var(--grey); }
+  svg text.b{ font-weight:700; }
+
+  /* C. 光譜圖 */
+  .spectrum .axis{ position:relative; display:flex; justify-content:space-between; margin:0 6px 18px; padding-bottom:6px; border-bottom:2px solid var(--ink); font-family:var(--hand); font-size:17px; font-weight:700; }
+  .spectrum .axis::before, .spectrum .axis::after{ content:""; position:absolute; bottom:-7px; width:11px; height:11px; border-top:2px solid var(--ink); border-left:2px solid var(--ink); }
+  .spectrum .axis::before{ left:-2px; transform:rotate(-45deg); }
+  .spectrum .axis::after{ right:-2px; transform:rotate(135deg); }
+  .spectrum .axis-m{ display:none; }
+  .spectrum ol{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .spectrum li svg{ width:100%; max-width:120px; margin:0 auto 8px; }
+  .spectrum h5{ margin:0 0 4px; font-family:var(--hand); font-size:18px; font-weight:700; line-height:1.5; color:var(--ink); text-align:center; }
+  .spectrum .how, .article .spectrum .how{ margin:0 0 8px; font-size:13.5px; line-height:1.75; color:var(--ink-soft); text-align:center; }
+  .spectrum .tw, .article .spectrum .tw{ margin:0; padding-top:8px; border-top:1px dashed var(--line); font-size:12.5px; line-height:1.75; color:var(--grey); text-align:center; }
+  .spectrum .tw b{ color:var(--coral-deep); }
+  @media(max-width:600px){
+    .spectrum .axis{ display:none; }
+    .spectrum .axis-m{ display:block; margin:0 0 12px; font-family:var(--hand); font-size:16px; font-weight:700; color:var(--ink); }
+    .spectrum ol{ grid-template-columns:1fr; gap:0; border-left:2px solid var(--ink); margin-left:6px; }
+    .spectrum li{ display:grid; grid-template-columns:76px 1fr; gap:4px 14px; align-items:start; padding:12px 0 12px 14px; border-bottom:1px solid var(--line); }
+    .spectrum li:last-child{ border-bottom:0; }
+    .spectrum li svg{ grid-row:span 3; margin:4px 0 0; }
+    .spectrum h5, .spectrum .how, .article .spectrum .how, .spectrum .tw, .article .spectrum .tw{ text-align:left; }
+  }
 </style>
 
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#F7E3DC"/><line x1="0" y1="0" x2="0" y2="7" stroke="#B4432A" stroke-width="2.2"/></pattern></defs></svg>
+
 
 <header class="masthead">
   <div class="row">
@@ -281,7 +367,9 @@
     <h2 class="sec"><span class="no">01</span>下課鐘響了，他為什麼不肯站起來？</h2>
     <p class="sec-dek">先從一個很常見的教室畫面說起。</p>
 
-    <p class="lead">下課鐘響了，全班都跑去操場，只有一個孩子還坐在位子上。老師叫了兩次，他沒動。叫到第三次，他開始大叫。</p>
+    <div class="scene" data-label="情境">
+      <p>下課鐘響了，全班都跑去操場，只有一個孩子還坐在位子上。老師叫了兩次，他沒動。叫到第三次，他開始大叫。</p>
+    </div>
 
     <p>你可能會覺得這孩子在反抗。換個角度看，他也可能只是不知道接下來要做什麼：下課要去哪裡？做什麼？跟誰？什麼時候回來？</p>
 
@@ -289,9 +377,19 @@
     <p>荷蘭特教專家 Colette de Bruin 就是從這樣的畫面出發。她認為，自閉症孩子的大腦接收資訊時，很像拿到一盒倒出來的拼圖。</p>
     <p>多數人聽到「下課了」，會自動把拼圖拼好：下課就是去操場玩，鐘響再回來。自閉症孩子比較難自己拼。少了一塊，他就不安；不安累積下來，大人看到的就是「行為問題」。</p>
 
-    <div class="quote">
-      <p>先補上缺的那塊拼圖，再看孩子的行為。</p>
-    </div>
+    <figure class="fig">
+      <div class="fig-ttl">聽到「下課了」，孩子的腦袋裡少了哪一塊？</div>
+      <svg viewBox="0 0 560 250" role="img" aria-label="示意圖：左邊是散開、少了一塊的拼圖，代表孩子聽到「下課了」時缺少的資訊；右邊是五塊拼圖都補上">
+<g transform="translate(12 58) rotate(-14 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">什麼</text></g><g transform="translate(96 26) rotate(16 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">怎麼做</text></g><g transform="translate(176 44) rotate(-8 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">在哪裡</text></g><g transform="translate(110 140) rotate(-18 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">誰</text></g><g transform="translate(26 142) rotate(10 30 30)"><path class="ink-c dash rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="42" font-size="30" text-anchor="middle" class="c b">?</text></g>
+<g class="rough"><path class="ink" d="M250 128 Q288.0 122 326 128 M317 121 L326 128 L317 135"/></g><text x="288" y="108" font-size="18" text-anchor="middle">說清楚</text>
+<g transform="translate(346 52) rotate(0 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">什麼</text></g><g transform="translate(406 52) rotate(0 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">怎麼做</text></g><g transform="translate(466 52) rotate(0 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">在哪裡</text></g><g transform="translate(376 112) rotate(0 30 30)"><path class="ink-c hatch rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="27" font-size="18" text-anchor="middle">什麼</text><text x="30" y="45" font-size="18" text-anchor="middle">時候</text></g><g transform="translate(436 112) rotate(0 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">誰</text></g>
+<text x="118" y="240" font-size="18" text-anchor="middle" class="g">少了「什麼時候」那一塊</text>
+<text x="436" y="240" font-size="18" text-anchor="middle" class="g">五塊都補上</text>
+</svg>
+      <figcaption>依 Colette de Bruin 的拼圖比喻繪製的示意圖。「什麼時候」是大人最常漏掉的一塊。</figcaption>
+    </figure>
+
+    <p class="pull"><span>先補上缺的那塊拼圖，再看孩子的行為。</span></p>
 
     <h3 class="sub">從一本書，到全荷蘭 30 多個機構</h3>
     <p>2004 年，她把這個想法寫成《Geef me de 5》這本書。二十多年後，荷蘭有 30 多個機構取得授權，在學校、照護機構和地方政府推廣這套方法。</p>
@@ -357,6 +455,18 @@
       <div class="flow-note">順序很重要。孩子還在崩潰時，聽不進任何道理；等他平靜了，才是一起找原因的時候。</div>
     </div>
 
+    <figure class="fig">
+      <div class="fig-ttl">情緒溫度計：這件事其實是幾級？</div>
+      <svg viewBox="0 0 560 150" role="img" aria-label="情緒溫度計示意：1 到 5 級，擦傷是 1 級，火災是 5 級；動物園取消是 2 級">
+<g class="rough"><rect x="30" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.08"/><rect x="130" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.22"/><rect x="230" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.42"/><rect x="330" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.66"/><rect x="430" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.92"/><rect class="ink" x="30" y="62" width="500" height="40" rx="3"/><path class="ink" d="M130 62 V102 M230 62 V102 M330 62 V102 M430 62 V102"/></g>
+<text x="80" y="89" font-size="20" text-anchor="middle" class="b" style="fill:var(--ink)">1</text><text x="180" y="89" font-size="20" text-anchor="middle" class="b" style="fill:var(--ink)">2</text><text x="280" y="89" font-size="20" text-anchor="middle" class="b" style="fill:var(--ink)">3</text><text x="380" y="89" font-size="20" text-anchor="middle" class="b" style="fill:#fff">4</text><text x="480" y="89" font-size="20" text-anchor="middle" class="b" style="fill:#fff">5</text>
+<g class="rough"><path class="ink-c" d="M180 34 Q178 46 180 56 M173 49 L180 57 L187 49"/></g>
+<text x="180" y="26" font-size="18" text-anchor="middle" class="c b">動物園取消：2 級</text>
+<text x="80" y="130" font-size="18" text-anchor="middle" class="g">擦傷</text><text x="480" y="130" font-size="18" text-anchor="middle" class="g">火災</text>
+</svg>
+      <figcaption>原版是從綠色到深紅色的 1 到 5 級尺。孩子覺得「世界末日」時，陪他一起找出這件事的位置。</figcaption>
+    </figure>
+
     <div class="note"><b>值得想一想：</b>台灣的特教老師對結構化教學、視覺化行程並不陌生。Geef me de 5 多走了一步：讓家長、老師和照護者學同一套說法。荷蘭的基礎課程上 4 天，每班最多 24 人，而且刻意讓老師和家長坐在同一間教室。孩子在家、在學校，聽到的是同一種說明方式。</div>
 
     <!-- 3 -->
@@ -416,7 +526,8 @@
     <p class="sec-dek">好方法要能長久用下去，需要制度幫忙。</p>
 
     <p>2014 年 8 月，荷蘭開始實施《適性教育法》（Passend Onderwijs）。法律規定：<b>學校有「照護義務」。</b></p>
-    <p>舉個例子。小明在普通班常常情緒爆發，家長很擔心被學校勸退。在荷蘭，學校不能只回一句「我們這裡沒辦法」。學校要和家長一起替小明找到合適的位置：可能是留在原班、加上支援；可能是轉到另一所普通學校；也可能是特教學校。找學校這件事，從家長一個人扛，變成學校一起負責。</p>
+    <p>舉個例子。小明在普通班常常情緒爆發，家長很擔心被學校勸退。在荷蘭，學校不能只回一句「我們這裡沒辦法」。學校要和家長一起替小明找到合適的位置：可能是留在原班、加上支援；可能是轉到另一所普通學校；也可能是特教學校。</p>
+    <p class="pull"><span>找學校這件事，從家長一個人扛，變成學校一起負責。</span></p>
     <p>為了做到這件事，荷蘭有幾個台灣家長聽了會覺得眼熟的設計：</p>
 
     <div class="tiers">
@@ -449,7 +560,9 @@
     <p class="sec-dek">五個問題是大人把話「翻譯」給孩子聽。孩子想說的話，也需要有路可以說出來。</p>
 
     <p>荷蘭社會學家 Tjerk Feitsma 提出一個說法：「溝通稅」。神經多樣性的人為了配合大多數人的說話方式，每天都要多花一份力氣。這份力氣，就像一筆看不見的稅。</p>
-    <p>想像一下：孩子在學校撐了一整天，回到家累到一句話都說不出來。如果他比一個手勢，媽媽就知道「我需要安靜十分鐘」，這筆稅就少繳了一點。</p>
+    <div class="scene" data-label="想像一下">
+      <p>孩子在學校撐了一整天，回到家累到一句話都說不出來。如果他比一個手勢，媽媽就知道「我需要安靜十分鐘」，這筆稅就少繳了一點。</p>
+    </div>
     <p>Feitsma 和夥伴成立了社會企業 2Tango，開發了一系列叫 SIGNS 的工具：</p>
 
     <ul class="checklist">
@@ -605,6 +718,9 @@
     <h2 class="sec"><span class="no">09</span>延伸討論：荷蘭國會的 ABA 動議</h2>
     <p class="sec-dek">ABA（應用行為分析）是台灣早療常見的方法之一。荷蘭國會在 2025 年對它做了一個決定，這件事很容易讀錯，以下先把事實說清楚。</p>
 
+<details class="more">
+      <summary>兩份動議差在哪？讀這件事要分清楚的三點<small>點開看動議內容與表決結果</small></summary>
+      <div class="more-body">
 <div class="compare">
     <div class="twcard">
       <h4>原始動議和修正版動議，差在哪？</h4>
@@ -623,6 +739,8 @@
     </ul>
 
     <p>如果你的孩子正在接受 ABA，這份動議沒有否定你的選擇。你可以拿它和治療師聊兩件事：一週做多久，以及孩子自己的感受。</p>
+      </div>
+    </details>
 
     <!-- closing -->
     <div class="closing-note">
@@ -653,8 +771,8 @@
     </div>
 
     <div class="sources">
-      <span class="lbl">參考來源</span>
-      <ol>
+        <details><summary>參考來源（6 筆）</summary>
+        <ol>
         <li><a href="https://www.geefmede5.nl/" target="_blank" rel="noopener">Geef me de 5 官方網站</a></li>
         <li><a href="https://cdn.i-pulse.nl/geefmede5/userfiles/gemeenten/informatiesheet-gemeenten---treffende-aanpak-bij-autisme-def.pdf" target="_blank" rel="noopener">Geef me de 5：給地方政府的說明資料（課程費用、研究摘要）</a></li>
         <li><a href="https://www.2tango.org" target="_blank" rel="noopener">2Tango 官方網站</a></li>
@@ -662,6 +780,7 @@
         <li><a href="https://www.tweedekamer.nl/kamerstukken/moties/detail?id=2025Z17540&amp;did=2025D40992" target="_blank" rel="noopener">荷蘭眾議院：ABA 修正版動議 24170-379 與表決結果</a></li>
         <li><a href="https://www.eerstekamer.nl/behandeling/20250909/motie_van_het_lid_joseph_over_aba/document3/f=/vmqnci8rxlzh.pdf" target="_blank" rel="noopener">ABA 原始動議 24170-370 全文</a></li>
       </ol>
+        </details>
     </div>
 
   </article>
