@@ -290,50 +290,9 @@
   .sources details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--coral); }
   .sources details[open] > summary::after{ content:"　收合 －"; }
 
-  /* 手繪圖 */
-  .fig{ margin:40px 0; }
-  .fig .fig-ttl{ font-family:var(--hand); font-size:19px; font-weight:700; line-height:1.6; margin:0 0 12px; color:var(--ink); }
-  .fig svg{ display:block; width:100%; height:auto; overflow:visible; }
-  .fig figcaption{ margin-top:14px; padding-left:14px; border-left:2px solid var(--line); font-size:13px; line-height:1.85; color:var(--grey); }
-  svg .ink{ fill:none; stroke:var(--ink); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
-  svg .ink-c{ fill:none; stroke:var(--coral); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
-  svg .dash{ stroke-dasharray:5 6; }
-  svg .fill-c{ fill:var(--coral); }
-  svg .fill-ink{ fill:var(--ink); }
-  svg .fill-paper{ fill:var(--bg); }
-  svg .hatch{ fill:url(#hatch); }
-  svg .rough{ filter:url(#rough); }
-  svg text{ font-family:var(--hand); fill:var(--ink); }
-  svg text.c{ fill:var(--coral); }
-  svg text.g{ fill:var(--grey); }
-  svg text.b{ font-weight:700; }
-
-  /* C. 光譜圖 */
-  .spectrum .axis{ position:relative; display:flex; justify-content:space-between; margin:0 6px 18px; padding-bottom:6px; border-bottom:2px solid var(--ink); font-family:var(--hand); font-size:17px; font-weight:700; }
-  .spectrum .axis::before, .spectrum .axis::after{ content:""; position:absolute; bottom:-7px; width:11px; height:11px; border-top:2px solid var(--ink); border-left:2px solid var(--ink); }
-  .spectrum .axis::before{ left:-2px; transform:rotate(-45deg); }
-  .spectrum .axis::after{ right:-2px; transform:rotate(135deg); }
-  .spectrum .axis-m{ display:none; }
-  .spectrum ol{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
-  .spectrum li svg{ width:100%; max-width:120px; margin:0 auto 8px; }
-  .spectrum h5{ margin:0 0 4px; font-family:var(--hand); font-size:18px; font-weight:700; line-height:1.5; color:var(--ink); text-align:center; }
-  .spectrum .how, .article .spectrum .how{ margin:0 0 8px; font-size:13.5px; line-height:1.75; color:var(--ink-soft); text-align:center; }
-  .spectrum .tw, .article .spectrum .tw{ margin:0; padding-top:8px; border-top:1px dashed var(--line); font-size:12.5px; line-height:1.75; color:var(--grey); text-align:center; }
-  .spectrum .tw b{ color:var(--coral-deep); }
-  @media(max-width:600px){
-    .spectrum .axis{ display:none; }
-    .spectrum .axis-m{ display:block; margin:0 0 12px; font-family:var(--hand); font-size:16px; font-weight:700; color:var(--ink); }
-    .spectrum ol{ grid-template-columns:1fr; gap:0; border-left:2px solid var(--ink); margin-left:6px; }
-    .spectrum li{ display:grid; grid-template-columns:76px 1fr; gap:4px 14px; align-items:start; padding:12px 0 12px 14px; border-bottom:1px solid var(--line); }
-    .spectrum li:last-child{ border-bottom:0; }
-    .spectrum li svg{ grid-row:span 3; margin:4px 0 0; }
-    .spectrum h5, .spectrum .how, .article .spectrum .how, .spectrum .tw, .article .spectrum .tw{ text-align:left; }
-  }
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#F7E3DC"/><line x1="0" y1="0" x2="0" y2="7" stroke="#B4432A" stroke-width="2.2"/></pattern></defs></svg>
-
 
   <header class="masthead">
     <div class="row">
@@ -363,7 +322,6 @@
     <article class="article">
 
       <div class="scene" data-label="情境">
-        <svg class="spot" viewBox="0 0 150 120" aria-hidden="true"><g class="ink rough"><circle cx="44" cy="54" r="30"/><path d="M44 54 V32 M44 54 H60"/><path d="M44 27 V30 M71 54 H68 M44 81 V78 M17 54 H20"/><rect x="88" y="30" width="36" height="66" rx="6"/><path d="M100 88 H112"/></g><g class="ink-c rough"><path d="M80 44 Q76 56 80 68"/><path d="M73 40 Q67 56 73 72"/><path d="M132 44 Q136 56 132 68"/><path d="M139 40 Q145 56 139 72"/></g></svg>
         <p>半夜三點，電話響了。一位媽媽打來，說兒子又在家裡摔東西。在挪威，接起這通電話的，是一套國家級的支援系統。</p>
       </div>
 
@@ -374,17 +332,6 @@
 
       <h3 class="sub">一個治療師，只帶四到六個家庭</h3>
       <p>台灣的社工常常一個人要顧幾十個個案。MST 的一個小組，由一位督導和三到四位碩士以上的治療師組成，每位治療師同時只服務四到六個家庭。個案少，治療師才有時間深入了解每一個家庭。</p>
-      <figure class="fig">
-        <div class="fig-ttl">個案量，決定陪伴的密度</div>
-        <svg viewBox="0 0 560 250" role="img" aria-label="示意圖：左邊一位 MST 治療師只負責四到六個家庭；右邊一個人負責幾十個個案">
-<g class="rough"><path class="ink dash" d="M120 104 L38 148"/><path class="ink dash" d="M120 104 L56 88"/><path class="ink dash" d="M120 104 L120 60"/><path class="ink dash" d="M120 104 L184 88"/><path class="ink dash" d="M120 104 L202 148"/><path class="ink" d="M26.0 132.0 L38.0 118.0 L50.0 132.0 V148.0 H26.0 Z"/><path class="ink" d="M44.0 72.0 L56.0 58.0 L68.0 72.0 V88.0 H44.0 Z"/><path class="ink" d="M108.0 44.0 L120.0 30.0 L132.0 44.0 V60.0 H108.0 Z"/><path class="ink" d="M172.0 72.0 L184.0 58.0 L196.0 72.0 V88.0 H172.0 Z"/><path class="ink" d="M190.0 132.0 L202.0 118.0 L214.0 132.0 V148.0 H190.0 Z"/><circle class="ink" cx="120" cy="113.0" r="11.0" /><path class="ink" d="M120 124.0 V167.0 M106.0 150.0 L120 132.0 L134.0 150.0 M111.0 200 L120 167.0 L129.0 200"/></g>
-<g class="rough"><path class="ink" d="M353.8 45.0 L362.5 34.9 L371.1 45.0 V56.5 H353.8 Z"/><path class="ink" d="M390.3 53.5 L398.9 43.4 L407.6 53.5 V65.0 H390.3 Z"/><path class="ink" d="M315.2 93.9 L323.8 83.9 L332.4 93.9 V105.5 H315.2 Z"/><path class="ink" d="M509.3 159.4 L517.9 149.3 L526.6 159.4 V170.9 H509.3 Z"/><path class="ink" d="M474.5 64.5 L483.1 54.4 L491.7 64.5 V76.0 H474.5 Z"/><path class="ink" d="M422.4 73.5 L431.0 63.4 L439.6 73.5 V85.0 H422.4 Z"/><path class="ink" d="M348.9 180.2 L357.5 170.1 L366.2 180.2 V191.7 H348.9 Z"/><path class="ink" d="M370.6 130.9 L379.3 120.8 L387.9 130.9 V142.4 H370.6 Z"/><path class="ink" d="M466.9 168.2 L475.5 158.2 L484.2 168.2 V179.8 H466.9 Z"/><path class="ink" d="M500.7 42.3 L509.3 32.2 L517.9 42.3 V53.8 H500.7 Z"/><path class="ink" d="M507.2 121.9 L515.9 111.9 L524.5 121.9 V133.5 H507.2 Z"/><path class="ink" d="M336.8 78.1 L345.4 68.0 L354.1 78.1 V89.6 H336.8 Z"/><path class="ink" d="M310.6 130.8 L319.2 120.7 L327.8 130.8 V142.3 H310.6 Z"/><path class="ink" d="M527.4 60.2 L536.0 50.1 L544.7 60.2 V71.7 H527.4 Z"/><path class="ink" d="M474.5 129.0 L483.1 118.9 L491.7 129.0 V140.5 H474.5 Z"/><path class="ink" d="M387.0 185.8 L395.7 175.7 L404.3 185.8 V197.3 H387.0 Z"/><path class="ink" d="M375.5 29.6 L384.2 19.5 L392.8 29.6 V41.1 H375.5 Z"/><path class="ink" d="M310.2 55.9 L318.9 45.8 L327.5 55.9 V67.4 H310.2 Z"/><path class="ink" d="M523.8 97.6 L532.5 87.5 L541.1 97.6 V109.1 H523.8 Z"/><path class="ink" d="M476.4 95.2 L485.1 85.1 L493.7 95.2 V106.7 H476.4 Z"/><path class="ink" d="M521.4 185.8 L530.0 175.7 L538.7 185.8 V197.3 H521.4 Z"/><path class="ink" d="M452.4 35.4 L461.0 25.3 L469.7 35.4 V46.9 H452.4 Z"/><path class="ink" d="M453.1 82.3 L461.7 72.2 L470.4 82.3 V93.8 H453.1 Z"/><path class="ink" d="M302.4 165.5 L311.0 155.4 L319.7 165.5 V177.0 H302.4 Z"/><path class="ink" d="M353.3 107.9 L361.9 97.8 L370.6 107.9 V119.4 H353.3 Z"/><path class="ink" d="M341.0 135.4 L349.6 125.3 L358.2 135.4 V146.9 H341.0 Z"/><path class="ink" d="M374.5 77.4 L383.1 67.3 L391.8 77.4 V88.9 H374.5 Z"/><path class="ink" d="M314.0 190.9 L322.6 180.8 L331.2 190.9 V202.4 H314.0 Z"/><path class="ink" d="M450.1 142.7 L458.7 132.6 L467.4 142.7 V154.2 H450.1 Z"/><path class="ink" d="M416.1 28.2 L424.8 18.1 L433.4 28.2 V39.7 H416.1 Z"/><circle class="ink" cx="420" cy="113.0" r="11.0" /><path class="ink" d="M420 124.0 V167.0 M406.0 150.0 L420 132.0 L434.0 150.0 M411.0 200 L420 167.0 L429.0 200"/></g>
-<text x="120" y="234" font-size="17" text-anchor="middle" class="b">MST：一位治療師 4–6 個家庭</text>
-<text x="420" y="234" font-size="17" text-anchor="middle" class="b">一個人負責幾十個個案時</text>
-</svg>
-        <figcaption>MST 每位治療師同時只服務四到六個家庭；右圖示意一個人要負責幾十個個案的情況。</figcaption>
-      </figure>
-
       <p class="pull"><span>就像吃藥要吃到足夠的劑量才有效，家庭服務也需要足夠的「劑量」。</span></p>
       <p>見面夠頻繁、陪伴夠深入，才可能改變一個家的相處方式。</p>
 
@@ -470,7 +417,6 @@
         <div class="block">
           <div class="k">後來呢</div>
           <p>三到五個月後，治療師用五個指標檢查成果：是不是住在家裡、有沒有上學或工作、有沒有再犯法、有沒有用藥、有沒有暴力行為。結案後，還會在第 6、12、18 個月各追蹤一次。</p>
-          <figure class="fig" style="margin:20px 0 4px"><svg viewBox="0 0 560 110" role="img" aria-label="五個成效指標：住在家裡、上學或工作、沒再犯法、沒有用藥、沒有暴力"><g class="rough"><path class="ink" d="M34 64 V38 L56 20 L78 38 V64 Z M50 64 V50 H62 V64"/><path class="ink-c" d="M76 20 L82 27 L94 12"/></g><text x="56" y="96" font-size="18" text-anchor="middle" class="b">住在家裡</text><g class="rough"><path class="ink" d="M168 30 Q156 22 142 26 V60 Q156 56 168 64 Q180 56 194 60 V26 Q180 22 168 30 V64"/><path class="ink-c" d="M188 20 L194 27 L206 12"/></g><text x="168" y="96" font-size="18" text-anchor="middle" class="b">上學或工作</text><g class="rough"><g transform="rotate(-40 284 34)"><rect class="ink" x="270" y="24" width="28" height="14" rx="3"/></g><path class="ink" d="M278 40 L262 58 M254 66 H286"/><path class="ink-c" d="M300 20 L306 27 L318 12"/></g><text x="280" y="96" font-size="18" text-anchor="middle" class="b">沒再犯法</text><g class="rough"><g transform="rotate(-30 392 44)"><rect class="ink" x="368" y="34" width="48" height="20" rx="10"/><path class="ink" d="M392 34 V54"/></g><path class="ink-c" d="M412 20 L418 27 L430 12"/></g><text x="392" y="96" font-size="18" text-anchor="middle" class="b">沒有用藥</text><g class="rough"><path class="ink" d="M504 62 C474 44 482 18 504 32 C526 18 534 44 504 62 Z"/><path class="ink-c" d="M524 20 L530 27 L542 12"/></g><text x="504" y="96" font-size="18" text-anchor="middle" class="b">沒有暴力</text></svg></figure>
         </div>
         <p class="verified">情境中的制度細節（個案量、24 小時待命、五項成效指標、追蹤期）都有公開資料可查；個案本身是虛構的，請不要引用任何具體數字（例如「逃學率降低八成」）。</p>
       </div>

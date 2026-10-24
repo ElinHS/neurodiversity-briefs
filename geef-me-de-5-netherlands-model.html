@@ -284,51 +284,10 @@
   .sources details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--coral); }
   .sources details[open] > summary::after{ content:"　收合 －"; }
 
-  /* 手繪圖 */
-  .fig{ margin:40px 0; }
-  .fig .fig-ttl{ font-family:var(--hand); font-size:19px; font-weight:700; line-height:1.6; margin:0 0 12px; color:var(--ink); }
-  .fig svg{ display:block; width:100%; height:auto; overflow:visible; }
-  .fig figcaption{ margin-top:14px; padding-left:14px; border-left:2px solid var(--line); font-size:13px; line-height:1.85; color:var(--grey); }
-  svg .ink{ fill:none; stroke:var(--ink); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
-  svg .ink-c{ fill:none; stroke:var(--coral); stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round; }
-  svg .dash{ stroke-dasharray:5 6; }
-  svg .fill-c{ fill:var(--coral); }
-  svg .fill-ink{ fill:var(--ink); }
-  svg .fill-paper{ fill:var(--bg); }
-  svg .hatch{ fill:url(#hatch); }
-  svg .rough{ filter:url(#rough); }
-  svg text{ font-family:var(--hand); fill:var(--ink); }
-  svg text.c{ fill:var(--coral); }
-  svg text.g{ fill:var(--grey); }
-  svg text.b{ font-weight:700; }
-
-  /* C. 光譜圖 */
-  .spectrum .axis{ position:relative; display:flex; justify-content:space-between; margin:0 6px 18px; padding-bottom:6px; border-bottom:2px solid var(--ink); font-family:var(--hand); font-size:17px; font-weight:700; }
-  .spectrum .axis::before, .spectrum .axis::after{ content:""; position:absolute; bottom:-7px; width:11px; height:11px; border-top:2px solid var(--ink); border-left:2px solid var(--ink); }
-  .spectrum .axis::before{ left:-2px; transform:rotate(-45deg); }
-  .spectrum .axis::after{ right:-2px; transform:rotate(135deg); }
-  .spectrum .axis-m{ display:none; }
-  .spectrum ol{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
-  .spectrum li svg{ width:100%; max-width:120px; margin:0 auto 8px; }
-  .spectrum h5{ margin:0 0 4px; font-family:var(--hand); font-size:18px; font-weight:700; line-height:1.5; color:var(--ink); text-align:center; }
-  .spectrum .how, .article .spectrum .how{ margin:0 0 8px; font-size:13.5px; line-height:1.75; color:var(--ink-soft); text-align:center; }
-  .spectrum .tw, .article .spectrum .tw{ margin:0; padding-top:8px; border-top:1px dashed var(--line); font-size:12.5px; line-height:1.75; color:var(--grey); text-align:center; }
-  .spectrum .tw b{ color:var(--coral-deep); }
-  @media(max-width:600px){
-    .spectrum .axis{ display:none; }
-    .spectrum .axis-m{ display:block; margin:0 0 12px; font-family:var(--hand); font-size:16px; font-weight:700; color:var(--ink); }
-    .spectrum ol{ grid-template-columns:1fr; gap:0; border-left:2px solid var(--ink); margin-left:6px; }
-    .spectrum li{ display:grid; grid-template-columns:76px 1fr; gap:4px 14px; align-items:start; padding:12px 0 12px 14px; border-bottom:1px solid var(--line); }
-    .spectrum li:last-child{ border-bottom:0; }
-    .spectrum li svg{ grid-row:span 3; margin:4px 0 0; }
-    .spectrum h5, .spectrum .how, .article .spectrum .how, .spectrum .tw, .article .spectrum .tw{ text-align:left; }
-  }
 </style>
 
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="rough" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.6" xChannelSelector="R" yChannelSelector="G"/></filter><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#F7E3DC"/><line x1="0" y1="0" x2="0" y2="7" stroke="#B4432A" stroke-width="2.2"/></pattern></defs></svg>
-
 
 <header class="masthead">
   <div class="row">
@@ -376,18 +335,6 @@
     <h3 class="sub">他的腦袋，收到的是一堆散開的拼圖</h3>
     <p>荷蘭特教專家 Colette de Bruin 就是從這樣的畫面出發。她認為，自閉症孩子的大腦接收資訊時，很像拿到一盒倒出來的拼圖。</p>
     <p>多數人聽到「下課了」，會自動把拼圖拼好：下課就是去操場玩，鐘響再回來。自閉症孩子比較難自己拼。少了一塊，他就不安；不安累積下來，大人看到的就是「行為問題」。</p>
-
-    <figure class="fig">
-      <div class="fig-ttl">聽到「下課了」，孩子的腦袋裡少了哪一塊？</div>
-      <svg viewBox="0 0 560 250" role="img" aria-label="示意圖：左邊是散開、少了一塊的拼圖，代表孩子聽到「下課了」時缺少的資訊；右邊是五塊拼圖都補上">
-<g transform="translate(12 58) rotate(-14 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">什麼</text></g><g transform="translate(96 26) rotate(16 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">怎麼做</text></g><g transform="translate(176 44) rotate(-8 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">在哪裡</text></g><g transform="translate(110 140) rotate(-18 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">誰</text></g><g transform="translate(26 142) rotate(10 30 30)"><path class="ink-c dash rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="42" font-size="30" text-anchor="middle" class="c b">?</text></g>
-<g class="rough"><path class="ink" d="M250 128 Q288.0 122 326 128 M317 121 L326 128 L317 135"/></g><text x="288" y="108" font-size="18" text-anchor="middle">說清楚</text>
-<g transform="translate(346 52) rotate(0 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">什麼</text></g><g transform="translate(406 52) rotate(0 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">怎麼做</text></g><g transform="translate(466 52) rotate(0 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">在哪裡</text></g><g transform="translate(376 112) rotate(0 30 30)"><path class="ink-c hatch rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="27" font-size="18" text-anchor="middle">什麼</text><text x="30" y="45" font-size="18" text-anchor="middle">時候</text></g><g transform="translate(436 112) rotate(0 30 30)"><path class="ink fill-paper rough" d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z"/><text x="30" y="36" font-size="18" text-anchor="middle">誰</text></g>
-<text x="118" y="240" font-size="18" text-anchor="middle" class="g">少了「什麼時候」那一塊</text>
-<text x="436" y="240" font-size="18" text-anchor="middle" class="g">五塊都補上</text>
-</svg>
-      <figcaption>依 Colette de Bruin 的拼圖比喻繪製的示意圖。「什麼時候」是大人最常漏掉的一塊。</figcaption>
-    </figure>
 
     <p class="pull"><span>先補上缺的那塊拼圖，再看孩子的行為。</span></p>
 
@@ -454,18 +401,6 @@
       <div class="step"><div class="dot">5</div><div class="txt"><b>平靜後再回頭聊</b>：用五個問題一起找出少了哪一塊拼圖，下次提早補上。</div></div>
       <div class="flow-note">順序很重要。孩子還在崩潰時，聽不進任何道理；等他平靜了，才是一起找原因的時候。</div>
     </div>
-
-    <figure class="fig">
-      <div class="fig-ttl">情緒溫度計：這件事其實是幾級？</div>
-      <svg viewBox="0 0 560 150" role="img" aria-label="情緒溫度計示意：1 到 5 級，擦傷是 1 級，火災是 5 級；動物園取消是 2 級">
-<g class="rough"><rect x="30" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.08"/><rect x="130" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.22"/><rect x="230" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.42"/><rect x="330" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.66"/><rect x="430" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.92"/><rect class="ink" x="30" y="62" width="500" height="40" rx="3"/><path class="ink" d="M130 62 V102 M230 62 V102 M330 62 V102 M430 62 V102"/></g>
-<text x="80" y="89" font-size="20" text-anchor="middle" class="b" style="fill:var(--ink)">1</text><text x="180" y="89" font-size="20" text-anchor="middle" class="b" style="fill:var(--ink)">2</text><text x="280" y="89" font-size="20" text-anchor="middle" class="b" style="fill:var(--ink)">3</text><text x="380" y="89" font-size="20" text-anchor="middle" class="b" style="fill:#fff">4</text><text x="480" y="89" font-size="20" text-anchor="middle" class="b" style="fill:#fff">5</text>
-<g class="rough"><path class="ink-c" d="M180 34 Q178 46 180 56 M173 49 L180 57 L187 49"/></g>
-<text x="180" y="26" font-size="18" text-anchor="middle" class="c b">動物園取消：2 級</text>
-<text x="80" y="130" font-size="18" text-anchor="middle" class="g">擦傷</text><text x="480" y="130" font-size="18" text-anchor="middle" class="g">火災</text>
-</svg>
-      <figcaption>原版是從綠色到深紅色的 1 到 5 級尺。孩子覺得「世界末日」時，陪他一起找出這件事的位置。</figcaption>
-    </figure>
 
     <div class="note"><b>值得想一想：</b>台灣的特教老師對結構化教學、視覺化行程並不陌生。Geef me de 5 多走了一步：讓家長、老師和照護者學同一套說法。荷蘭的基礎課程上 4 天，每班最多 24 人，而且刻意讓老師和家長坐在同一間教室。孩子在家、在學校，聽到的是同一種說明方式。</div>
 
