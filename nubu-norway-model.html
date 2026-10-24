@@ -199,7 +199,7 @@
     --ink:#1C1917;
     --ink-soft:#44403C;
     --grey:#57534E;
-    --coral:#B4432A;
+    --coral:#8A5636;
     --coral-deep:#9F3A24;
     --teal:#44403C;
     --teal-deep:#1C1917;
@@ -209,7 +209,7 @@
   .hero h1{ font-family:'Noto Serif TC',serif; font-weight:900; }
   h2.sec, h3.sub, h4, .card h2, .sec-ttl, .closing-note h3, .about h3,
   .takeaway .ttl, .fact10 .q, .article .fact10 .q{ font-family:'Noto Sans TC',sans-serif; font-weight:900; }
-  .note.alert{ border-color:#EBCFC6; }
+  .note.alert{ border-color:#EAC8AB; }
   a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; border-radius:6px; }
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; scroll-behavior:auto !important; }
@@ -274,7 +274,7 @@
   /* D. 重點句 */
   .article p.pull{ margin:44px 0 40px; font-family:'Noto Serif TC',serif; font-weight:900; font-size:clamp(21px,4.8vw,26px); line-height:1.7; color:var(--ink); }
   .article p.pull::before{ content:""; display:block; width:40px; height:4px; margin-bottom:16px; background:var(--coral); border-radius:2px; }
-  .article p.pull span{ background:linear-gradient(transparent 60%, rgba(180,67,42,.2) 60%, rgba(180,67,42,.2) 90%, transparent 90%); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .article p.pull span{ background:linear-gradient(transparent 60%, rgba(220,167,130,.35) 60%, rgba(220,167,130,.35) 90%, transparent 90%); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 
   /* E. 展開／收合 */
   details.more{ margin:28px 0; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); }
@@ -324,17 +324,52 @@
   .scene, .case{
     background:linear-gradient(225deg, var(--bg) 0 50%, var(--scene-fold) 50% 100%) top right / 28px 28px no-repeat, var(--scene);
     border:0; border-radius:2px;
-    box-shadow:0 1px 0 rgba(28,25,23,.04), 0 12px 24px -16px rgba(79,107,120,.55);
+    box-shadow:0 1px 0 rgba(28,25,23,.04), 0 12px 24px -16px rgba(78,99,120,.55);
   }
   .scene::before, .case .chip{
     top:-10px; left:22px; margin:0;
-    background:rgba(79,107,120,.9); color:#fff;
+    background:rgba(78,99,120,.9); color:#fff;
     font-family:var(--hand); font-size:14px; font-weight:700; letter-spacing:.08em;
     padding:3px 14px 5px; border-radius:1px; transform:rotate(-1.5deg);
   }
   .scene .spot{ margin-top:12px; }
   .case .block .k{ color:var(--scene-accent); }
   .case .verified{ border-top-color:var(--scene-fold); }
+
+  /* ===== 配色 v5：worn denim／sandy beach／terracotta ===== */
+  :root{
+    --bg:#F8F2E6;
+    --panel:#FFFFFF;
+    --panel-soft:#F7EADF;
+    --panel-teal:#EEF0EB;
+    --panel-yellow:#F3EAD6;
+    --line:#DADDD4;
+    --coral:#DCA782;
+    --coral-deep:#8A5636;
+    --accent-text:#8A5636;
+    --denim:#748DA4;
+    --denim-deep:#4E6378;
+    --scene:#E7ECF0;
+    --scene-accent:#4E6378;
+    --scene-fold:#C7D2DC;
+  }
+  .banner, .masthead{ border-bottom-color:var(--line); }
+  .note.alert{ border-color:#EAC8AB; }
+  /* 細線、短線、裝飾用淺 terracotta；文字一律用加深版 */
+  .fact10 .n, .fact10.warn .n,
+  .sources details > summary::after,
+  details.more > summary::after{ color:var(--accent-text); }
+  details.more > summary::after{ border-color:var(--coral); }
+  h2.sec .no{ -webkit-text-stroke-color:var(--coral); }
+  .checklist li::before{ color:var(--coral); }
+  .sub-btn:hover{ border-color:var(--coral); color:var(--accent-text); }
+  .bmc-btn{ background:var(--accent-text); }
+  .bmc-btn:hover{ background:#6E4329; }
+  .flow .step .dot{ background:var(--accent-text); }
+  .flow .step:nth-child(2) .dot{ background:var(--denim-deep); }
+  .flow .step:nth-child(3) .dot{ background:#6E7058; }
+  .flow .step:nth-child(4) .dot{ background:var(--ink-soft); }
+  .flow .step:nth-child(5) .dot{ background:#6E4329; }
 </style>
 </head>
 <body>
@@ -368,10 +403,10 @@
     <article class="article">
 
       <div class="scene" data-label="情境">
-        <svg class="spot" viewBox="0 0 150 120" aria-hidden="true"><circle cx="44" cy="56" r="32" fill="#EDE3CF"/><circle cx="44" cy="56" r="25" fill="#FFFFFF"/>
-<path d="M44 56 V38 M44 56 H58" stroke="#1C1917" stroke-width="4" stroke-linecap="round"/><circle cx="44" cy="56" r="3.5" fill="#B4432A"/>
+        <svg class="spot" viewBox="0 0 150 120" aria-hidden="true"><circle cx="44" cy="56" r="32" fill="#E2E5DE"/><circle cx="44" cy="56" r="25" fill="#FFFFFF"/>
+<path d="M44 56 V38 M44 56 H58" stroke="#1C1917" stroke-width="4" stroke-linecap="round"/><circle cx="44" cy="56" r="3.5" fill="#8A5636"/>
 <rect x="88" y="26" width="38" height="70" rx="8" fill="#1C1917"/><rect x="93" y="34" width="28" height="48" rx="3" fill="#EBC4B8"/><rect x="101" y="87" width="12" height="3" rx="1.5" fill="#57534E"/>
-<g fill="none" stroke="#B4432A" stroke-width="3" stroke-linecap="round"><path d="M81 46 Q77 58 81 70"/><path d="M134 46 Q138 58 134 70"/><path d="M141 40 Q147 58 141 76"/></g></svg>
+<g fill="none" stroke="#8A5636" stroke-width="3" stroke-linecap="round"><path d="M81 46 Q77 58 81 70"/><path d="M134 46 Q138 58 134 70"/><path d="M141 40 Q147 58 141 76"/></g></svg>
         <p>半夜三點，電話響了。一位媽媽打來，說兒子又在家裡摔東西。在挪威，接起這通電話的，是一套國家級的支援系統。</p>
       </div>
 
@@ -385,7 +420,7 @@
       <figure class="fig">
         <div class="fig-ttl">個案量，決定陪伴的密度</div>
         <svg viewBox="0 0 560 250" font-family="Noto Sans TC, sans-serif" role="img" aria-label="示意圖：左邊一位 MST 治療師只負責四到六個家庭；右邊一個人負責幾十個個案">
-<path d="M120 134 L39 146" stroke="#CDBFA3" stroke-width="2" stroke-dasharray="4 5"/><path d="M120 134 L57 86" stroke="#CDBFA3" stroke-width="2" stroke-dasharray="4 5"/><path d="M120 134 L121 58" stroke="#CDBFA3" stroke-width="2" stroke-dasharray="4 5"/><path d="M120 134 L185 86" stroke="#CDBFA3" stroke-width="2" stroke-dasharray="4 5"/><path d="M120 134 L203 146" stroke="#CDBFA3" stroke-width="2" stroke-dasharray="4 5"/><path d="M24.0 130.0 L39.0 118.0 L54.0 130.0 Z" fill="#1C1917"/><rect x="26.0" y="130.0" width="26.0" height="16.0" fill="#EDE3CF"/><path d="M42.0 70.0 L57.0 58.0 L72.0 70.0 Z" fill="#1C1917"/><rect x="44.0" y="70.0" width="26.0" height="16.0" fill="#EDE3CF"/><path d="M106.0 42.0 L121.0 30.0 L136.0 42.0 Z" fill="#1C1917"/><rect x="108.0" y="42.0" width="26.0" height="16.0" fill="#EDE3CF"/><path d="M170.0 70.0 L185.0 58.0 L200.0 70.0 Z" fill="#1C1917"/><rect x="172.0" y="70.0" width="26.0" height="16.0" fill="#EDE3CF"/><path d="M188.0 130.0 L203.0 118.0 L218.0 130.0 Z" fill="#1C1917"/><rect x="190.0" y="130.0" width="26.0" height="16.0" fill="#EDE3CF"/><circle cx="120.0" cy="135.5" r="11.5" fill="#B4432A"/><path d="M103.4 196.0 V175.1 A16.6 16.6 0 0 1 136.6 175.1 V196.0 Z" fill="#B4432A"/><path d="M352.4 43.6 L363.2 34.9 L374.0 43.6 Z" fill="#CDBFA3"/><rect x="353.8" y="43.6" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M388.9 52.1 L399.7 43.4 L410.5 52.1 Z" fill="#CDBFA3"/><rect x="390.3" y="52.1" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M313.7 92.5 L324.5 83.9 L335.3 92.5 Z" fill="#CDBFA3"/><rect x="315.2" y="92.5" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M507.9 157.9 L518.7 149.3 L529.5 157.9 Z" fill="#CDBFA3"/><rect x="509.3" y="157.9" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M473.0 63.0 L483.8 54.4 L494.6 63.0 Z" fill="#CDBFA3"/><rect x="474.5" y="63.0" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M420.9 72.0 L431.7 63.4 L442.5 72.0 Z" fill="#CDBFA3"/><rect x="422.4" y="72.0" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M347.4 178.7 L358.2 170.1 L369.0 178.7 Z" fill="#CDBFA3"/><rect x="348.9" y="178.7" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M369.2 129.5 L380.0 120.8 L390.8 129.5 Z" fill="#CDBFA3"/><rect x="370.6" y="129.5" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M465.4 166.8 L476.2 158.2 L487.0 166.8 Z" fill="#CDBFA3"/><rect x="466.9" y="166.8" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M499.2 40.9 L510.0 32.2 L520.8 40.9 Z" fill="#CDBFA3"/><rect x="500.7" y="40.9" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M505.8 120.5 L516.6 111.9 L527.4 120.5 Z" fill="#CDBFA3"/><rect x="507.2" y="120.5" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M335.3 76.7 L346.1 68.0 L356.9 76.7 Z" fill="#CDBFA3"/><rect x="336.8" y="76.7" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M309.1 129.4 L319.9 120.7 L330.7 129.4 Z" fill="#CDBFA3"/><rect x="310.6" y="129.4" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M525.9 58.7 L536.7 50.1 L547.5 58.7 Z" fill="#CDBFA3"/><rect x="527.4" y="58.7" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M473.0 127.6 L483.8 118.9 L494.6 127.6 Z" fill="#CDBFA3"/><rect x="474.5" y="127.6" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M385.6 184.4 L396.4 175.7 L407.2 184.4 Z" fill="#CDBFA3"/><rect x="387.0" y="184.4" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M374.1 28.2 L384.9 19.5 L395.7 28.2 Z" fill="#CDBFA3"/><rect x="375.5" y="28.2" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M308.8 54.4 L319.6 45.8 L330.4 54.4 Z" fill="#CDBFA3"/><rect x="310.2" y="54.4" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M522.4 96.2 L533.2 87.5 L544.0 96.2 Z" fill="#CDBFA3"/><rect x="523.8" y="96.2" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M475.0 93.8 L485.8 85.1 L496.6 93.8 Z" fill="#CDBFA3"/><rect x="476.4" y="93.8" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M520.0 184.4 L530.8 175.7 L541.6 184.4 Z" fill="#CDBFA3"/><rect x="521.4" y="184.4" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M450.9 33.9 L461.7 25.3 L472.5 33.9 Z" fill="#CDBFA3"/><rect x="452.4" y="33.9" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M451.7 80.9 L462.5 72.2 L473.3 80.9 Z" fill="#CDBFA3"/><rect x="453.1" y="80.9" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M301.0 164.0 L311.8 155.4 L322.6 164.0 Z" fill="#CDBFA3"/><rect x="302.4" y="164.0" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M351.8 106.5 L362.6 97.8 L373.4 106.5 Z" fill="#CDBFA3"/><rect x="353.3" y="106.5" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M339.5 133.9 L350.3 125.3 L361.1 133.9 Z" fill="#CDBFA3"/><rect x="341.0" y="133.9" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M373.0 75.9 L383.8 67.3 L394.6 75.9 Z" fill="#CDBFA3"/><rect x="374.5" y="75.9" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M312.5 189.4 L323.3 180.8 L334.1 189.4 Z" fill="#CDBFA3"/><rect x="314.0" y="189.4" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M448.7 141.2 L459.5 132.6 L470.3 141.2 Z" fill="#CDBFA3"/><rect x="450.1" y="141.2" width="18.7" height="11.5" fill="#EDE3CF"/><path d="M414.7 26.8 L425.5 18.1 L436.3 26.8 Z" fill="#CDBFA3"/><rect x="416.1" y="26.8" width="18.7" height="11.5" fill="#EDE3CF"/><circle cx="420.0" cy="135.5" r="11.5" fill="#1C1917"/><path d="M403.4 196.0 V175.1 A16.6 16.6 0 0 1 436.6 175.1 V196.0 Z" fill="#1C1917"/>
+<path d="M120 134 L39 146" stroke="#C2C3A8" stroke-width="2" stroke-dasharray="4 5"/><path d="M120 134 L57 86" stroke="#C2C3A8" stroke-width="2" stroke-dasharray="4 5"/><path d="M120 134 L121 58" stroke="#C2C3A8" stroke-width="2" stroke-dasharray="4 5"/><path d="M120 134 L185 86" stroke="#C2C3A8" stroke-width="2" stroke-dasharray="4 5"/><path d="M120 134 L203 146" stroke="#C2C3A8" stroke-width="2" stroke-dasharray="4 5"/><path d="M24.0 130.0 L39.0 118.0 L54.0 130.0 Z" fill="#1C1917"/><rect x="26.0" y="130.0" width="26.0" height="16.0" fill="#E2E5DE"/><path d="M42.0 70.0 L57.0 58.0 L72.0 70.0 Z" fill="#1C1917"/><rect x="44.0" y="70.0" width="26.0" height="16.0" fill="#E2E5DE"/><path d="M106.0 42.0 L121.0 30.0 L136.0 42.0 Z" fill="#1C1917"/><rect x="108.0" y="42.0" width="26.0" height="16.0" fill="#E2E5DE"/><path d="M170.0 70.0 L185.0 58.0 L200.0 70.0 Z" fill="#1C1917"/><rect x="172.0" y="70.0" width="26.0" height="16.0" fill="#E2E5DE"/><path d="M188.0 130.0 L203.0 118.0 L218.0 130.0 Z" fill="#1C1917"/><rect x="190.0" y="130.0" width="26.0" height="16.0" fill="#E2E5DE"/><circle cx="120.0" cy="135.5" r="11.5" fill="#8A5636"/><path d="M103.4 196.0 V175.1 A16.6 16.6 0 0 1 136.6 175.1 V196.0 Z" fill="#8A5636"/><path d="M352.4 43.6 L363.2 34.9 L374.0 43.6 Z" fill="#C2C3A8"/><rect x="353.8" y="43.6" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M388.9 52.1 L399.7 43.4 L410.5 52.1 Z" fill="#C2C3A8"/><rect x="390.3" y="52.1" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M313.7 92.5 L324.5 83.9 L335.3 92.5 Z" fill="#C2C3A8"/><rect x="315.2" y="92.5" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M507.9 157.9 L518.7 149.3 L529.5 157.9 Z" fill="#C2C3A8"/><rect x="509.3" y="157.9" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M473.0 63.0 L483.8 54.4 L494.6 63.0 Z" fill="#C2C3A8"/><rect x="474.5" y="63.0" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M420.9 72.0 L431.7 63.4 L442.5 72.0 Z" fill="#C2C3A8"/><rect x="422.4" y="72.0" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M347.4 178.7 L358.2 170.1 L369.0 178.7 Z" fill="#C2C3A8"/><rect x="348.9" y="178.7" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M369.2 129.5 L380.0 120.8 L390.8 129.5 Z" fill="#C2C3A8"/><rect x="370.6" y="129.5" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M465.4 166.8 L476.2 158.2 L487.0 166.8 Z" fill="#C2C3A8"/><rect x="466.9" y="166.8" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M499.2 40.9 L510.0 32.2 L520.8 40.9 Z" fill="#C2C3A8"/><rect x="500.7" y="40.9" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M505.8 120.5 L516.6 111.9 L527.4 120.5 Z" fill="#C2C3A8"/><rect x="507.2" y="120.5" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M335.3 76.7 L346.1 68.0 L356.9 76.7 Z" fill="#C2C3A8"/><rect x="336.8" y="76.7" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M309.1 129.4 L319.9 120.7 L330.7 129.4 Z" fill="#C2C3A8"/><rect x="310.6" y="129.4" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M525.9 58.7 L536.7 50.1 L547.5 58.7 Z" fill="#C2C3A8"/><rect x="527.4" y="58.7" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M473.0 127.6 L483.8 118.9 L494.6 127.6 Z" fill="#C2C3A8"/><rect x="474.5" y="127.6" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M385.6 184.4 L396.4 175.7 L407.2 184.4 Z" fill="#C2C3A8"/><rect x="387.0" y="184.4" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M374.1 28.2 L384.9 19.5 L395.7 28.2 Z" fill="#C2C3A8"/><rect x="375.5" y="28.2" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M308.8 54.4 L319.6 45.8 L330.4 54.4 Z" fill="#C2C3A8"/><rect x="310.2" y="54.4" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M522.4 96.2 L533.2 87.5 L544.0 96.2 Z" fill="#C2C3A8"/><rect x="523.8" y="96.2" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M475.0 93.8 L485.8 85.1 L496.6 93.8 Z" fill="#C2C3A8"/><rect x="476.4" y="93.8" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M520.0 184.4 L530.8 175.7 L541.6 184.4 Z" fill="#C2C3A8"/><rect x="521.4" y="184.4" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M450.9 33.9 L461.7 25.3 L472.5 33.9 Z" fill="#C2C3A8"/><rect x="452.4" y="33.9" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M451.7 80.9 L462.5 72.2 L473.3 80.9 Z" fill="#C2C3A8"/><rect x="453.1" y="80.9" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M301.0 164.0 L311.8 155.4 L322.6 164.0 Z" fill="#C2C3A8"/><rect x="302.4" y="164.0" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M351.8 106.5 L362.6 97.8 L373.4 106.5 Z" fill="#C2C3A8"/><rect x="353.3" y="106.5" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M339.5 133.9 L350.3 125.3 L361.1 133.9 Z" fill="#C2C3A8"/><rect x="341.0" y="133.9" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M373.0 75.9 L383.8 67.3 L394.6 75.9 Z" fill="#C2C3A8"/><rect x="374.5" y="75.9" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M312.5 189.4 L323.3 180.8 L334.1 189.4 Z" fill="#C2C3A8"/><rect x="314.0" y="189.4" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M448.7 141.2 L459.5 132.6 L470.3 141.2 Z" fill="#C2C3A8"/><rect x="450.1" y="141.2" width="18.7" height="11.5" fill="#E2E5DE"/><path d="M414.7 26.8 L425.5 18.1 L436.3 26.8 Z" fill="#C2C3A8"/><rect x="416.1" y="26.8" width="18.7" height="11.5" fill="#E2E5DE"/><circle cx="420.0" cy="135.5" r="11.5" fill="#1C1917"/><path d="M403.4 196.0 V175.1 A16.6 16.6 0 0 1 436.6 175.1 V196.0 Z" fill="#1C1917"/>
 <text x="120" y="234" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">MST：一位治療師 4–6 個家庭</text>
 <text x="420" y="234" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">一個人負責幾十個個案時</text></svg>
         <figcaption>MST 每位治療師同時只服務四到六個家庭；右圖示意一個人要負責幾十個個案的情況。</figcaption>
@@ -476,7 +511,7 @@
         <div class="block">
           <div class="k">後來呢</div>
           <p>三到五個月後，治療師用五個指標檢查成果：是不是住在家裡、有沒有上學或工作、有沒有再犯法、有沒有用藥、有沒有暴力行為。結案後，還會在第 6、12、18 個月各追蹤一次。</p>
-          <figure class="fig" style="margin:20px 0 4px"><svg viewBox="0 0 560 110" font-family="Noto Sans TC, sans-serif" role="img" aria-label="五個成效指標：住在家裡、上學或工作、沒再犯法、沒有用藥、沒有暴力"><circle cx="56" cy="40" r="29" fill="#EDE3CF"/><path d="M40 39 L56 26 L72 39 Z" fill="#1C1917"/><rect x="44" y="39" width="24" height="16" fill="#1C1917"/><rect x="52" y="45" width="8" height="10" fill="#EDE3CF"/><circle cx="79" cy="19" r="10" fill="#B4432A"/><path d="M74 19 L78 23 L84 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="56" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">住在家裡</text><circle cx="168" cy="40" r="29" fill="#EDE3CF"/><path d="M168 32 Q159 26 150 29 V53 Q159 50 168 55 Q177 50 186 53 V29 Q177 26 168 32 Z" fill="#1C1917"/><path d="M168 33 V54" stroke="#EDE3CF" stroke-width="2"/><circle cx="191" cy="19" r="10" fill="#B4432A"/><path d="M186 19 L190 23 L196 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="168" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">上學或工作</text><circle cx="280" cy="40" r="29" fill="#EDE3CF"/><g transform="rotate(-40 283 35)"><rect x="271" y="28" width="24" height="12" rx="2" fill="#1C1917"/></g><path d="M278 41 L266 53" stroke="#1C1917" stroke-width="4" stroke-linecap="round"/><rect x="262" y="56" width="26" height="4" rx="2" fill="#1C1917"/><circle cx="303" cy="19" r="10" fill="#B4432A"/><path d="M298 19 L302 23 L308 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="280" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">沒再犯法</text><circle cx="392" cy="40" r="29" fill="#EDE3CF"/><g transform="rotate(-35 392 40)"><rect x="374" y="32" width="36" height="16" rx="8" fill="#FFFFFF"/><path d="M392 32 H402 A8 8 0 0 1 402 48 H392 Z" fill="#1C1917"/><rect x="374" y="32" width="36" height="16" rx="8" fill="none" stroke="#1C1917" stroke-width="2.5"/></g><circle cx="415" cy="19" r="10" fill="#B4432A"/><path d="M410 19 L414 23 L420 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="392" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">沒有用藥</text><circle cx="504" cy="40" r="29" fill="#EDE3CF"/><path d="M504 55 C480 41 486 22 504 33 C522 22 528 41 504 55 Z" fill="#1C1917"/><circle cx="527" cy="19" r="10" fill="#B4432A"/><path d="M522 19 L526 23 L532 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="504" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">沒有暴力</text></svg></figure>
+          <figure class="fig" style="margin:20px 0 4px"><svg viewBox="0 0 560 110" font-family="Noto Sans TC, sans-serif" role="img" aria-label="五個成效指標：住在家裡、上學或工作、沒再犯法、沒有用藥、沒有暴力"><circle cx="56" cy="40" r="29" fill="#E2E5DE"/><path d="M40 39 L56 26 L72 39 Z" fill="#1C1917"/><rect x="44" y="39" width="24" height="16" fill="#1C1917"/><rect x="52" y="45" width="8" height="10" fill="#E2E5DE"/><circle cx="79" cy="19" r="10" fill="#8A5636"/><path d="M74 19 L78 23 L84 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="56" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">住在家裡</text><circle cx="168" cy="40" r="29" fill="#E2E5DE"/><path d="M168 32 Q159 26 150 29 V53 Q159 50 168 55 Q177 50 186 53 V29 Q177 26 168 32 Z" fill="#1C1917"/><path d="M168 33 V54" stroke="#E2E5DE" stroke-width="2"/><circle cx="191" cy="19" r="10" fill="#8A5636"/><path d="M186 19 L190 23 L196 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="168" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">上學或工作</text><circle cx="280" cy="40" r="29" fill="#E2E5DE"/><g transform="rotate(-40 283 35)"><rect x="271" y="28" width="24" height="12" rx="2" fill="#1C1917"/></g><path d="M278 41 L266 53" stroke="#1C1917" stroke-width="4" stroke-linecap="round"/><rect x="262" y="56" width="26" height="4" rx="2" fill="#1C1917"/><circle cx="303" cy="19" r="10" fill="#8A5636"/><path d="M298 19 L302 23 L308 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="280" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">沒再犯法</text><circle cx="392" cy="40" r="29" fill="#E2E5DE"/><g transform="rotate(-35 392 40)"><rect x="374" y="32" width="36" height="16" rx="8" fill="#FFFFFF"/><path d="M392 32 H402 A8 8 0 0 1 402 48 H392 Z" fill="#1C1917"/><rect x="374" y="32" width="36" height="16" rx="8" fill="none" stroke="#1C1917" stroke-width="2.5"/></g><circle cx="415" cy="19" r="10" fill="#8A5636"/><path d="M410 19 L414 23 L420 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="392" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">沒有用藥</text><circle cx="504" cy="40" r="29" fill="#E2E5DE"/><path d="M504 55 C480 41 486 22 504 33 C522 22 528 41 504 55 Z" fill="#1C1917"/><circle cx="527" cy="19" r="10" fill="#8A5636"/><path d="M522 19 L526 23 L532 15" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text x="504" y="98" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">沒有暴力</text></svg></figure>
         </div>
         <p class="verified">情境中的制度細節（個案量、24 小時待命、五項成效指標、追蹤期）都有公開資料可查；個案本身是虛構的，請不要引用任何具體數字（例如「逃學率降低八成」）。</p>
       </div>

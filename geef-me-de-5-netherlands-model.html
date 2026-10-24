@@ -85,7 +85,7 @@
 
   .note{ font-size:14px; color:var(--grey); background:var(--panel); border:1px dashed var(--line); border-radius:12px; padding:16px 16px; margin:24px 0; line-height:1.85; }
   .note b{ color:var(--ink-soft); }
-  .note.alert{ border-style:solid; border-color:#F7D3C8; background:var(--panel-soft); color:var(--ink-soft); }
+  .note.alert{ border-style:solid; border-color:#EAC8AB; background:var(--panel-soft); color:var(--ink-soft); }
 
   .tiers{ margin:24px 0; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
   .tier{ border-radius:12px; padding:16px 16px; }
@@ -193,7 +193,7 @@
     --ink:#1C1917;
     --ink-soft:#44403C;
     --grey:#57534E;
-    --coral:#B4432A;
+    --coral:#8A5636;
     --coral-deep:#9F3A24;
     --teal:#44403C;
     --teal-deep:#1C1917;
@@ -203,7 +203,7 @@
   .hero h1{ font-family:'Noto Serif TC',serif; font-weight:900; }
   h2.sec, h3.sub, h4, .card h2, .sec-ttl, .closing-note h3, .about h3,
   .takeaway .ttl, .fact10 .q, .article .fact10 .q{ font-family:'Noto Sans TC',sans-serif; font-weight:900; }
-  .note.alert{ border-color:#EBCFC6; }
+  .note.alert{ border-color:#EAC8AB; }
   a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; border-radius:6px; }
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; scroll-behavior:auto !important; }
@@ -268,7 +268,7 @@
   /* D. 重點句 */
   .article p.pull{ margin:44px 0 40px; font-family:'Noto Serif TC',serif; font-weight:900; font-size:clamp(21px,4.8vw,26px); line-height:1.7; color:var(--ink); }
   .article p.pull::before{ content:""; display:block; width:40px; height:4px; margin-bottom:16px; background:var(--coral); border-radius:2px; }
-  .article p.pull span{ background:linear-gradient(transparent 60%, rgba(180,67,42,.2) 60%, rgba(180,67,42,.2) 90%, transparent 90%); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
+  .article p.pull span{ background:linear-gradient(transparent 60%, rgba(220,167,130,.35) 60%, rgba(220,167,130,.35) 90%, transparent 90%); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 
   /* E. 展開／收合 */
   details.more{ margin:28px 0; border-top:1.5px solid var(--ink); border-bottom:1.5px solid var(--ink); }
@@ -318,17 +318,52 @@
   .scene, .case{
     background:linear-gradient(225deg, var(--bg) 0 50%, var(--scene-fold) 50% 100%) top right / 28px 28px no-repeat, var(--scene);
     border:0; border-radius:2px;
-    box-shadow:0 1px 0 rgba(28,25,23,.04), 0 12px 24px -16px rgba(79,107,120,.55);
+    box-shadow:0 1px 0 rgba(28,25,23,.04), 0 12px 24px -16px rgba(78,99,120,.55);
   }
   .scene::before, .case .chip{
     top:-10px; left:22px; margin:0;
-    background:rgba(79,107,120,.9); color:#fff;
+    background:rgba(78,99,120,.9); color:#fff;
     font-family:var(--hand); font-size:14px; font-weight:700; letter-spacing:.08em;
     padding:3px 14px 5px; border-radius:1px; transform:rotate(-1.5deg);
   }
   .scene .spot{ margin-top:12px; }
   .case .block .k{ color:var(--scene-accent); }
   .case .verified{ border-top-color:var(--scene-fold); }
+
+  /* ===== 配色 v5：worn denim／sandy beach／terracotta ===== */
+  :root{
+    --bg:#F8F2E6;
+    --panel:#FFFFFF;
+    --panel-soft:#F7EADF;
+    --panel-teal:#EEF0EB;
+    --panel-yellow:#F3EAD6;
+    --line:#DADDD4;
+    --coral:#DCA782;
+    --coral-deep:#8A5636;
+    --accent-text:#8A5636;
+    --denim:#748DA4;
+    --denim-deep:#4E6378;
+    --scene:#E7ECF0;
+    --scene-accent:#4E6378;
+    --scene-fold:#C7D2DC;
+  }
+  .banner, .masthead{ border-bottom-color:var(--line); }
+  .note.alert{ border-color:#EAC8AB; }
+  /* 細線、短線、裝飾用淺 terracotta；文字一律用加深版 */
+  .fact10 .n, .fact10.warn .n,
+  .sources details > summary::after,
+  details.more > summary::after{ color:var(--accent-text); }
+  details.more > summary::after{ border-color:var(--coral); }
+  h2.sec .no{ -webkit-text-stroke-color:var(--coral); }
+  .checklist li::before{ color:var(--coral); }
+  .sub-btn:hover{ border-color:var(--coral); color:var(--accent-text); }
+  .bmc-btn{ background:var(--accent-text); }
+  .bmc-btn:hover{ background:#6E4329; }
+  .flow .step .dot{ background:var(--accent-text); }
+  .flow .step:nth-child(2) .dot{ background:var(--denim-deep); }
+  .flow .step:nth-child(3) .dot{ background:#6E7058; }
+  .flow .step:nth-child(4) .dot{ background:var(--ink-soft); }
+  .flow .step:nth-child(5) .dot{ background:#6E4329; }
 </style>
 
 </head>
@@ -385,7 +420,7 @@
     <figure class="fig">
       <div class="fig-ttl">聽到「下課了」，孩子的腦袋裡少了哪一塊？</div>
       <svg viewBox="0 0 560 250" font-family="Noto Sans TC, sans-serif" role="img" aria-label="示意圖：左邊是散開、少了一塊的拼圖，代表孩子聽到「下課了」時缺少的資訊；右邊是五塊拼圖都補上">
-<g transform="translate(12 58) rotate(-14 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">什麼</text></g><g transform="translate(96 26) rotate(16 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">怎麼做</text></g><g transform="translate(176 44) rotate(-8 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">在哪裡</text></g><g transform="translate(110 140) rotate(-18 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">誰</text></g><g transform="translate(26 142) rotate(10 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="none" stroke="#B4432A" stroke-width="2.5" stroke-dasharray="6 5"/><text x="30" y="42" font-size="28" font-weight="900" text-anchor="middle" fill="#B4432A">?</text></g><path d="M252 128 H318" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round"/><path d="M326 128 L315 121.5 L315 134.5 Z" fill="#1C1917"/><text x="289" y="110" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">說清楚</text><g transform="translate(346 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">什麼</text></g><g transform="translate(406 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">怎麼做</text></g><g transform="translate(466 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">在哪裡</text></g><g transform="translate(376 112) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#B4432A" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="27" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">什麼</text><text x="30" y="45" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">時候</text></g><g transform="translate(436 112) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">誰</text></g>
+<g transform="translate(12 58) rotate(-14 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#E2E5DE" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">什麼</text></g><g transform="translate(96 26) rotate(16 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#E2E5DE" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">怎麼做</text></g><g transform="translate(176 44) rotate(-8 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#E2E5DE" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">在哪裡</text></g><g transform="translate(110 140) rotate(-18 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#E2E5DE" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">誰</text></g><g transform="translate(26 142) rotate(10 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="none" stroke="#8A5636" stroke-width="2.5" stroke-dasharray="6 5"/><text x="30" y="42" font-size="28" font-weight="900" text-anchor="middle" fill="#8A5636">?</text></g><path d="M252 128 H318" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round"/><path d="M326 128 L315 121.5 L315 134.5 Z" fill="#1C1917"/><text x="289" y="110" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">說清楚</text><g transform="translate(346 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#E2E5DE" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">什麼</text></g><g transform="translate(406 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#E2E5DE" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">怎麼做</text></g><g transform="translate(466 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#E2E5DE" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">在哪裡</text></g><g transform="translate(376 112) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#8A5636" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="27" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">什麼</text><text x="30" y="45" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">時候</text></g><g transform="translate(436 112) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#E2E5DE" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">誰</text></g>
 <text x="118" y="240" font-size="16" text-anchor="middle" fill="#57534E">少了「什麼時候」那一塊</text><text x="436" y="240" font-size="16" text-anchor="middle" fill="#57534E">五塊都補上</text></svg>
       <figcaption>依 Colette de Bruin 的拼圖比喻繪製的示意圖。「什麼時候」是大人最常漏掉的一塊。</figcaption>
     </figure>
@@ -459,8 +494,8 @@
     <figure class="fig">
       <div class="fig-ttl">情緒溫度計：這件事其實是幾級？</div>
       <svg viewBox="0 0 560 150" font-family="Noto Sans TC, sans-serif" role="img" aria-label="情緒溫度計示意：1 到 5 級，擦傷是 1 級，火災是 5 級；動物園取消是 2 級">
-<clipPath id="thc"><rect x="30" y="62" width="500" height="40" rx="20"/></clipPath><g clip-path="url(#thc)"><rect x="30" y="62" width="500" height="40" fill="#FFFFFF"/><rect x="30" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.12"/><rect x="130" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.3"/><rect x="230" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.5"/><rect x="330" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.72"/><rect x="430" y="62" width="100" height="40" fill="#B4432A" fill-opacity="1"/><rect x="129" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="229" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="329" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="429" y="62" width="2" height="40" fill="#FFFFFF"/></g><text x="80" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">1</text><text x="180" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">2</text><text x="280" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">3</text><text x="380" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text><text x="480" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#FFFFFF">5</text>
-<path d="M180 56 L172 44 L188 44 Z" fill="#B4432A"/><text x="180" y="34" font-size="16" font-weight="700" text-anchor="middle" fill="#B4432A">動物園取消：2 級</text>
+<clipPath id="thc"><rect x="30" y="62" width="500" height="40" rx="20"/></clipPath><g clip-path="url(#thc)"><rect x="30" y="62" width="500" height="40" fill="#FFFFFF"/><rect x="30" y="62" width="100" height="40" fill="#8A5636" fill-opacity="0.12"/><rect x="130" y="62" width="100" height="40" fill="#8A5636" fill-opacity="0.3"/><rect x="230" y="62" width="100" height="40" fill="#8A5636" fill-opacity="0.5"/><rect x="330" y="62" width="100" height="40" fill="#8A5636" fill-opacity="0.72"/><rect x="430" y="62" width="100" height="40" fill="#8A5636" fill-opacity="1"/><rect x="129" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="229" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="329" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="429" y="62" width="2" height="40" fill="#FFFFFF"/></g><text x="80" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">1</text><text x="180" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">2</text><text x="280" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">3</text><text x="380" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text><text x="480" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#FFFFFF">5</text>
+<path d="M180 56 L172 44 L188 44 Z" fill="#8A5636"/><text x="180" y="34" font-size="16" font-weight="700" text-anchor="middle" fill="#8A5636">動物園取消：2 級</text>
 <text x="80" y="130" font-size="16" text-anchor="middle" fill="#57534E">擦傷</text><text x="480" y="130" font-size="16" text-anchor="middle" fill="#57534E">火災</text></svg>
       <figcaption>原版是從綠色到深紅色的 1 到 5 級尺。孩子覺得「世界末日」時，陪他一起找出這件事的位置。</figcaption>
     </figure>
