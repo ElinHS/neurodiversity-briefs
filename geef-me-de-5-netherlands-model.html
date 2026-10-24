@@ -312,6 +312,23 @@
     .spectrum li svg{ grid-row:span 3; margin:4px 0 0; }
     .spectrum h5, .spectrum .how, .article .spectrum .how, .spectrum .tw, .article .spectrum .tw{ text-align:left; }
   }
+
+  /* ===== 情境框 v4：霧灰藍便條紙 ===== */
+  :root{ --scene:#E9EEF0; --scene-accent:#4F6B78; --scene-fold:#C9D6DC; }
+  .scene, .case{
+    background:linear-gradient(225deg, var(--bg) 0 50%, var(--scene-fold) 50% 100%) top right / 28px 28px no-repeat, var(--scene);
+    border:0; border-radius:2px;
+    box-shadow:0 1px 0 rgba(28,25,23,.04), 0 12px 24px -16px rgba(79,107,120,.55);
+  }
+  .scene::before, .case .chip{
+    top:-10px; left:22px; margin:0;
+    background:rgba(79,107,120,.9); color:#fff;
+    font-family:var(--hand); font-size:14px; font-weight:700; letter-spacing:.08em;
+    padding:3px 14px 5px; border-radius:1px; transform:rotate(-1.5deg);
+  }
+  .scene .spot{ margin-top:12px; }
+  .case .block .k{ color:var(--scene-accent); }
+  .case .verified{ border-top-color:var(--scene-fold); }
 </style>
 
 </head>
