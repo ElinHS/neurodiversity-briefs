@@ -248,7 +248,7 @@
   .hero h1 .title-img{ display:block; width:100%; max-width:640px; height:auto; }
   @media(max-width:560px){ .masthead .logo-img{ height:48px; } .masthead .row{ flex-direction:column; align-items:flex-start; gap:8px; } }
 
-  /* ===== 設計修正 v3：情境框、大章節號、重點句、展開、手繪圖 ===== */
+  /* ===== 設計修正 v3：情境框、大章節號、重點句、展開、向量插圖 ===== */
   :root{ --scene:#FAF1DE; --hand:'LXGW WenKai TC','Noto Serif TC',serif; }
 
   /* D. 章節大編號 */
@@ -273,7 +273,7 @@
 
   /* D. 重點句 */
   .article p.pull{ margin:44px 0 40px; font-family:'Noto Serif TC',serif; font-weight:900; font-size:clamp(21px,4.8vw,26px); line-height:1.7; color:var(--ink); }
-  .article p.pull::before{ content:""; display:block; width:56px; height:12px; margin-bottom:14px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 12'%3E%3Cpath d='M2 7 Q9 1 16 6 T30 6 T44 6 T54 5' fill='none' stroke='%23B4432A' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat; }
+  .article p.pull::before{ content:""; display:block; width:40px; height:4px; margin-bottom:16px; background:var(--coral); border-radius:2px; }
   .article p.pull span{ background:linear-gradient(transparent 60%, rgba(180,67,42,.2) 60%, rgba(180,67,42,.2) 90%, transparent 90%); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 
   /* E. 展開／收合 */
@@ -290,9 +290,38 @@
   .sources details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--coral); }
   .sources details[open] > summary::after{ content:"　收合 －"; }
 
+  /* 向量插圖 */
+  .fig{ margin:40px 0; }
+  .fig .fig-ttl{ font-family:'Noto Sans TC',sans-serif; font-size:17px; font-weight:900; line-height:1.6; margin:0 0 14px; color:var(--ink); }
+  .fig svg{ display:block; width:100%; height:auto; overflow:visible; }
+  .fig figcaption{ margin-top:14px; padding-left:14px; border-left:2px solid var(--line); font-size:13px; line-height:1.85; color:var(--grey); }
+  svg text{ font-family:'Noto Sans TC',sans-serif; }
+
+  /* C. 光譜圖 */
+  .spectrum .axis{ position:relative; display:flex; justify-content:space-between; margin:0 6px 18px; padding-bottom:6px; border-bottom:2px solid var(--ink); font-size:14px; font-weight:700; color:var(--ink-soft); }
+  .spectrum .axis::before, .spectrum .axis::after{ content:""; position:absolute; bottom:-6px; width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent; }
+  .spectrum .axis::before{ left:-6px; border-right:8px solid var(--ink); }
+  .spectrum .axis::after{ right:-6px; border-left:8px solid var(--ink); }
+  .spectrum .axis-m{ display:none; }
+  .spectrum ol{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .spectrum li svg{ width:100%; max-width:120px; margin:0 auto 10px; }
+  .spectrum h5{ margin:0 0 4px; font-size:16px; font-weight:900; line-height:1.5; color:var(--ink); text-align:center; }
+  .spectrum .how, .article .spectrum .how{ margin:0 0 8px; font-size:13.5px; line-height:1.75; color:var(--ink-soft); text-align:center; }
+  .spectrum .tw, .article .spectrum .tw{ margin:0; padding-top:8px; border-top:1px dashed var(--line); font-size:12.5px; line-height:1.75; color:var(--grey); text-align:center; }
+  .spectrum .tw b{ color:var(--coral-deep); }
+  @media(max-width:600px){
+    .spectrum .axis{ display:none; }
+    .spectrum .axis-m{ display:block; margin:0 0 12px; font-size:14px; font-weight:700; color:var(--ink-soft); }
+    .spectrum ol{ grid-template-columns:1fr; gap:0; border-left:2px solid var(--ink); margin-left:6px; }
+    .spectrum li{ display:grid; grid-template-columns:76px 1fr; gap:4px 14px; align-items:start; padding:12px 0 12px 14px; border-bottom:1px solid var(--line); }
+    .spectrum li:last-child{ border-bottom:0; }
+    .spectrum li svg{ grid-row:span 3; margin:4px 0 0; }
+    .spectrum h5, .spectrum .how, .article .spectrum .how, .spectrum .tw, .article .spectrum .tw{ text-align:left; }
+  }
 </style>
 </head>
 <body>
+
 
   <header class="masthead">
     <div class="row">
@@ -362,37 +391,24 @@
       <p>這套制度有一個基本邏輯：依障礙類別，把孩子送到對應的地方。看不見的去盲學校，聽不見的去聾學校，智能障礙的去養護學校，普通學校裡再另設「特殊學級」。</p>
       <p>那個愛講暴龍的孩子呢？在 2007 年以前，他幾乎看不見。智力沒有遲緩的自閉症、學習障礙、ADHD（注意力不足過動症），大多沒有被明確列為特殊教育的對象。從 2007 年起，他終於被制度看見了。問題變成：看見之後，要把他放在哪裡？</p>
 
-      <h3 class="sub">名詞小辭典：日本孩子的四種去處</h3>
-      <div class="compare">
-        <div class="twcard">
-          <h4>特別支援學校</h4>
-          <div class="row">
-            <div class="col"><span class="k">怎麼運作</span><p>獨立的學校。</p></div>
-            <div class="col"><span class="k">台灣最接近的</span><p>特教學校，兩者大致相同。</p></div>
-          </div>
-        </div>
-        <div class="twcard">
-          <h4>特別支援學級</h4>
-          <div class="row">
-            <div class="col"><span class="k">怎麼運作</span><p>普通學校裡的獨立小班，每班最多 8 人。</p></div>
-            <div class="col"><span class="k">台灣最接近的</span><p>集中式特教班。差別是日本的小班也收自閉症、情緒障礙的孩子。</p></div>
-          </div>
-        </div>
-        <div class="twcard">
-          <h4>通級指導</h4>
-          <div class="row">
-            <div class="col"><span class="k">怎麼運作</span><p>平常在普通班，每週抽幾節課接受個別指導。</p></div>
-            <div class="col"><span class="k">台灣最接近的</span><p>分散式資源班。差別是日本約三成小學生要到別的學校上。</p></div>
-          </div>
-        </div>
-        <div class="twcard">
-          <h4>普通班內支援</h4>
-          <div class="row">
-            <div class="col"><span class="k">怎麼運作</span><p>由校內委員會安排，不必等診斷。</p></div>
-            <div class="col"><span class="k">台灣最接近的</span><p>普通班接受特教服務。差別是台灣需要先經過鑑定。</p></div>
-          </div>
-        </div>
-      </div>
+      <figure class="fig spectrum">
+        <div class="fig-ttl">名詞小辭典：日本孩子的四種去處</div>
+        <div class="axis"><span>和同學分開</span><span>和同學一起</span></div>
+        <div class="axis-m">由上往下：從「和同學分開」到「和同學一起」</div>
+        <ol>
+          <li><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="8" y="82" width="104" height="3" rx="1.5" fill="#CDBFA3"/>
+<path d="M60 18 V4" stroke="#1C1917" stroke-width="2.5"/><path d="M60 4 L78 9 L60 14 Z" fill="#B4432A"/>
+<path d="M16 42 L60 18 L104 42 Z" fill="#1C1917"/><rect x="24" y="42" width="72" height="40" fill="#EDE3CF"/>
+<rect x="32" y="50" width="13" height="11" rx="1.5" fill="#FFFFFF"/><rect x="75" y="50" width="13" height="11" rx="1.5" fill="#FFFFFF"/><rect x="52" y="60" width="16" height="22" fill="#1C1917"/></svg><h5>特別支援學校</h5><p class="how">獨立的學校。</p><p class="tw"><b>台灣最接近：</b>特教學校，兩者大致相同。</p></li>
+          <li><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="12" y="16" width="96" height="66" rx="8" fill="#EDE3CF"/><rect x="25" y="36" width="13" height="9" rx="2" fill="#1C1917"/><rect x="45" y="36" width="13" height="9" rx="2" fill="#1C1917"/><rect x="65" y="36" width="13" height="9" rx="2" fill="#1C1917"/><rect x="85" y="36" width="13" height="9" rx="2" fill="#1C1917"/><rect x="25" y="58" width="13" height="9" rx="2" fill="#1C1917"/><rect x="45" y="58" width="13" height="9" rx="2" fill="#1C1917"/><rect x="65" y="58" width="13" height="9" rx="2" fill="#1C1917"/><rect x="85" y="58" width="13" height="9" rx="2" fill="#1C1917"/><rect x="12" y="16" width="96" height="8" rx="4" fill="#B4432A"/></svg><h5>特別支援學級</h5><p class="how">普通學校裡的獨立小班，每班最多 8 人。</p><p class="tw"><b>台灣最接近：</b>集中式特教班。差別是日本的小班也收自閉症、情緒障礙的孩子。</p></li>
+          <li><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="2" y="82" width="116" height="3" rx="1.5" fill="#CDBFA3"/>
+<path d="M2 52 L24 40 L46 52 Z" fill="#1C1917"/><rect x="6" y="52" width="36" height="30" fill="#EDE3CF"/>
+<path d="M74 52 L96 40 L118 52 Z" fill="#1C1917"/><rect x="78" y="52" width="36" height="30" fill="#EDE3CF"/>
+<path d="M28 34 Q60 8 88 32" fill="none" stroke="#B4432A" stroke-width="2.5" stroke-dasharray="5 5" stroke-linecap="round"/><path d="M93 37 L82 34 L89 26 Z" fill="#B4432A"/>
+<circle cx="60.0" cy="56.8" r="4.8" fill="#B4432A"/><path d="M53.1 82.0 V73.3 A6.9 6.9 0 0 1 66.9 73.3 V82.0 Z" fill="#B4432A"/></svg><h5>通級指導</h5><p class="how">平常在普通班，每週抽幾節課接受個別指導。</p><p class="tw"><b>台灣最接近：</b>分散式資源班。差別是日本約三成小學生要到別的學校上。</p></li>
+          <li><svg viewBox="0 0 120 90" aria-hidden="true"><rect x="8" y="14" width="104" height="68" rx="8" fill="#EDE3CF"/><circle cx="22" cy="32" r="5" fill="#CDBFA3"/><circle cx="37" cy="32" r="5" fill="#CDBFA3"/><circle cx="52" cy="32" r="5" fill="#CDBFA3"/><circle cx="67" cy="32" r="5" fill="#CDBFA3"/><circle cx="82" cy="32" r="5" fill="#CDBFA3"/><circle cx="22" cy="48" r="5" fill="#CDBFA3"/><circle cx="37" cy="48" r="5" fill="#CDBFA3"/><circle cx="52" cy="48" r="5" fill="#CDBFA3"/><circle cx="67" cy="48" r="5" fill="#CDBFA3"/><circle cx="82" cy="48" r="5" fill="#CDBFA3"/><circle cx="22" cy="64" r="5" fill="#CDBFA3"/><circle cx="37" cy="64" r="5" fill="#CDBFA3"/><circle cx="52" cy="64" r="5" fill="#CDBFA3"/><circle cx="67" cy="64" r="5" fill="#CDBFA3"/><circle cx="82" cy="64" r="5" fill="#B4432A"/><circle cx="101.0" cy="44.4" r="6.4" fill="#1C1917"/><path d="M91.8 78.0 V66.4 A9.2 9.2 0 0 1 110.2 66.4 V78.0 Z" fill="#1C1917"/></svg><h5>普通班內支援</h5><p class="how">由校內委員會安排，不必等診斷。</p><p class="tw"><b>台灣最接近：</b>普通班接受特教服務。差別是台灣需要先經過鑑定。</p></li>
+        </ol>
+      </figure>
 
       <p class="pull"><span>名字改了，家長也更有發言權了。但「依需求安排場所」的架構沒有變。</span></p>
       <p>聯合國委員會指出的正是這一點：以醫療評估為基礎的分流仍在持續，而且就設在普通學校裡。</p>
@@ -411,11 +427,14 @@
         <div class="desc">2014 到 2024 年度，日本小學和國中的孩子從 <b>1,019 萬</b>人減為 <b>927 萬</b>人；接受特別支援教育的人數，卻從 <b>34 萬</b>增為 <b>68 萬</b>，占全體的 7.3%。</div>
       </div>
 
-      <ul class="checklist">
-        <li><b>特別支援學校（小中部）：</b>6.9 萬人增為 8.7 萬人，約 1.3 倍</li>
-        <li><b>特別支援學級：</b>18.7 萬人增為 39.5 萬人，2.1 倍</li>
-        <li><b>通級指導：</b>8.4 萬人增為 19.6 萬人（2022 年度），2.3 倍</li>
-      </ul>
+      <figure class="fig">
+        <div class="fig-ttl">三種安置方式，各自多了多少？（單位：萬人）</div>
+        <svg viewBox="0 0 560 350" font-family="Noto Sans TC, sans-serif" role="img" aria-label="長條圖：2014 到 2024 年度，特別支援學校 6.9 萬增為 8.7 萬，特別支援學級 18.7 萬增為 39.5 萬，通級指導 8.4 萬增為 19.6 萬（2022 年度）">
+<rect x="16" y="270" width="528" height="2" fill="#1C1917"/><rect x="48" y="237" width="48" height="33" rx="3" fill="#CDBFA3"/><rect x="104" y="228" width="48" height="42" rx="3" fill="#B4432A"/><text x="72" y="228" font-size="17" text-anchor="middle" fill="#57534E">6.9</text><text x="128" y="219" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">8.7</text><text x="128" y="194" font-size="19" font-weight="900" text-anchor="middle" fill="#B4432A">×1.3</text><text x="100" y="300" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">特別支援學校</text><rect x="228" y="180" width="48" height="90" rx="3" fill="#CDBFA3"/><rect x="284" y="80" width="48" height="190" rx="3" fill="#B4432A"/><text x="252" y="171" font-size="17" text-anchor="middle" fill="#57534E">18.7</text><text x="308" y="71" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">39.5</text><text x="308" y="46" font-size="19" font-weight="900" text-anchor="middle" fill="#B4432A">×2.1</text><text x="280" y="300" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">特別支援學級</text><rect x="408" y="230" width="48" height="40" rx="3" fill="#CDBFA3"/><rect x="464" y="176" width="48" height="94" rx="3" fill="#B4432A"/><text x="432" y="221" font-size="17" text-anchor="middle" fill="#57534E">8.4</text><text x="488" y="167" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">19.6</text><text x="488" y="142" font-size="19" font-weight="900" text-anchor="middle" fill="#B4432A">×2.3</text><text x="460" y="300" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">通級指導</text>
+<rect x="20" y="324" width="16" height="16" rx="3" fill="#CDBFA3"/><text x="44" y="338" font-size="16" fill="#57534E">2014 年度</text>
+<rect x="160" y="324" width="16" height="16" rx="3" fill="#B4432A"/><text x="184" y="338" font-size="16" fill="#57534E">2024 年度（通級為 2022 年度）</text></svg>
+        <figcaption>通級指導的 2014 與 2022 年度統計方式不同，倍數僅供參考。資料：內閣府《障害者白書》2025 年版。</figcaption>
+      </figure>
 
       <p>增加最多的，是普通學校裡的小班：特別支援學級多了 20 萬個孩子。這正是聯合國擔心的方向。</p>
 
@@ -458,23 +477,34 @@
       <p>在制度上，你不必等這三個孩子去看醫生，就可以開始幫他們。2017 年文部科學省的指引寫明，從「可能有發展障礙」的階段就要開始支援，而且判斷是不是障礙，不是老師的工作。老師要做的，是把孩子提到「校內委員會」。這是學校裡討論孩子需要哪些支援的會議，由校長、導師、特教相關老師等組成。</p>
       <p>這個原則實際運作得如何？2022 年的一份全國調查提供了線索。文部科學省請導師依一組問題判斷班上的孩子，結果小中學普通班約有 8.8% 的孩子「在學習或行為上有顯著困難」。這是導師的觀察，不是醫師的診斷，所以不能拿來和台灣的特教生比例直接比較。</p>
 
-      <div class="statcard">
-        <div class="num">28.7%</div>
-        <div class="desc">8.8% 放進你的教室，大約就是那 <b>3 個孩子</b>。但全國只有 28.7% 的這類孩子，被校內委員會判定需要支援。也就是說，你看見的 3 個孩子裡，平均只有 <b>1 個</b>會接到下一步。</div>
-      </div>
+      <figure class="fig">
+        <div class="fig-ttl">把全國數字放進你的教室</div>
+        <svg viewBox="0 0 560 240" font-family="Noto Sans TC, sans-serif" role="img" aria-label="示意圖：35 人的班級裡，導師看見約 3 個孩子有顯著困難，其中約 1 個被校內委員會接手">
+<text x="90" y="42" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">35 人的班級</text><circle cx="30" cy="70" r="7" fill="#CDBFA3"/><circle cx="50" cy="70" r="7" fill="#CDBFA3"/><circle cx="70" cy="70" r="7" fill="#CDBFA3"/><circle cx="90" cy="70" r="7" fill="#CDBFA3"/><circle cx="110" cy="70" r="7" fill="#CDBFA3"/><circle cx="130" cy="70" r="7" fill="#CDBFA3"/><circle cx="150" cy="70" r="7" fill="#CDBFA3"/><circle cx="30" cy="90" r="7" fill="#CDBFA3"/><circle cx="50" cy="90" r="7" fill="#B4432A"/><circle cx="70" cy="90" r="7" fill="#CDBFA3"/><circle cx="90" cy="90" r="7" fill="#CDBFA3"/><circle cx="110" cy="90" r="7" fill="#CDBFA3"/><circle cx="130" cy="90" r="7" fill="#CDBFA3"/><circle cx="150" cy="90" r="7" fill="#CDBFA3"/><circle cx="30" cy="110" r="7" fill="#CDBFA3"/><circle cx="50" cy="110" r="7" fill="#CDBFA3"/><circle cx="70" cy="110" r="7" fill="#CDBFA3"/><circle cx="90" cy="110" r="7" fill="#CDBFA3"/><circle cx="110" cy="110" r="7" fill="#CDBFA3"/><circle cx="130" cy="110" r="7" fill="#B4432A"/><circle cx="150" cy="110" r="7" fill="#CDBFA3"/><circle cx="30" cy="130" r="7" fill="#CDBFA3"/><circle cx="50" cy="130" r="7" fill="#CDBFA3"/><circle cx="70" cy="130" r="7" fill="#CDBFA3"/><circle cx="90" cy="130" r="7" fill="#CDBFA3"/><circle cx="110" cy="130" r="7" fill="#CDBFA3"/><circle cx="130" cy="130" r="7" fill="#CDBFA3"/><circle cx="150" cy="130" r="7" fill="#CDBFA3"/><circle cx="30" cy="150" r="7" fill="#CDBFA3"/><circle cx="50" cy="150" r="7" fill="#CDBFA3"/><circle cx="70" cy="150" r="7" fill="#CDBFA3"/><circle cx="90" cy="150" r="7" fill="#B4432A"/><circle cx="110" cy="150" r="7" fill="#CDBFA3"/><circle cx="130" cy="150" r="7" fill="#CDBFA3"/><circle cx="150" cy="150" r="7" fill="#CDBFA3"/>
+<path d="M172 112 H216" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round"/><path d="M224 112 L213 105.5 L213 118.5 Z" fill="#1C1917"/><text x="198" y="94" font-size="16" text-anchor="middle" fill="#1C1917">導師看見</text>
+<circle cx="256.0" cy="125.0" r="9.0" fill="#B4432A"/><path d="M243.1 172.0 V155.8 A12.9 12.9 0 0 1 268.9 155.8 V172.0 Z" fill="#B4432A"/><circle cx="291.0" cy="125.0" r="9.0" fill="#B4432A"/><path d="M278.1 172.0 V155.8 A12.9 12.9 0 0 1 303.9 155.8 V172.0 Z" fill="#B4432A"/><circle cx="326.0" cy="125.0" r="9.0" fill="#B4432A"/><path d="M313.1 172.0 V155.8 A12.9 12.9 0 0 1 338.9 155.8 V172.0 Z" fill="#B4432A"/>
+<text x="291" y="204" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">約 3 人</text><text x="291" y="228" font-size="15" text-anchor="middle" fill="#57534E">（8.8%）</text>
+<path d="M350 112 H392" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round"/><path d="M400 112 L389 105.5 L389 118.5 Z" fill="#1C1917"/><text x="375" y="94" font-size="16" text-anchor="middle" fill="#1C1917">校內委員會</text>
+<path d="M449 150 L478 128" stroke="#1C1917" stroke-width="5" stroke-linecap="round"/>
+<circle cx="442.0" cy="125.0" r="9.0" fill="#B4432A"/><path d="M429.1 172.0 V155.8 A12.9 12.9 0 0 1 454.9 155.8 V172.0 Z" fill="#B4432A"/><circle cx="488.0" cy="94.7" r="14.7" fill="#1C1917"/><path d="M466.8 172.0 V145.3 A21.2 21.2 0 0 1 509.2 145.3 V172.0 Z" fill="#1C1917"/>
+<text x="466" y="204" font-size="17" font-weight="700" text-anchor="middle" fill="#1C1917">約 1 人接手</text><text x="466" y="228" font-size="15" text-anchor="middle" fill="#57534E">（28.7%）</text></svg>
+        <figcaption>8.8% 放進 35 人的班級，大約是 3 個孩子。全國只有 28.7% 的這類孩子被校內委員會判定需要支援，平均下來，3 個裡只有 1 個會接到下一步。資料：文部科學省 2022 年調查。</figcaption>
+      </figure>
 
       <p>文部科學省自己的解讀是：校內委員會的功能沒有充分發揮。</p>
 
       <h3 class="sub">每校都有協調員，八成同時在帶班</h3>
-      <p>你想找人討論。按規定，每所學校都有一位「特別支援教育協調員」，是校內的特教窗口，負責聯繫醫療、福祉機構，也是家長可以請教的人。台灣沒有完全對應的職位。</p>
-      <p>但很可能，協調員就是隔壁班的導師，和你一樣要帶 35 個孩子。2023 年的調查顯示：</p>
-      <ul class="checklist">
-        <li><b>已指定協調員：</b>公立小學、國中都是 100%</li>
-        <li><b>協調員為專任（不帶班、不教科目）：</b>小學 14.0%，國中 20.1%</li>
-        <li><b>採用 10 年內的教師，沒有任何兩年以上特教經驗：</b>小學 85.4%，國中 59.7%</li>
-      </ul>
+      <p>你想找人討論。按規定，每所學校都有一位「特別支援教育協調員」，是校內的特教窗口，負責聯繫醫療、福祉機構，也是家長可以請教的人。台灣沒有完全對應的職位。2023 年的調查顯示，公立小學、國中都已經 100% 指定了協調員。但很可能，協調員就是隔壁班的導師，和你一樣要帶 35 個孩子。</p>
 
-      <p>這些數字的意思是：每所小學都有協調員，但十所裡只有不到兩所的協調員有專心做這件事的時間。各地差異也很大，專任率從 0% 到 93% 都有。而如果你是入行十年內的小學老師，十個同事裡大約有八個，沒有在特教班、通級或特別支援學校待過兩年以上。聯合國委員會對此的描述是：普通班教師缺乏融合教育的技術。</p>
+      <figure class="fig">
+        <div class="fig-ttl">有人，不等於有時間</div>
+        <svg viewBox="0 0 560 262" font-family="Noto Sans TC, sans-serif" role="img" aria-label="示意圖：十所小學中，協調員為專任的約一所半；入行十年內的小學老師，十位中約一位半有兩年以上特教經驗">
+<text x="20" y="30" font-size="16" font-weight="700" fill="#1C1917">十所小學裡，協調員是專任的：不到兩所</text><path d="M19 60 L42 46 L65 60 Z" fill="#1C1917" /><rect x="22" y="60" width="40" height="26" fill="#B4432A" /><rect x="37" y="72" width="10" height="14" fill="#FFFFFF" /><path d="M71 60 L94 46 L117 60 Z" fill="#1C1917" /><rect x="74" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="89" y="72" width="10" height="14" fill="#FFFFFF" /><clipPath id="sc1"><rect x="70" y="40" width="20" height="50"/></clipPath><g clip-path="url(#sc1)"><path d="M71 60 L94 46 L117 60 Z" fill="#1C1917" /><rect x="74" y="60" width="40" height="26" fill="#B4432A" /><rect x="89" y="72" width="10" height="14" fill="#FFFFFF" /></g><path d="M123 60 L146 46 L169 60 Z" fill="#1C1917" /><rect x="126" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="141" y="72" width="10" height="14" fill="#FFFFFF" /><path d="M175 60 L198 46 L221 60 Z" fill="#1C1917" /><rect x="178" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="193" y="72" width="10" height="14" fill="#FFFFFF" /><path d="M227 60 L250 46 L273 60 Z" fill="#1C1917" /><rect x="230" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="245" y="72" width="10" height="14" fill="#FFFFFF" /><path d="M279 60 L302 46 L325 60 Z" fill="#1C1917" /><rect x="282" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="297" y="72" width="10" height="14" fill="#FFFFFF" /><path d="M331 60 L354 46 L377 60 Z" fill="#1C1917" /><rect x="334" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="349" y="72" width="10" height="14" fill="#FFFFFF" /><path d="M383 60 L406 46 L429 60 Z" fill="#1C1917" /><rect x="386" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="401" y="72" width="10" height="14" fill="#FFFFFF" /><path d="M435 60 L458 46 L481 60 Z" fill="#1C1917" /><rect x="438" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="453" y="72" width="10" height="14" fill="#FFFFFF" /><path d="M487 60 L510 46 L533 60 Z" fill="#1C1917" /><rect x="490" y="60" width="40" height="26" fill="#EDE3CF" /><rect x="505" y="72" width="10" height="14" fill="#FFFFFF" />
+<text x="20" y="140" font-size="16" font-weight="700" fill="#1C1917">十位入行十年內的小學老師，有兩年以上特教經驗的：一位多</text><circle cx="42.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M26.8 238.0 V218.9 A15.2 15.2 0 0 1 57.2 218.9 V238.0 Z" fill="#CDBFA3"/><circle cx="94.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M78.8 238.0 V218.9 A15.2 15.2 0 0 1 109.2 218.9 V238.0 Z" fill="#CDBFA3"/><circle cx="146.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M130.8 238.0 V218.9 A15.2 15.2 0 0 1 161.2 218.9 V238.0 Z" fill="#CDBFA3"/><circle cx="198.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M182.8 238.0 V218.9 A15.2 15.2 0 0 1 213.2 218.9 V238.0 Z" fill="#CDBFA3"/><circle cx="250.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M234.8 238.0 V218.9 A15.2 15.2 0 0 1 265.2 218.9 V238.0 Z" fill="#CDBFA3"/><circle cx="302.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M286.8 238.0 V218.9 A15.2 15.2 0 0 1 317.2 218.9 V238.0 Z" fill="#CDBFA3"/><circle cx="354.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M338.8 238.0 V218.9 A15.2 15.2 0 0 1 369.2 218.9 V238.0 Z" fill="#CDBFA3"/><circle cx="406.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M390.8 238.0 V218.9 A15.2 15.2 0 0 1 421.2 218.9 V238.0 Z" fill="#CDBFA3"/><circle cx="458.0" cy="182.6" r="10.6" fill="#CDBFA3"/><path d="M442.8 238.0 V218.9 A15.2 15.2 0 0 1 473.2 218.9 V238.0 Z" fill="#CDBFA3"/><clipPath id="tc1"><rect x="458" y="160" width="30" height="80"/></clipPath><g clip-path="url(#tc1)"><circle cx="458.0" cy="182.6" r="10.6" fill="#B4432A"/><path d="M442.8 238.0 V218.9 A15.2 15.2 0 0 1 473.2 218.9 V238.0 Z" fill="#B4432A"/></g><circle cx="510.0" cy="182.6" r="10.6" fill="#B4432A"/><path d="M494.8 238.0 V218.9 A15.2 15.2 0 0 1 525.2 218.9 V238.0 Z" fill="#B4432A"/></svg>
+        <figcaption>紅色代表專任的協調員（小學 14.0%，國中 20.1%），以及有兩年以上特教經驗的老師（入行十年內：小學約 14.6%，國中約 40.3%）。各地專任率從 0% 到 93% 都有。資料：文部科學省 2023 年度調查。</figcaption>
+      </figure>
+
+      <p>也就是說，十所小學裡，只有不到兩所的協調員有專心做這件事的時間。而如果你是入行十年內的小學老師，十個同事裡大約有八個，沒有在特教班、通級或特別支援學校待過兩年以上。聯合國委員會對此的描述是：普通班教師缺乏融合教育的技術。</p>
       <p>這不是在評判導師。一個要教 35 個孩子、又沒受過專業訓練的老師，就算看見了那 3 個孩子，也未必有時間、有方法接住他們。「不必等診斷」的原則，需要有人力配套才能落實。</p>
 
       <h2 class="sec"><span class="no">05</span>聯合國開口之後，日本改了什麼？</h2>
@@ -497,6 +527,10 @@
       <p class="sec-dek">特教人數倍增的同一個十年，另一個數字也在創新高。</p>
 
       <div class="scene" data-label="假設情境">
+        <svg class="spot" viewBox="0 0 150 120" aria-hidden="true"><rect x="8" y="108" width="134" height="4" rx="2" fill="#CDBFA3"/>
+<path d="M40 24 Q40 12 50 12 Q60 12 60 24" fill="none" stroke="#1C1917" stroke-width="4"/>
+<rect x="24" y="22" width="52" height="86" rx="18" fill="#B4432A"/><rect x="24" y="22" width="52" height="34" rx="18" fill="#8E3420"/><rect x="38" y="70" width="24" height="16" rx="4" fill="#8E3420"/>
+<path d="M84 108 Q84 94 97 94 L110 98 Q124 100 125 108 Z" fill="#1C1917"/><path d="M100 100 Q100 86 113 86 L126 90 Q140 92 141 100 L141 104 L100 104 Z" fill="#57534E"/></svg>
         <p>假設某個星期三早上，你的孩子穿好制服、背好書包，站在玄關卻不肯穿鞋。他說肚子痛。你讓他在家休息一天。</p>
         <p>第二天也是。第二個星期也是。後來，他連制服都不穿了。</p>
       </div>
@@ -505,8 +539,17 @@
 
       <div class="statcard">
         <div class="num">353,970</div>
-        <div class="desc">2024 年度，日本小學和國中的不登校孩子人數，<b>連續 12 年增加</b>。平均每千個孩子裡有將近 39 個，大約是一個班級裡有一到兩個。</div>
+        <div class="desc">2024 年度，日本小學和國中的不登校孩子人數，<b>連續 12 年增加</b>。平均每千個孩子裡有將近 39 個。</div>
       </div>
+
+      <figure class="fig">
+        <div class="fig-ttl">換成一個 35 人的班級來看</div>
+        <svg viewBox="0 0 560 300" font-family="Noto Sans TC, sans-serif" role="img" aria-label="示意圖：35 人的教室座位表，其中一個座位是空的">
+<rect x="150" y="14" width="190" height="20" rx="3" fill="#1C1917"/><rect x="215" y="46" width="60" height="14" rx="3" fill="#CDBFA3"/><rect x="30" y="84" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="50" cy="114" r="7" fill="#CDBFA3"/><rect x="92" y="84" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="112" cy="114" r="7" fill="#CDBFA3"/><rect x="154" y="84" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="174" cy="114" r="7" fill="#CDBFA3"/><rect x="216" y="84" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="236" cy="114" r="7" fill="#CDBFA3"/><rect x="278" y="84" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="298" cy="114" r="7" fill="#CDBFA3"/><rect x="340" y="84" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="360" cy="114" r="7" fill="#CDBFA3"/><rect x="402" y="84" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="422" cy="114" r="7" fill="#CDBFA3"/><rect x="30" y="126" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="50" cy="156" r="7" fill="#CDBFA3"/><rect x="92" y="126" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="112" cy="156" r="7" fill="#CDBFA3"/><rect x="154" y="126" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="174" cy="156" r="7" fill="#CDBFA3"/><rect x="216" y="126" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="236" cy="156" r="7" fill="#CDBFA3"/><rect x="278" y="126" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="298" cy="156" r="7" fill="#CDBFA3"/><rect x="340" y="126" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="360" cy="156" r="7" fill="#CDBFA3"/><rect x="402" y="126" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="422" cy="156" r="7" fill="#CDBFA3"/><rect x="30" y="168" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="50" cy="198" r="7" fill="#CDBFA3"/><rect x="92" y="168" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="112" cy="198" r="7" fill="#CDBFA3"/><rect x="154" y="168" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="174" cy="198" r="7" fill="#CDBFA3"/><rect x="216" y="168" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="236" cy="198" r="7" fill="#CDBFA3"/><rect x="278" y="168" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="298" cy="198" r="7" fill="#CDBFA3"/><rect x="340" y="168" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="360" cy="198" r="7" fill="#CDBFA3"/><rect x="402" y="168" width="40" height="18" rx="4" fill="none" stroke="#B4432A" stroke-width="2" stroke-dasharray="4 4"/><rect x="30" y="210" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="50" cy="240" r="7" fill="#CDBFA3"/><rect x="92" y="210" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="112" cy="240" r="7" fill="#CDBFA3"/><rect x="154" y="210" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="174" cy="240" r="7" fill="#CDBFA3"/><rect x="216" y="210" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="236" cy="240" r="7" fill="#CDBFA3"/><rect x="278" y="210" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="298" cy="240" r="7" fill="#CDBFA3"/><rect x="340" y="210" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="360" cy="240" r="7" fill="#CDBFA3"/><rect x="402" y="210" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="422" cy="240" r="7" fill="#CDBFA3"/><rect x="30" y="252" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="50" cy="282" r="7" fill="#CDBFA3"/><rect x="92" y="252" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="112" cy="282" r="7" fill="#CDBFA3"/><rect x="154" y="252" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="174" cy="282" r="7" fill="#CDBFA3"/><rect x="216" y="252" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="236" cy="282" r="7" fill="#CDBFA3"/><rect x="278" y="252" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="298" cy="282" r="7" fill="#CDBFA3"/><rect x="340" y="252" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="360" cy="282" r="7" fill="#CDBFA3"/><rect x="402" y="252" width="40" height="18" rx="4" fill="#EDE3CF"/><circle cx="422" cy="282" r="7" fill="#CDBFA3"/>
+<path d="M478 216 L456 196" stroke="#B4432A" stroke-width="2.5" stroke-linecap="round"/><path d="M449 189 L461 192 L453 201 Z" fill="#B4432A"/>
+<text x="470" y="238" font-size="16" font-weight="700" fill="#B4432A">這個座位</text><text x="470" y="260" font-size="16" font-weight="700" fill="#B4432A">一年空了</text><text x="470" y="282" font-size="16" font-weight="700" fill="#B4432A">30 天以上</text></svg>
+        <figcaption>每千人將近 39 人，放進 35 人的班級，平均約 1.4 人，也就是一個班級裡有一到兩個座位，常常是空的。</figcaption>
+      </figure>
 
       <p>這 35 萬個孩子裡，有 26,665 個是學校知道「因為障礙或疑似障礙，而有特別教育需求」的，占 7.5%。要注意，這是學校掌握到的數字，不等於神經多樣性孩子在其中的實際比例。學校沒看見的孩子，不會出現在這個數字裡。</p>
       <p>文部科學省在分析不登校為什麼增加時，自己列了一項原因：對需要特別配慮的孩子，從早期開始的支援還有不足。特教人數倍增和不登校創新高同時發生，不代表其中一個造成另一個。但它們指向同一個問題：</p>

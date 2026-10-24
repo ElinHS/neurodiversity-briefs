@@ -242,7 +242,7 @@
   .hero h1 .title-img{ display:block; width:100%; max-width:640px; height:auto; }
   @media(max-width:560px){ .masthead .logo-img{ height:48px; } .masthead .row{ flex-direction:column; align-items:flex-start; gap:8px; } }
 
-  /* ===== 設計修正 v3：情境框、大章節號、重點句、展開、手繪圖 ===== */
+  /* ===== 設計修正 v3：情境框、大章節號、重點句、展開、向量插圖 ===== */
   :root{ --scene:#FAF1DE; --hand:'LXGW WenKai TC','Noto Serif TC',serif; }
 
   /* D. 章節大編號 */
@@ -267,7 +267,7 @@
 
   /* D. 重點句 */
   .article p.pull{ margin:44px 0 40px; font-family:'Noto Serif TC',serif; font-weight:900; font-size:clamp(21px,4.8vw,26px); line-height:1.7; color:var(--ink); }
-  .article p.pull::before{ content:""; display:block; width:56px; height:12px; margin-bottom:14px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 12'%3E%3Cpath d='M2 7 Q9 1 16 6 T30 6 T44 6 T54 5' fill='none' stroke='%23B4432A' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat; }
+  .article p.pull::before{ content:""; display:block; width:40px; height:4px; margin-bottom:16px; background:var(--coral); border-radius:2px; }
   .article p.pull span{ background:linear-gradient(transparent 60%, rgba(180,67,42,.2) 60%, rgba(180,67,42,.2) 90%, transparent 90%); box-decoration-break:clone; -webkit-box-decoration-break:clone; }
 
   /* E. 展開／收合 */
@@ -284,10 +284,39 @@
   .sources details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--coral); }
   .sources details[open] > summary::after{ content:"　收合 －"; }
 
+  /* 向量插圖 */
+  .fig{ margin:40px 0; }
+  .fig .fig-ttl{ font-family:'Noto Sans TC',sans-serif; font-size:17px; font-weight:900; line-height:1.6; margin:0 0 14px; color:var(--ink); }
+  .fig svg{ display:block; width:100%; height:auto; overflow:visible; }
+  .fig figcaption{ margin-top:14px; padding-left:14px; border-left:2px solid var(--line); font-size:13px; line-height:1.85; color:var(--grey); }
+  svg text{ font-family:'Noto Sans TC',sans-serif; }
+
+  /* C. 光譜圖 */
+  .spectrum .axis{ position:relative; display:flex; justify-content:space-between; margin:0 6px 18px; padding-bottom:6px; border-bottom:2px solid var(--ink); font-size:14px; font-weight:700; color:var(--ink-soft); }
+  .spectrum .axis::before, .spectrum .axis::after{ content:""; position:absolute; bottom:-6px; width:0; height:0; border-top:5px solid transparent; border-bottom:5px solid transparent; }
+  .spectrum .axis::before{ left:-6px; border-right:8px solid var(--ink); }
+  .spectrum .axis::after{ right:-6px; border-left:8px solid var(--ink); }
+  .spectrum .axis-m{ display:none; }
+  .spectrum ol{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .spectrum li svg{ width:100%; max-width:120px; margin:0 auto 10px; }
+  .spectrum h5{ margin:0 0 4px; font-size:16px; font-weight:900; line-height:1.5; color:var(--ink); text-align:center; }
+  .spectrum .how, .article .spectrum .how{ margin:0 0 8px; font-size:13.5px; line-height:1.75; color:var(--ink-soft); text-align:center; }
+  .spectrum .tw, .article .spectrum .tw{ margin:0; padding-top:8px; border-top:1px dashed var(--line); font-size:12.5px; line-height:1.75; color:var(--grey); text-align:center; }
+  .spectrum .tw b{ color:var(--coral-deep); }
+  @media(max-width:600px){
+    .spectrum .axis{ display:none; }
+    .spectrum .axis-m{ display:block; margin:0 0 12px; font-size:14px; font-weight:700; color:var(--ink-soft); }
+    .spectrum ol{ grid-template-columns:1fr; gap:0; border-left:2px solid var(--ink); margin-left:6px; }
+    .spectrum li{ display:grid; grid-template-columns:76px 1fr; gap:4px 14px; align-items:start; padding:12px 0 12px 14px; border-bottom:1px solid var(--line); }
+    .spectrum li:last-child{ border-bottom:0; }
+    .spectrum li svg{ grid-row:span 3; margin:4px 0 0; }
+    .spectrum h5, .spectrum .how, .article .spectrum .how, .spectrum .tw, .article .spectrum .tw{ text-align:left; }
+  }
 </style>
 
 </head>
 <body>
+
 
 <header class="masthead">
   <div class="row">
@@ -335,6 +364,14 @@
     <h3 class="sub">他的腦袋，收到的是一堆散開的拼圖</h3>
     <p>荷蘭特教專家 Colette de Bruin 就是從這樣的畫面出發。她認為，自閉症孩子的大腦接收資訊時，很像拿到一盒倒出來的拼圖。</p>
     <p>多數人聽到「下課了」，會自動把拼圖拼好：下課就是去操場玩，鐘響再回來。自閉症孩子比較難自己拼。少了一塊，他就不安；不安累積下來，大人看到的就是「行為問題」。</p>
+
+    <figure class="fig">
+      <div class="fig-ttl">聽到「下課了」，孩子的腦袋裡少了哪一塊？</div>
+      <svg viewBox="0 0 560 250" font-family="Noto Sans TC, sans-serif" role="img" aria-label="示意圖：左邊是散開、少了一塊的拼圖，代表孩子聽到「下課了」時缺少的資訊；右邊是五塊拼圖都補上">
+<g transform="translate(12 58) rotate(-14 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">什麼</text></g><g transform="translate(96 26) rotate(16 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">怎麼做</text></g><g transform="translate(176 44) rotate(-8 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">在哪裡</text></g><g transform="translate(110 140) rotate(-18 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">誰</text></g><g transform="translate(26 142) rotate(10 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="none" stroke="#B4432A" stroke-width="2.5" stroke-dasharray="6 5"/><text x="30" y="42" font-size="28" font-weight="900" text-anchor="middle" fill="#B4432A">?</text></g><path d="M252 128 H318" stroke="#1C1917" stroke-width="2.5" stroke-linecap="round"/><path d="M326 128 L315 121.5 L315 134.5 Z" fill="#1C1917"/><text x="289" y="110" font-size="16" font-weight="700" text-anchor="middle" fill="#1C1917">說清楚</text><g transform="translate(346 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">什麼</text></g><g transform="translate(406 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">怎麼做</text></g><g transform="translate(466 52) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">在哪裡</text></g><g transform="translate(376 112) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#B4432A" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="27" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">什麼</text><text x="30" y="45" font-size="14" font-weight="700" text-anchor="middle" fill="#FFFFFF">時候</text></g><g transform="translate(436 112) rotate(0 30 30)"><path d="M0 0 H22 C22 -8 38 -8 38 0 H60 V22 C68 22 68 38 60 38 V60 H0 Z" fill="#EDE3CF" stroke="#FFFFFF" stroke-width="2.5"/><text x="30" y="36" font-size="15" font-weight="700" text-anchor="middle" fill="#1C1917">誰</text></g>
+<text x="118" y="240" font-size="16" text-anchor="middle" fill="#57534E">少了「什麼時候」那一塊</text><text x="436" y="240" font-size="16" text-anchor="middle" fill="#57534E">五塊都補上</text></svg>
+      <figcaption>依 Colette de Bruin 的拼圖比喻繪製的示意圖。「什麼時候」是大人最常漏掉的一塊。</figcaption>
+    </figure>
 
     <p class="pull"><span>先補上缺的那塊拼圖，再看孩子的行為。</span></p>
 
@@ -401,6 +438,15 @@
       <div class="step"><div class="dot">5</div><div class="txt"><b>平靜後再回頭聊</b>：用五個問題一起找出少了哪一塊拼圖，下次提早補上。</div></div>
       <div class="flow-note">順序很重要。孩子還在崩潰時，聽不進任何道理；等他平靜了，才是一起找原因的時候。</div>
     </div>
+
+    <figure class="fig">
+      <div class="fig-ttl">情緒溫度計：這件事其實是幾級？</div>
+      <svg viewBox="0 0 560 150" font-family="Noto Sans TC, sans-serif" role="img" aria-label="情緒溫度計示意：1 到 5 級，擦傷是 1 級，火災是 5 級；動物園取消是 2 級">
+<clipPath id="thc"><rect x="30" y="62" width="500" height="40" rx="20"/></clipPath><g clip-path="url(#thc)"><rect x="30" y="62" width="500" height="40" fill="#FFFFFF"/><rect x="30" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.12"/><rect x="130" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.3"/><rect x="230" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.5"/><rect x="330" y="62" width="100" height="40" fill="#B4432A" fill-opacity="0.72"/><rect x="430" y="62" width="100" height="40" fill="#B4432A" fill-opacity="1"/><rect x="129" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="229" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="329" y="62" width="2" height="40" fill="#FFFFFF"/><rect x="429" y="62" width="2" height="40" fill="#FFFFFF"/></g><text x="80" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">1</text><text x="180" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">2</text><text x="280" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#1C1917">3</text><text x="380" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#FFFFFF">4</text><text x="480" y="89" font-size="19" font-weight="700" text-anchor="middle" fill="#FFFFFF">5</text>
+<path d="M180 56 L172 44 L188 44 Z" fill="#B4432A"/><text x="180" y="34" font-size="16" font-weight="700" text-anchor="middle" fill="#B4432A">動物園取消：2 級</text>
+<text x="80" y="130" font-size="16" text-anchor="middle" fill="#57534E">擦傷</text><text x="480" y="130" font-size="16" text-anchor="middle" fill="#57534E">火災</text></svg>
+      <figcaption>原版是從綠色到深紅色的 1 到 5 級尺。孩子覺得「世界末日」時，陪他一起找出這件事的位置。</figcaption>
+    </figure>
 
     <div class="note"><b>值得想一想：</b>台灣的特教老師對結構化教學、視覺化行程並不陌生。Geef me de 5 多走了一步：讓家長、老師和照護者學同一套說法。荷蘭的基礎課程上 4 天，每班最多 24 人，而且刻意讓老師和家長坐在同一間教室。孩子在家、在學校，聽到的是同一種說明方式。</div>
 
