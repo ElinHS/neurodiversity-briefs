@@ -244,6 +244,19 @@
     .cards .card .tags{ display:none; }
     .cards .card .go{ margin-top:8px; }
   }
+
+  /* ===== 什麼是神經多樣性 v3：細線框，對齊首頁卡片語言 ===== */
+  .os, .shift{ gap:16px; margin:24px 0; }
+  .os .box, .os .box.typ, .os .box.nd, .shift .col, .shift .new{ background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px; }
+  .shift .new{ border-color:var(--coral-deep); }
+  .os .box .k, .core .k, .shift .col .k{ display:block; font-size:12px; font-weight:700; letter-spacing:.06em; color:var(--coral-deep); margin-bottom:8px; }
+  .shift .old .k{ color:var(--grey); }
+  .os .box h3{ font-size:17px; margin:0 0 8px; }
+  .os .box p, .shift .col p{ font-size:14px; line-height:1.85; }
+  .core{ position:relative; margin:32px 0; padding:16px 0 0; background:none; border-radius:0; }
+  .core::before{ content:""; position:absolute; top:0; left:0; width:32px; height:2px; background:var(--coral); }
+  .core p{ margin:4px 0 0; font-size:clamp(17px,3.6vw,19px); line-height:1.75; }
+  .concept .sum{ margin-top:8px; padding-top:16px; border-top:1px solid var(--line); }
 </style>
 
 </head>
@@ -272,7 +285,7 @@
         <span class="nd-toggle"><span class="t-closed">展開閱讀</span><span class="t-open">收合</span><span class="nd-plus" aria-hidden="true"></span></span>
       </summary>
       <div class="nd-body">
-    <p>每個人大腦的「內建作業系統」本來就長得不一樣，這是一種自然的現象。</p>
+    <p>每個人大腦的「內建作業系統」本來就長得不一樣，這是一種自然的現象。<b>神經多樣性</b>，指的就是這件事：每個人的大腦本來就不一樣。</p>
     <p>就像手機有 Android（安卓）系統、也有 iOS（蘋果）系統，我們不會說哪一個系統是「壞掉」或「生病」的，它們只是運作邏輯不同、擅長的事情不同。同樣的道理，人類的大腦也有很多種版本：</p>
 
     <div class="os">
@@ -283,14 +296,14 @@
       </div>
       <div class="box nd">
         <span class="k">少數人的大腦</span>
-        <h3>神經多樣性</h3>
-        <p>像是不同的特製系統，例如 ADHD（過動／分心）、自閉症光譜、閱讀障礙或高敏感。</p>
+        <h3>神經多樣性的孩子</h3>
+        <p>像是不同的特製系統，例如 ADHD（注意力不足過動症）、自閉症光譜、學習障礙（如讀寫困難）、妥瑞症。</p>
       </div>
     </div>
 
     <div class="core">
       <div class="k">核心觀念只有一個</div>
-      <p>這群人的大腦出廠設定不同，不需要被醫好。</p>
+      <p>大腦的出廠設定不同，不是需要被「修好」的缺陷。需要調整的，常常是環境和支持方式。</p>
     </div>
 
     <div class="shift">
@@ -300,11 +313,11 @@
       </div>
       <div class="col new">
         <span class="k">神經多樣性的觀念：調整環境</span>
-        <p>「他的大腦就是『過動／分心版』的系統，雖然他很難乖乖坐著，但很多這樣的孩子反應很快、很有創意。我們應該給他不同的學習方式，而不是強迫他變成別人。」</p>
+        <p>「他的大腦就是『過動／分心版』的系統。他在某些環境裡很難專心，換一種環境，卻可能表現得很好。我們應該給他不同的學習方式，而不是強迫他變成別人。」</p>
       </div>
     </div>
 
-    <p class="sum">簡單來說，神經多樣性就是把社會上的「不一樣」，從「你有病、你要改」，變成<b>「你很特別，我們來找適合你的方法」</b>。</p>
+    <p class="sum">簡單來說，神經多樣性就是把社會上的「不一樣」，從「你有問題，你要改」，變成<b>「你不一樣，我們一起找適合你的方法」</b>。</p>
       </div>
     </details>
   </section>
