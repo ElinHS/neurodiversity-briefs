@@ -385,6 +385,20 @@
   .next-list a .c{ display:inline-flex; align-items:center; gap:8px; }
   .next-list .flag{ display:inline-block; width:22px; height:15px; flex:none; border-radius:2px; overflow:hidden; box-shadow:0 0 0 1px rgba(28,25,23,.14); }
   .next-list .flag svg{ display:block; width:100%; height:100%; }
+
+  /* ===== 延伸閱讀 v3：色票色塊卡片 ===== */
+  .rc-list{ margin:40px 0 0; }
+  .rc-list .lbl{ display:block; padding:0 0 10px; margin-bottom:14px; border-bottom:1.5px solid var(--ink); font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--coral-deep); }
+  .rc-list a{ display:grid; grid-template-columns:112px 1fr; gap:18px; align-items:center; margin-bottom:12px; padding:14px 20px 14px 14px; border-radius:14px; text-decoration:none; color:var(--ink); transition:transform .15s ease, box-shadow .15s ease; }
+  .rc-list a:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(28,25,23,.08); }
+  .rc-list a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+  .rc-list .tile{ display:block; width:112px; height:112px; border-radius:10px; overflow:hidden; }
+  .rc-list .tile svg{ display:block; width:100%; height:100%; }
+  .rc-list .chip{ display:block; margin-bottom:4px; font-size:12px; font-weight:700; letter-spacing:.04em; color:var(--coral-deep); }
+  .rc-list .t{ display:block; font-size:17px; font-weight:900; line-height:1.55; }
+  .rc-list .go{ display:block; margin-top:8px; font-size:13px; font-weight:700; }
+  @media(max-width:560px){ .rc-list a{ grid-template-columns:88px 1fr; gap:12px; padding:12px 14px 12px 10px; } .rc-list .tile{ width:88px; height:88px; border-radius:9px; } .rc-list .t{ font-size:15px; } }
+  @media (prefers-reduced-motion: reduce){ .rc-list a{ transition:none; } .rc-list a:hover{ transform:none; } }
 </style>
 </head>
 <body>
@@ -617,11 +631,23 @@
         <p>選擇學校以外的地方時，可以把問題問得具體一點：孩子情緒激動時，誰會處理？這裡有沒有人懂特教？孩子想回學校或升學時，路接得上嗎？這些問題不一定都有好答案，但能幫你找到真正接得住孩子的地方。</p>
       </div>
 
-      <nav class="next-list" aria-label="延伸閱讀">
+      <nav class="rc-list" aria-label="延伸閱讀">
         <span class="lbl">延伸閱讀</span>
-        <a href="tokubetsu-shien-japan-model.html"><span class="c"><span class="flag"><svg viewBox="0 0 96 64" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="96" height="64" fill="#FAF8F3"/><circle cx="48" cy="32" r="19.2" fill="#BC2D3A"/></svg></span>日本篇</span><span class="t">日本孩子少了一成，特教生卻多了一倍：「特別支援」是照顧，還是分開？</span><span class="go">→</span></a>
-        <a href="geef-me-de-5-netherlands-model.html"><span class="c"><span class="flag"><svg viewBox="0 0 96 64" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="96" height="21.4" fill="#B8423A"/><rect y="21.3" width="96" height="21.4" fill="#FAF8F3"/><rect y="42.6" width="96" height="21.4" fill="#2E4C80"/></svg></span>荷蘭篇</span><span class="t">孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</span><span class="go">→</span></a>
-        <a href="nubu-norway-model.html"><span class="c"><span class="flag"><svg viewBox="0 0 88 64" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="88" height="64" fill="#B83A3A"/><rect x="24" width="16" height="64" fill="#FAF8F3"/><rect y="24" width="88" height="16" fill="#FAF8F3"/><rect x="28" width="8" height="64" fill="#2B4470"/><rect y="28" width="88" height="8" fill="#2B4470"/></svg></span>挪威篇</span><span class="t">挪威怎麼讓快要「壞掉」的孩子，留在家裡？</span><span class="go">→</span></a>
+        <a href="tokubetsu-shien-japan-model.html" style="background:#CED7DF"><span class="tile"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="t-rcjp1"><rect width="200" height="200"/></clipPath></defs>
+<g clip-path="url(#t-rcjp1)"><rect width="200" height="200" fill="#748DA4"/><polygon points="70,52 166,52 426,312 426,376 330,376 70,116" fill="#000" fill-opacity=".13"/><polygon points="64,42 70,42 330,302 330,430 324,430 64,170" fill="#000" fill-opacity=".13"/><polygon points="50,168 84,168 344,428 344,440 310,440 50,180" fill="#000" fill-opacity=".13"/></g>
+<rect x="64" y="42" width="6" height="128" fill="#5F5A55"/><circle cx="67" cy="40" r="5.5" fill="#F4E4C4"/>
+<rect x="56" y="164" width="22" height="6" fill="#5F5A55"/><rect x="50" y="170" width="34" height="8" fill="#5F5A55"/>
+<g transform="translate(70 52)"><rect width="96" height="64" fill="#FAF8F3"/><circle cx="48" cy="32" r="19.2" fill="#BC2D3A"/></g></svg></span><span class="tx"><span class="chip">No.03｜日本篇</span><span class="t">日本孩子少了一成，特教生卻多了一倍：「特別支援」是照顧，還是分開？</span><span class="go">閱讀全文 →</span></span></a>
+        <a href="geef-me-de-5-netherlands-model.html" style="background:#E0E1D4"><span class="tile"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="t-rcnl"><rect width="200" height="200"/></clipPath></defs>
+<g clip-path="url(#t-rcnl)"><rect width="200" height="200" fill="#C2C3A8"/><polygon points="70,52 166,52 426,312 426,376 330,376 70,116" fill="#000" fill-opacity=".13"/><polygon points="64,42 70,42 330,302 330,430 324,430 64,170" fill="#000" fill-opacity=".13"/><polygon points="50,168 84,168 344,428 344,440 310,440 50,180" fill="#000" fill-opacity=".13"/></g>
+<rect x="64" y="42" width="6" height="128" fill="#5F5A55"/><circle cx="67" cy="40" r="5.5" fill="#F4E4C4"/>
+<rect x="56" y="164" width="22" height="6" fill="#5F5A55"/><rect x="50" y="170" width="34" height="8" fill="#5F5A55"/>
+<g transform="translate(70 52)"><rect width="96" height="21.4" fill="#B8423A"/><rect y="21.3" width="96" height="21.4" fill="#FAF8F3"/><rect y="42.6" width="96" height="21.4" fill="#2E4C80"/></g></svg></span><span class="tx"><span class="chip">No.01｜荷蘭篇</span><span class="t">孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</span><span class="go">閱讀全文 →</span></span></a>
+        <a href="nubu-norway-model.html" style="background:#F4E4D5"><span class="tile"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="t-rcno"><rect width="200" height="200"/></clipPath></defs>
+<g clip-path="url(#t-rcno)"><rect width="200" height="200" fill="#EAC8AB"/><polygon points="70,52 158,52 418,312 418,376 330,376 70,116" fill="#000" fill-opacity=".13"/><polygon points="64,42 70,42 330,302 330,430 324,430 64,170" fill="#000" fill-opacity=".13"/><polygon points="50,168 84,168 344,428 344,440 310,440 50,180" fill="#000" fill-opacity=".13"/></g>
+<rect x="64" y="42" width="6" height="128" fill="#5F5A55"/><circle cx="67" cy="40" r="5.5" fill="#F4E4C4"/>
+<rect x="56" y="164" width="22" height="6" fill="#5F5A55"/><rect x="50" y="170" width="34" height="8" fill="#5F5A55"/>
+<g transform="translate(70 52)"><rect width="88" height="64" fill="#B83A3A"/><rect x="24" width="16" height="64" fill="#FAF8F3"/><rect y="24" width="88" height="16" fill="#FAF8F3"/><rect x="28" width="8" height="64" fill="#2B4470"/><rect y="28" width="88" height="8" fill="#2B4470"/></g></svg></span><span class="tx"><span class="chip">No.02｜挪威篇</span><span class="t">挪威怎麼讓快要「壞掉」的孩子，留在家裡？</span><span class="go">閱讀全文 →</span></span></a>
       </nav>
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
