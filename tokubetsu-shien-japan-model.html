@@ -370,6 +370,17 @@
   .flow .step:nth-child(3) .dot{ background:#6E7058; }
   .flow .step:nth-child(4) .dot{ background:var(--ink-soft); }
   .flow .step:nth-child(5) .dot{ background:#6E4329; }
+
+  /* ===== 延伸閱讀 v2：只留標題的精簡清單 ===== */
+  .next-list{ margin:40px 0 0; border-top:1.5px solid var(--ink); }
+  .next-list .lbl{ display:block; padding:14px 0 6px; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--coral-deep); }
+  .next-list a{ display:grid; grid-template-columns:auto 1fr auto; gap:6px 14px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); }
+  .next-list a .c{ min-width:9em; font-size:12px; font-weight:700; color:var(--grey); white-space:nowrap; }
+  .next-list a .t{ font-size:15px; font-weight:700; line-height:1.6; }
+  .next-list a .go{ font-size:14px; color:var(--coral-deep); }
+  .next-list a:hover .t{ text-decoration:underline; text-underline-offset:3px; }
+  .next-list a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+  @media(max-width:560px){ .next-list a{ grid-template-columns:1fr auto; } .next-list a .c{ grid-column:1 / -1; min-width:0; } }
 </style>
 </head>
 <body>
@@ -679,24 +690,12 @@
         <p>制度的改變需要時間。你現在可以做的，是把孩子在學校卡住的具體時刻記下來，帶著它去問學校：在結果出來之前，誰能先幫忙？這個問題不一定馬上有答案，但它能讓孩子被看見之後，多一個人接手。</p>
       </div>
 
-      <a class="next-read" href="geef-me-de-5-netherlands-model.html">
-        <span class="lbl">延伸閱讀・荷蘭篇</span>
-        <h4>孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</h4>
-        <p>荷蘭的 Geef me de 5 請大人先把「什麼、怎麼做、在哪裡、什麼時候、誰」說清楚，也讓家裡和學校用同一套說法。</p>
-        <span class="go">繼續讀 →</span>
-      </a>
-      <a class="next-read" href="nubu-norway-model.html">
-        <span class="lbl">延伸閱讀・挪威篇</span>
-        <h4>挪威怎麼讓快要「壞掉」的孩子，留在家裡？</h4>
-        <p>挪威用「多系統治療」（MST），讓治療師到家裡陪家長，24 小時接電話，一起撐過孩子最難的三到五個月。</p>
-        <span class="go">繼續讀 →</span>
-      </a>
-      <a class="next-read" href="futoko-free-school-japan.html">
-        <span class="lbl">延伸閱讀・日本篇（不登校）</span>
-        <h4>日本 35 萬孩子不去上學：自由學校接得住神經多樣性的孩子嗎？</h4>
-        <p>日本法律承認孩子可以先休息，很多不登校的孩子去了自由學校。那裡人少、節奏慢，但懂神經多樣性孩子的人不多，費用也多半由家長負擔。</p>
-        <span class="go">繼續讀 →</span>
-      </a>
+      <nav class="next-list" aria-label="延伸閱讀">
+        <span class="lbl">延伸閱讀</span>
+        <a href="geef-me-de-5-netherlands-model.html"><span class="c">荷蘭篇</span><span class="t">孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</span><span class="go">→</span></a>
+        <a href="nubu-norway-model.html"><span class="c">挪威篇</span><span class="t">挪威怎麼讓快要「壞掉」的孩子，留在家裡？</span><span class="go">→</span></a>
+        <a href="futoko-free-school-japan.html"><span class="c">日本篇（不登校）</span><span class="t">日本 35 萬孩子不去上學：自由學校接得住神經多樣性的孩子嗎？</span><span class="go">→</span></a>
+      </nav>
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
       <div class="verify">

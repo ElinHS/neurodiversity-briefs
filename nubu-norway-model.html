@@ -370,6 +370,17 @@
   .flow .step:nth-child(3) .dot{ background:#6E7058; }
   .flow .step:nth-child(4) .dot{ background:var(--ink-soft); }
   .flow .step:nth-child(5) .dot{ background:#6E4329; }
+
+  /* ===== 延伸閱讀 v2：只留標題的精簡清單 ===== */
+  .next-list{ margin:40px 0 0; border-top:1.5px solid var(--ink); }
+  .next-list .lbl{ display:block; padding:14px 0 6px; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--coral-deep); }
+  .next-list a{ display:grid; grid-template-columns:auto 1fr auto; gap:6px 14px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); }
+  .next-list a .c{ min-width:9em; font-size:12px; font-weight:700; color:var(--grey); white-space:nowrap; }
+  .next-list a .t{ font-size:15px; font-weight:700; line-height:1.6; }
+  .next-list a .go{ font-size:14px; color:var(--coral-deep); }
+  .next-list a:hover .t{ text-decoration:underline; text-underline-offset:3px; }
+  .next-list a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+  @media(max-width:560px){ .next-list a{ grid-template-columns:1fr auto; } .next-list a .c{ grid-column:1 / -1; min-width:0; } }
 </style>
 </head>
 <body>
@@ -680,24 +691,12 @@
         <p>如果你正陪著一個讓你心力交瘁的青少年，這篇文章或許沒辦法馬上改變台灣的制度。但請記得：你現在感受到的無力，本來就該由整個社會一起分擔，不是你一個人的責任。</p>
       </div>
 
-      <a class="next-read" href="geef-me-de-5-netherlands-model.html">
-        <span class="lbl">延伸閱讀・荷蘭篇</span>
-        <h4>孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</h4>
-        <p>荷蘭的 Geef me de 5 請大人先把「什麼、怎麼做、在哪裡、什麼時候、誰」說清楚，也讓家裡和學校用同一套說法。</p>
-        <span class="go">繼續讀 →</span>
-      </a>
-      <a class="next-read" href="tokubetsu-shien-japan-model.html">
-        <span class="lbl">延伸閱讀・日本篇</span>
-        <h4>日本孩子少了一成，特教生卻多了一倍：「特別支援」是照顧，還是分開？</h4>
-        <p>日本把特殊教育改名為「特別支援教育」，小班人數十年倍增，聯合國卻要求停止分流。普通班的老師看見了孩子，為什麼接不住？</p>
-        <span class="go">繼續讀 →</span>
-      </a>
-      <a class="next-read" href="futoko-free-school-japan.html">
-        <span class="lbl">延伸閱讀・日本篇（不登校）</span>
-        <h4>日本 35 萬孩子不去上學：自由學校接得住神經多樣性的孩子嗎？</h4>
-        <p>日本法律承認孩子可以先休息，很多不登校的孩子去了自由學校。那裡人少、節奏慢，但懂神經多樣性孩子的人不多，費用也多半由家長負擔。</p>
-        <span class="go">繼續讀 →</span>
-      </a>
+      <nav class="next-list" aria-label="延伸閱讀">
+        <span class="lbl">延伸閱讀</span>
+        <a href="geef-me-de-5-netherlands-model.html"><span class="c">荷蘭篇</span><span class="t">孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</span><span class="go">→</span></a>
+        <a href="tokubetsu-shien-japan-model.html"><span class="c">日本篇</span><span class="t">日本孩子少了一成，特教生卻多了一倍：「特別支援」是照顧，還是分開？</span><span class="go">→</span></a>
+        <a href="futoko-free-school-japan.html"><span class="c">日本篇（不登校）</span><span class="t">日本 35 萬孩子不去上學：自由學校接得住神經多樣性的孩子嗎？</span><span class="go">→</span></a>
+      </nav>
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
       <div class="verify">

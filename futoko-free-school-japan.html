@@ -370,6 +370,17 @@
   .flow .step:nth-child(3) .dot{ background:#6E7058; }
   .flow .step:nth-child(4) .dot{ background:var(--ink-soft); }
   .flow .step:nth-child(5) .dot{ background:#6E4329; }
+
+  /* ===== 延伸閱讀 v2：只留標題的精簡清單 ===== */
+  .next-list{ margin:40px 0 0; border-top:1.5px solid var(--ink); }
+  .next-list .lbl{ display:block; padding:14px 0 6px; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--coral-deep); }
+  .next-list a{ display:grid; grid-template-columns:auto 1fr auto; gap:6px 14px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); }
+  .next-list a .c{ min-width:9em; font-size:12px; font-weight:700; color:var(--grey); white-space:nowrap; }
+  .next-list a .t{ font-size:15px; font-weight:700; line-height:1.6; }
+  .next-list a .go{ font-size:14px; color:var(--coral-deep); }
+  .next-list a:hover .t{ text-decoration:underline; text-underline-offset:3px; }
+  .next-list a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+  @media(max-width:560px){ .next-list a{ grid-template-columns:1fr auto; } .next-list a .c{ grid-column:1 / -1; min-width:0; } }
 </style>
 </head>
 <body>
@@ -602,24 +613,12 @@
         <p>選擇學校以外的地方時，可以把問題問得具體一點：孩子情緒激動時，誰會處理？這裡有沒有人懂特教？孩子想回學校或升學時，路接得上嗎？這些問題不一定都有好答案，但能幫你找到真正接得住孩子的地方。</p>
       </div>
 
-      <a class="next-read" href="tokubetsu-shien-japan-model.html">
-        <span class="lbl">延伸閱讀・日本篇</span>
-        <h4>日本孩子少了一成，特教生卻多了一倍：「特別支援」是照顧，還是分開？</h4>
-        <p>日本把特殊教育改名為「特別支援教育」，小班人數十年倍增，聯合國卻要求停止分流。普通班的老師看見了孩子，為什麼接不住？</p>
-        <span class="go">繼續讀 →</span>
-      </a>
-      <a class="next-read" href="geef-me-de-5-netherlands-model.html">
-        <span class="lbl">延伸閱讀・荷蘭篇</span>
-        <h4>孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</h4>
-        <p>荷蘭的 Geef me de 5 請大人先把「什麼、怎麼做、在哪裡、什麼時候、誰」說清楚，也讓家裡和學校用同一套說法。</p>
-        <span class="go">繼續讀 →</span>
-      </a>
-      <a class="next-read" href="nubu-norway-model.html">
-        <span class="lbl">延伸閱讀・挪威篇</span>
-        <h4>挪威怎麼讓快要「壞掉」的孩子，留在家裡？</h4>
-        <p>挪威用「多系統治療」（MST），讓治療師到家裡陪家長，24 小時接電話，一起撐過孩子最難的三到五個月。</p>
-        <span class="go">繼續讀 →</span>
-      </a>
+      <nav class="next-list" aria-label="延伸閱讀">
+        <span class="lbl">延伸閱讀</span>
+        <a href="tokubetsu-shien-japan-model.html"><span class="c">日本篇</span><span class="t">日本孩子少了一成，特教生卻多了一倍：「特別支援」是照顧，還是分開？</span><span class="go">→</span></a>
+        <a href="geef-me-de-5-netherlands-model.html"><span class="c">荷蘭篇</span><span class="t">孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</span><span class="go">→</span></a>
+        <a href="nubu-norway-model.html"><span class="c">挪威篇</span><span class="t">挪威怎麼讓快要「壞掉」的孩子，留在家裡？</span><span class="go">→</span></a>
+      </nav>
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
       <div class="verify">
