@@ -375,12 +375,16 @@
   .next-list{ margin:40px 0 0; border-top:1.5px solid var(--ink); }
   .next-list .lbl{ display:block; padding:14px 0 6px; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--coral-deep); }
   .next-list a{ display:grid; grid-template-columns:auto 1fr auto; gap:6px 14px; align-items:baseline; padding:12px 0; border-bottom:1px solid var(--line); text-decoration:none; color:var(--ink); }
-  .next-list a .c{ min-width:9em; font-size:12px; font-weight:700; color:var(--grey); white-space:nowrap; }
+  .next-list a .c{ min-width:11.5em; font-size:12px; font-weight:700; color:var(--grey); white-space:nowrap; }
   .next-list a .t{ font-size:15px; font-weight:700; line-height:1.6; }
   .next-list a .go{ font-size:14px; color:var(--coral-deep); }
   .next-list a:hover .t{ text-decoration:underline; text-underline-offset:3px; }
   .next-list a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
   @media(max-width:560px){ .next-list a{ grid-template-columns:1fr auto; } .next-list a .c{ grid-column:1 / -1; min-width:0; } }
+
+  .next-list a .c{ display:inline-flex; align-items:center; gap:8px; }
+  .next-list .flag{ display:inline-block; width:22px; height:15px; flex:none; border-radius:2px; overflow:hidden; box-shadow:0 0 0 1px rgba(28,25,23,.14); }
+  .next-list .flag svg{ display:block; width:100%; height:100%; }
 </style>
 </head>
 <body>
@@ -615,9 +619,9 @@
 
       <nav class="next-list" aria-label="延伸閱讀">
         <span class="lbl">延伸閱讀</span>
-        <a href="tokubetsu-shien-japan-model.html"><span class="c">日本篇</span><span class="t">日本孩子少了一成，特教生卻多了一倍：「特別支援」是照顧，還是分開？</span><span class="go">→</span></a>
-        <a href="geef-me-de-5-netherlands-model.html"><span class="c">荷蘭篇</span><span class="t">孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</span><span class="go">→</span></a>
-        <a href="nubu-norway-model.html"><span class="c">挪威篇</span><span class="t">挪威怎麼讓快要「壞掉」的孩子，留在家裡？</span><span class="go">→</span></a>
+        <a href="tokubetsu-shien-japan-model.html"><span class="c"><span class="flag"><svg viewBox="0 0 96 64" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="96" height="64" fill="#FAF8F3"/><circle cx="48" cy="32" r="19.2" fill="#BC2D3A"/></svg></span>日本篇</span><span class="t">日本孩子少了一成，特教生卻多了一倍：「特別支援」是照顧，還是分開？</span><span class="go">→</span></a>
+        <a href="geef-me-de-5-netherlands-model.html"><span class="c"><span class="flag"><svg viewBox="0 0 96 64" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="96" height="21.4" fill="#B8423A"/><rect y="21.3" width="96" height="21.4" fill="#FAF8F3"/><rect y="42.6" width="96" height="21.4" fill="#2E4C80"/></svg></span>荷蘭篇</span><span class="t">孩子一崩潰就講不聽？荷蘭老師先問自己五個問題</span><span class="go">→</span></a>
+        <a href="nubu-norway-model.html"><span class="c"><span class="flag"><svg viewBox="0 0 88 64" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="88" height="64" fill="#B83A3A"/><rect x="24" width="16" height="64" fill="#FAF8F3"/><rect y="24" width="88" height="16" fill="#FAF8F3"/><rect x="28" width="8" height="64" fill="#2B4470"/><rect y="28" width="88" height="8" fill="#2B4470"/></svg></span>挪威篇</span><span class="t">挪威怎麼讓快要「壞掉」的孩子，留在家裡？</span><span class="go">→</span></a>
       </nav>
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
