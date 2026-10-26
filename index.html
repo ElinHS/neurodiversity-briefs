@@ -173,12 +173,14 @@
   .polaroid img{ display:block; width:100%; height:auto; }
   .polaroid::before{ content:""; position:absolute; top:-12px; left:50%; width:88px; height:24px; margin-left:-44px; background:rgba(220,167,130,.7); transform:rotate(3deg); }
   @media(max-width:560px){ .polaroid{ width:200px; } }
-  .polaroid-pair{ display:flex; flex-wrap:wrap; gap:24px; margin:16px 0 32px 8px; }
-  .polaroid-pair .polaroid{ margin:0; }
-  .polaroid-pair .polaroid:nth-child(2){ transform:rotate(2deg); margin-top:12px; }
-  .polaroid-pair .polaroid:nth-child(2)::before{ transform:rotate(-4deg); }
-  .polaroid figcaption{ position:absolute; left:0; right:0; bottom:10px; text-align:center; font-size:14px; letter-spacing:.1em; color:#57534E; }
-  @media(max-width:560px){ .polaroid-pair{ gap:12px; margin-left:0; flex-wrap:nowrap; } .polaroid-pair .polaroid{ width:calc(50% - 6px); padding:8px 8px 32px; } .polaroid-pair .polaroid::before{ width:64px; margin-left:-32px; height:20px; top:-10px; } .polaroid figcaption{ font-size:12px; bottom:8px; } }
+  .polaroid-pair{ display:flex; align-items:flex-start; margin:20px 0 32px 8px; }
+  .polaroid-pair .polaroid{ width:180px; margin:0; padding:9px 9px 30px; }
+  .polaroid-pair .polaroid:nth-child(1){ z-index:2; }
+  .polaroid-pair .polaroid:nth-child(2){ z-index:1; margin-left:-36px; margin-top:22px; transform:rotate(4deg); }
+  .polaroid-pair .polaroid::before{ width:64px; height:20px; margin-left:-32px; top:-10px; }
+  .polaroid-pair .polaroid:nth-child(2)::before{ transform:rotate(-5deg); }
+  .polaroid figcaption{ position:absolute; left:0; right:0; bottom:7px; text-align:center; font-size:13px; letter-spacing:.1em; color:#57534E; }
+  @media(max-width:560px){ .polaroid-pair{ margin-left:4px; } .polaroid-pair .polaroid{ width:150px; padding:7px 7px 26px; } .polaroid-pair .polaroid:nth-child(2){ margin-left:-30px; margin-top:18px; } .polaroid-pair .polaroid::before{ width:52px; margin-left:-26px; height:16px; top:-8px; } .polaroid figcaption{ font-size:12px; bottom:6px; } }
   .series-pill{ display:block; height:28px; width:auto; margin:0 0 12px; }
   /* 編輯介紹／關於系列：左側長線條 */
   .about.sec-editor, .about.sec-series{ position:relative; border-top:0; padding:0 0 0 32px; }
