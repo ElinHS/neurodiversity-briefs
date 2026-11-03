@@ -310,10 +310,42 @@
   .about.sec-editor::before{ background:var(--coral); }
   .about.sec-series::before{ background:var(--denim-deep); }
   .about.sec-series p{ font-size:12px; line-height:1.9; }
+
+  /* ===== 頂部導覽列：標語＋電子報／贊助 ===== */
+  .masthead{ padding:14px 0; background:var(--bg); border-bottom:1px solid var(--line); }
+  .masthead .row{ max-width:1080px; display:flex; flex-direction:row; align-items:center; justify-content:flex-start; gap:28px; }
+  .masthead .brand{ display:flex; flex-direction:column; gap:2px; flex:none; }
+  .masthead .logo-img{ height:44px; }
+  .masthead .tagline{ font-size:15px; color:var(--ink-soft); letter-spacing:.08em; white-space:nowrap; }
+  .masthead .tagline i{ font-style:normal; color:var(--grey); margin:0 .6em; }
+  .masthead .actions{ margin-left:auto; display:flex; gap:12px; flex:none; }
+  .nav-btn{ display:inline-flex; align-items:center; justify-content:center; height:40px; padding:0 22px; border-radius:999px; border:1.5px solid var(--accent-text); font-size:15px; font-weight:700; letter-spacing:.06em; text-decoration:none; white-space:nowrap; transition:background .15s ease, color .15s ease; }
+  .nav-btn.outline{ color:var(--accent-text); background:transparent; }
+  .nav-btn.outline:hover{ background:var(--accent-text); color:#fff; }
+  .nav-btn.solid{ color:#fff; background:var(--accent-text); }
+  .nav-btn.solid:hover{ background:#6E4329; border-color:#6E4329; }
+  .nav-btn:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+  @media(max-width:860px){ .masthead .tagline{ display:none; } }
+  @media(max-width:560px){
+    .masthead{ padding:10px 0; }
+    .masthead .row{ flex-direction:row; align-items:center; gap:12px; }
+    .masthead .logo-img{ height:32px; }
+    .masthead .series-no{ display:none; }
+    .masthead .actions{ gap:8px; }
+    .nav-btn{ height:34px; padding:0 14px; font-size:14px; }
+  }
 </style>
 
 </head>
 <body>
+
+<header class="masthead">
+  <div class="row">
+    <div class="brand"><a class="logo" href="./"><img class="logo-img" src="assets/logo.png" width="706" height="128" alt="世界教養連線"></a></div>
+    <div class="tagline">教養<i>×</i>神經多樣性<i>×</i>跨國筆記</div>
+    <nav class="actions" aria-label="訂閱與贊助"><a class="nav-btn outline" href="https://elinhsieh.substack.com/subscribe" target="_blank" rel="noopener">電子報</a><a class="nav-btn solid" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">贊助</a></nav>
+  </div>
+</header>
 
 <header class="banner">
   <a href="./"><picture>
