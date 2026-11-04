@@ -332,30 +332,114 @@
     .masthead .actions{ gap:8px; }
     .nav-btn{ height:34px; padding:0 14px; font-size:14px; }
   }
+
+.hero-q{ font-family:"Noto Serif TC",serif; font-weight:900; font-size:clamp(26px,5.6vw,40px); line-height:1.6; letter-spacing:.04em; color:var(--ink); margin:0 0 28px; padding-bottom:20px; border-bottom:1px solid var(--line); }
+.hero-q::before{ content:""; display:block; width:48px; height:4px; margin-bottom:20px; background:var(--coral); border-radius:2px; }
+.hero-q span{ background:linear-gradient(transparent 58%, rgba(220,167,130,.45) 58%, rgba(220,167,130,.45) 92%, transparent 92%); box-decoration-break:clone; -webkit-box-decoration-break:clone; padding:0 .08em; }
+/* ===== 刊頭 v6：雜誌報頭式 ===== */
+.mh{ background:var(--bg); }
+.mh-in{ max-width:1080px; margin:0 auto; padding:20px 24px 0; }
+.mh-top{ font-size:14px; letter-spacing:.14em; color:var(--ink-soft); padding-bottom:12px; border-bottom:2.5px solid #1C1917; }
+.mh-main{ display:flex; align-items:stretch; margin-top:4px; border-top:1px solid #1C1917; padding:22px 0 20px; }
+.mh-logo{ display:flex; align-items:center; flex:none; padding-right:40px; }
+.mh-logo img{ display:block; height:96px; width:auto; }
+.mh-issue{ border-left:1px solid #1C1917; padding:6px 0 6px 32px; display:flex; flex-direction:column; gap:8px; }
+.mh-ttl{ font-family:"Noto Serif TC",serif; font-size:15px; letter-spacing:.2em; color:var(--grey); }
+.mh-theme{ font-family:"Noto Serif TC",serif; font-size:21px; font-weight:700; color:var(--ink); text-decoration:none; letter-spacing:.06em; }
+.mh-theme span{ color:var(--accent-text); }
+.mh-theme:hover{ color:var(--accent-text); }
+.mh-no{ margin-left:auto; display:flex; align-items:flex-end; gap:6px; font-family:"Noto Serif TC",serif; color:#1C1917; line-height:.78; }
+.mh-no span{ font-size:30px; font-weight:700; padding-bottom:4px; }
+.mh-no b{ font-size:128px; font-weight:900; letter-spacing:-.02em; }
+.mh-nav{ display:flex; align-items:center; gap:16px; border-top:1px solid #1C1917; border-bottom:1px solid #1C1917; padding:12px 0; }
+.mh-links{ display:flex; align-items:center; gap:12px; font-family:"Noto Serif TC",serif; font-size:17px; white-space:nowrap; }
+.mh-links a{ color:var(--ink); text-decoration:none; padding:4px 2px; border-bottom:2px solid transparent; }
+.mh-links a:hover{ color:var(--accent-text); }
+.mh-links a[aria-current]{ color:var(--accent-text); font-weight:700; border-bottom-color:var(--coral); }
+.mh-links i{ font-style:normal; color:var(--grey); }
+.mh-act{ margin-left:auto; display:flex; align-items:center; gap:18px; flex:none; }
+.mh-sub,.mh-don{ white-space:nowrap; }
+.mh-act-m{ display:none; }
+.mh-sub{ background:var(--accent-text); color:#fff; font-weight:700; font-size:15px; letter-spacing:.06em; padding:8px 18px; border-radius:999px; text-decoration:none; }
+.mh-sub:hover{ background:#6E4329; }
+.mh-don{ color:var(--ink-soft); font-size:15px; text-decoration:none; letter-spacing:.06em; }
+.mh-don:hover{ color:var(--accent-text); }
+.mh a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+/* 捲動後的精簡列 */
+.mh-mini{ position:fixed; top:0; left:0; right:0; z-index:50; background:var(--bg); border-bottom:1px solid #1C1917; box-shadow:0 2px 12px rgba(46,36,28,.06); transform:translateY(-100%); transition:transform .25s ease; }
+.mh-mini.on{ transform:none; }
+.mh-mini-in{ max-width:1080px; margin:0 auto; padding:10px 24px; display:flex; align-items:center; gap:16px; }
+.mh-mini-logo img{ display:block; height:34px; width:auto; }
+.mh-mini-no{ font-family:"Noto Serif TC",serif; font-size:14px; font-weight:700; letter-spacing:.08em; color:var(--accent-text); padding-left:16px; border-left:1px solid #1C1917; white-space:nowrap; }
+.mh-mini-act{ margin-left:auto; display:flex; align-items:center; gap:16px; }
+@media (prefers-reduced-motion:reduce){ .mh-mini{ transition:none; } }
+/* 分類標籤：底色與文字互換 */
+.kicker{ background:#8A5636; color:#F7EADF; }
+@media(max-width:860px){
+  .mh-logo img{ height:68px; } .mh-no b{ font-size:92px; } .mh-logo{ padding-right:24px; } .mh-issue{ padding-left:20px; }
+}
+@media(max-width:560px){
+  .mh-in{ padding:12px 16px 0; }
+  .mh-top{ display:flex; align-items:center; justify-content:flex-end; padding-bottom:10px; }
+  .mh-tag{ display:none; }
+  .mh-act-m{ display:flex; margin-left:0; }
+  .mh-nav .mh-act{ display:none; }
+  .mh-main{ margin-top:3px; padding:14px 0 12px; }
+  .mh-main{ flex-wrap:wrap; align-items:flex-end; }
+  .mh-logo{ flex-basis:100%; padding:0 0 12px; margin-bottom:12px; border-bottom:1px solid var(--line); }
+  .mh-logo img{ height:48px; }
+  .mh-issue{ border-left:3px solid var(--coral); padding:2px 0 2px 12px; gap:4px; }
+  .mh-ttl{ font-size:12px; letter-spacing:.12em; } .mh-theme{ font-size:14px; letter-spacing:.02em; }
+  .mh-no span{ font-size:14px; padding-bottom:2px; } .mh-no b{ font-size:52px; }
+  .mh-nav{ padding:8px 0; gap:10px; }
+  .mh-links{ overflow-x:auto; flex:1; min-width:0; font-size:15px; gap:8px; scrollbar-width:none; -webkit-mask-image:linear-gradient(90deg,#000 85%,transparent); mask-image:linear-gradient(90deg,#000 85%,transparent); }
+  .mh-links::-webkit-scrollbar{ display:none; }
+  .mh-act{ gap:12px; } .mh-don{ font-size:13px; }
+  .mh-sub{ font-size:13px; padding:6px 12px; }
+  .mh-mini-in{ padding:8px 16px; gap:10px; } .mh-mini-logo img{ height:26px; }
+  .mh-mini-no{ font-size:12px; padding-left:10px; letter-spacing:.02em; } .mh-mini-act{ gap:10px; } .mh-mini-c{ display:none; }
+}
 </style>
 
 </head>
 <body>
 
-<header class="masthead">
-  <div class="row">
-    <div class="brand"><a class="logo" href="./"><img class="logo-img" src="assets/logo.png" width="706" height="128" alt="世界教養連線"></a></div>
-    <div class="tagline">教養<i>×</i>神經多樣性<i>×</i>跨國筆記</div>
-    <nav class="actions" aria-label="訂閱與贊助"><a class="nav-btn outline" href="https://neurodiversitytaiwan.substack.com/subscribe" target="_blank" rel="noopener">電子報</a><a class="nav-btn solid" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">贊助</a></nav>
+<header class="mh">
+  <div class="mh-in">
+    <div class="mh-top"><span class="mh-tag">教養 × 神經多樣性 × 跨國筆記</span><div class="mh-act mh-act-m"><a class="mh-sub" href="https://neurodiversitytaiwan.substack.com/subscribe" target="_blank" rel="noopener">訂閱電子報</a><a class="mh-don" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">贊助 ›</a></div></div>
+    <div class="mh-main">
+      <a class="mh-logo" href="./"><img class="logo-img" src="assets/logo.png" width="706" height="128" alt="世界教養連線"></a>
+      <div class="mh-issue">
+        <div class="mh-ttl">最新一期｜新加坡篇</div>
+        <a class="mh-theme" href="sen-team-singapore-model.html">主流教室裡的分工 <span>»</span></a>
+      </div>
+      <div class="mh-no"><span>No.</span><b>06</b></div>
+    </div>
+    <nav class="mh-nav" aria-label="系列各篇">
+      <div class="mh-links"><a href="geef-me-de-5-netherlands-model.html">荷蘭</a><i>·</i><a href="nubu-norway-model.html">挪威</a><i>·</i><a href="tokubetsu-shien-japan-model.html">日本</a><i>·</i><a href="futoko-free-school-japan.html">不登校現況</a><i>·</i><a href="oku-malaysia-model.html">馬來西亞</a><i>·</i><a href="sen-team-singapore-model.html">新加坡</a></div>
+      <div class="mh-act"><a class="mh-sub" href="https://neurodiversitytaiwan.substack.com/subscribe" target="_blank" rel="noopener">訂閱電子報</a><a class="mh-don" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">贊助 ›</a></div>
+    </nav>
   </div>
 </header>
+<div class="mh-mini" aria-hidden="true">
+  <div class="mh-mini-in">
+    <a class="mh-mini-logo" href="./" tabindex="-1"><img class="logo-img" src="assets/logo.png" width="706" height="128" alt="世界教養連線"></a>
+    <span class="mh-mini-no">最新一期 No.06</span>
+    <div class="mh-mini-act"><a class="mh-sub" href="https://neurodiversitytaiwan.substack.com/subscribe" target="_blank" rel="noopener" tabindex="-1">訂閱電子報</a><a class="mh-don" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener" tabindex="-1">贊助 ›</a></div>
+  </div>
+</div>
+<script>
+(function(){var h=document.querySelector('.mh'),m=document.querySelector('.mh-mini');if(!h||!m||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.toggle('on',on);m.setAttribute('aria-hidden',on?'false':'true');m.querySelectorAll('a').forEach(function(a){a.tabIndex=on?0:-1});}).observe(h);})();
+</script>
 
-<header class="banner">
-  <a href="./"><picture>
-    <source media="(max-width:640px)" srcset="assets/banner-mobile.png" width="1500" height="880">
-    <img src="assets/banner-desktop.png" width="3000" height="768" alt="世界教養連線 World Parenting Alliance｜神經多樣性的孩子，在別的國家怎麼長大？">
-  </picture></a>
-</header>
+
 
 <div class="wrap">
 
   <section class="hero">
     <h1 class="sr-only">世界教養連線｜神經多樣性的跨國教養筆記：別國爸媽怎麼做？</h1>
+    <p class="hero-q" aria-hidden="true"><span>神經多樣性的孩子，</span><br><span>在別的國家怎麼長大？</span></p>
     <p class="deck">孩子又崩潰了。<br>學校說「需要更多支持」，<br class="m-br">但到底要怎麼支持？<br>資源查了一堆，<br class="m-br">卻還是不知道哪個真的有用。<br>其實，這些難題，<br class="m-br">世界各地的家長都遇過。<br>所以我們換個角度——<br>一次走進一個國家，<br class="m-br">從學校、家庭到社會支持，<br>把「他們怎麼做」說清楚。<br>看看他們如何面對<br class="m-br">神經多樣性孩子的<br class="m-br">情緒、學習、校園支持與家庭陪伴；<br>哪些做法已經有研究支持，<br class="m-br">哪些仍在摸索。</p>
     <p class="deck deck-end">不神化國外，也不急著否定自己。<br>一起多看看幾個國家的做法，<br>讓我們在陪孩子的路上，<br>多一點選擇，少一點孤單。</p>
   </section>
