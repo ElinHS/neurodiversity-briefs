@@ -491,6 +491,13 @@
   .mh-mini-in{ padding:8px 16px; gap:10px; } .mh-mini-logo img{ height:26px; }
   .mh-mini-no{ font-size:12px; padding-left:10px; letter-spacing:.02em; } .mh-mini-act{ gap:10px; } .mh-mini-c{ display:none; }
 }
+
+/* ===== 文末作者簡介 ===== */
+.author-bio{ margin:56px 0 0; padding:24px 0; border-top:2.5px solid #1C1917; border-bottom:1px solid #1C1917; }
+.author-bio h3{ font-family:"Noto Serif TC",serif; font-size:18px; font-weight:900; letter-spacing:.06em; color:var(--ink); margin:0 0 10px; }
+.author-bio p{ font-size:15px; line-height:1.9; color:var(--ink-soft); margin:0 0 18px; }
+.bio-act{ display:flex; align-items:center; gap:18px; }
+@media(max-width:560px){ .author-bio p{ font-size:14px; } .author-bio p br{ display:none; } }
 </style>
 
 </head>
@@ -934,7 +941,13 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
       <p>補拼圖這件事，也不該只靠家長。荷蘭讓學校、政府、科技業者和倡議團體一起承擔，台灣也可以朝這個方向走。</p>
     </div>
 
-    <nav class="rc-list" aria-label="延伸閱讀">
+    <aside class="author-bio" aria-label="關於作者">
+        <h3>連線特派員｜10</h3>
+        <p>廣告人二十年，職業病是「把複雜的事說清楚」。<br>有了神經多樣性的孩子後，一次走進一個國家，把各國怎麼陪孩子長大，翻成一看就懂的白話。</p>
+        <div class="bio-act"><a class="mh-sub" href="https://neurodiversitytaiwan.substack.com/subscribe" target="_blank" rel="noopener">訂閱電子報</a><a class="mh-don" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">贊助 ›</a></div>
+      </aside>
+
+      <nav class="rc-list" aria-label="延伸閱讀">
       <span class="lbl">延伸閱讀</span>
       <a href="nubu-norway-model.html" style="background:#F4E4D5"><span class="tile"><svg viewBox="0 0 200 200" aria-hidden="true"><defs><clipPath id="t-rcno"><rect width="200" height="200"/></clipPath></defs>
 <g clip-path="url(#t-rcno)"><rect width="200" height="200" fill="#EAC8AB"/><polygon points="70,52 158,52 418,312 418,376 330,376 70,116" fill="#000" fill-opacity=".13"/><polygon points="64,42 70,42 330,302 330,430 324,430 64,170" fill="#000" fill-opacity=".13"/><polygon points="50,168 84,168 344,428 344,440 310,440 50,180" fill="#000" fill-opacity=".13"/></g>

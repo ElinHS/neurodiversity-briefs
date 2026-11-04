@@ -497,6 +497,13 @@
   .mh-mini-in{ padding:8px 16px; gap:10px; } .mh-mini-logo img{ height:26px; }
   .mh-mini-no{ font-size:12px; padding-left:10px; letter-spacing:.02em; } .mh-mini-act{ gap:10px; } .mh-mini-c{ display:none; }
 }
+
+/* ===== 文末作者簡介 ===== */
+.author-bio{ margin:56px 0 0; padding:24px 0; border-top:2.5px solid #1C1917; border-bottom:1px solid #1C1917; }
+.author-bio h3{ font-family:"Noto Serif TC",serif; font-size:18px; font-weight:900; letter-spacing:.06em; color:var(--ink); margin:0 0 10px; }
+.author-bio p{ font-size:15px; line-height:1.9; color:var(--ink-soft); margin:0 0 18px; }
+.bio-act{ display:flex; align-items:center; gap:18px; }
+@media(max-width:560px){ .author-bio p{ font-size:14px; } .author-bio p br{ display:none; } }
 </style>
 </head>
 <body>
@@ -830,6 +837,12 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
         <p>挪威的故事最打動人的地方，是一整個國家相信：一個看起來快要「壞掉」的孩子，背後往往是好幾個地方同時出了問題。家庭撐不住、學校顧不到、社區也沒有及時拉他一把。所以挪威選擇把資源送進家裡，讓家長重新有力氣照顧孩子。</p>
         <p>如果你正陪著一個讓你心力交瘁的青少年，這篇文章或許沒辦法馬上改變台灣的制度。但請記得：你現在感受到的無力，本來就該由整個社會一起分擔，不是你一個人的責任。</p>
       </div>
+
+      <aside class="author-bio" aria-label="關於作者">
+        <h3>連線特派員｜10</h3>
+        <p>廣告人二十年，職業病是「把複雜的事說清楚」。<br>有了神經多樣性的孩子後，一次走進一個國家，把各國怎麼陪孩子長大，翻成一看就懂的白話。</p>
+        <div class="bio-act"><a class="mh-sub" href="https://neurodiversitytaiwan.substack.com/subscribe" target="_blank" rel="noopener">訂閱電子報</a><a class="mh-don" href="https://buymeacoffee.com/elinhsieh" target="_blank" rel="noopener">贊助 ›</a></div>
+      </aside>
 
       <nav class="rc-list" aria-label="延伸閱讀">
         <span class="lbl">延伸閱讀</span>
