@@ -424,6 +424,15 @@
     .masthead .actions{ gap:8px; }
     .nav-btn{ height:34px; padding:0 14px; font-size:14px; }
   }
+
+  /* 資料查證說明：預設收合 */
+  .verify details > summary{ cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); list-style:none; }
+  .verify details > summary::-webkit-details-marker{ display:none; }
+  .verify details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--accent-text); }
+  .verify details[open] > summary::after{ content:"　收合 －"; }
+  .verify details[open] > summary{ margin-bottom:12px; }
+  .verify summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+
 </style>
 </head>
 <body>
@@ -766,7 +775,7 @@
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
       <div class="verify">
-        <span class="lbl">資料查證說明</span>
+        <details><summary>資料查證說明</summary>
         <p>整理過程中，有幾處資料仍在查證，或只能找到二手來源。這裡如實標出：</p>
         <ul>
           <li><b>情境：</b>文中以「假設」開頭的情境，其中的孩子與生活細節是虛構的；情境之後的制度與數字都有出處。</li>
@@ -777,6 +786,7 @@
           <li><b>普通班教師特教研習：</b>有學校計畫引教育部函示「普通班教師每年至少 3 小時」，也有立委指出並未規定所有老師都要上，教育部原函仍在查證，因此文中未寫入時數。</li>
           <li><b>台灣拒學統計：</b>目前只找到中輟與學籍喪失統計，尚未找到全國拒學或長期缺課統計。</li>
         </ul>
+        </details>
       </div>
 
       <div class="sources">

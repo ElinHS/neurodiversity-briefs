@@ -424,6 +424,15 @@
     .masthead .actions{ gap:8px; }
     .nav-btn{ height:34px; padding:0 14px; font-size:14px; }
   }
+
+  /* 資料查證說明：預設收合 */
+  .verify details > summary{ cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); list-style:none; }
+  .verify details > summary::-webkit-details-marker{ display:none; }
+  .verify details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--accent-text); }
+  .verify details[open] > summary::after{ content:"　收合 －"; }
+  .verify details[open] > summary{ margin-bottom:12px; }
+  .verify summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+
 </style>
 </head>
 <body>
@@ -767,7 +776,7 @@
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
       <div class="verify">
-        <span class="lbl">資料查證說明</span>
+        <details><summary>資料查證說明</summary>
         <p>整理過程中，有幾個常被引用的數字，在不同資料來源之間不一致。這裡如實標出，不強行統一：</p>
         <ul>
           <li><b>團隊數：</b>學術文獻記載目前有 21 個團隊（1999–2003 年建立了 25 個）；部分機構的介紹資料則寫 24 個，可能是統計時間不同。</li>
@@ -776,6 +785,7 @@
           <li>「24 小時待命」的細節，大多引自 MST 的國際和美國文獻，只有部分明確來自挪威本地研究，反映的是 MST 在各國的一般做法。</li>
           <li>兩個示範情境都是依公開的治療方式寫成的虛構案例，不是真實個案，文中已分別標出可以查證和不能查證的地方。</li>
         </ul>
+        </details>
       </div>
 
       <div class="sources">

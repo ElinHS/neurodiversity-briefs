@@ -418,6 +418,15 @@
     .masthead .actions{ gap:8px; }
     .nav-btn{ height:34px; padding:0 14px; font-size:14px; }
   }
+
+  /* 資料查證說明：預設收合 */
+  .verify details > summary{ cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); list-style:none; }
+  .verify details > summary::-webkit-details-marker{ display:none; }
+  .verify details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--accent-text); }
+  .verify details[open] > summary::after{ content:"　收合 －"; }
+  .verify details[open] > summary{ margin-bottom:12px; }
+  .verify summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+
 </style>
 
 </head>
@@ -870,7 +879,7 @@
     <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
     <div class="verify">
-      <span class="lbl">資料查證說明</span>
+      <details><summary>資料查證說明</summary>
       <p>本文以「荷蘭模式」研究筆記的 43 筆資料為主，並用公開資料交叉查證。以下幾項目前只見於筆記彙整，還沒找到一手出處，引用時請保留彈性：</p>
       <ul>
         <li><b>58 個國家：</b>神經多樣性驕傲日的參與國家數，來自主辦單位的相關資料。</li>
@@ -879,7 +888,8 @@
         <li><b>ABA 動議</b>的表決結果，已用荷蘭眾議院官方頁面核實。</li>
         <li>兩個示範情境中的「小宇」「小芸」是虛構人物，依方法原則寫成，不是真實個案。</li>
       </ul>
-    </div>
+        </details>
+      </div>
 
     <div class="sources">
         <details><summary>參考來源（6 筆）</summary>

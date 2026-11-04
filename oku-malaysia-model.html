@@ -436,6 +436,15 @@
     .masthead .actions{ gap:8px; }
     .nav-btn{ height:34px; padding:0 14px; font-size:14px; }
   }
+
+  /* 資料查證說明：預設收合 */
+  .verify details > summary{ cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); list-style:none; }
+  .verify details > summary::-webkit-details-marker{ display:none; }
+  .verify details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--accent-text); }
+  .verify details[open] > summary::after{ content:"　收合 －"; }
+  .verify details[open] > summary{ margin-bottom:12px; }
+  .verify summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+
 </style>
 </head>
 <body>
@@ -629,7 +638,7 @@
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
       <div class="verify">
-        <span class="lbl">資料查證說明</span>
+        <details><summary>資料查證說明</summary>
         <ul>
           <li><b>情境：</b>每章開頭的「假設情境」為虛構，人物與細節不是真人真事；情境中的制度與數字皆有出處。</li>
           <li><b>轉述：</b>文中國會答詢、媒體訪問與投書的內容，依報導轉述，部分未讀到原始文件。</li>
@@ -638,6 +647,7 @@
           <li><b>跨國比較：</b>台灣、馬來西亞、新加坡的特教生定義與鑑定方式不同，比例不能直接比較高低。</li>
           <li><b>時效：</b>2026 年資料以撰稿時（2026 年 11 月）可取得的公開資料為準。</li>
         </ul>
+        </details>
       </div>
 
       <div class="sources">

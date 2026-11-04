@@ -437,6 +437,15 @@
     .nav-btn{ height:34px; padding:0 14px; font-size:14px; }
   }
 
+  /* 資料查證說明：預設收合 */
+  .verify details > summary{ cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); list-style:none; }
+  .verify details > summary::-webkit-details-marker{ display:none; }
+  .verify details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--accent-text); }
+  .verify details[open] > summary::after{ content:"　收合 －"; }
+  .verify details[open] > summary{ margin-bottom:12px; }
+  .verify summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
+
+
   /* ===== 新加坡篇：副標、團隊圖、提示框、長條圖 ===== */
   .hero h1 .h1-sub{ display:block; margin-top:12px; font-size:.62em; line-height:1.5; font-weight:700; color:var(--ink-soft); }
   .team{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
@@ -719,7 +728,7 @@
       <a class="series-back" href="./">← 回到「世界教養連線」系列首頁</a>
 
       <div class="verify">
-        <span class="lbl">資料查證說明</span>
+        <details><summary>資料查證說明</summary>
         <ul>
           <li><b>情境：</b>每章開頭的「假設情境」為虛構，人物與細節不是真人真事；情境中的制度與數字皆有出處。</li>
           <li><b>轉述：</b>第 05 章一年級導師打算退休、老師不敢建議評估兩段，依《親子天下》報導轉述；第 04 章受訪者的回憶，由英文研究報告譯述。</li>
@@ -732,6 +741,7 @@
           <li><b>跨國比較：</b>新加坡的特殊教育需求以醫療診斷或學校通報為準，台灣以教育鑑定為準，且包含資優學生，比例不能直接比較高低。</li>
           <li><b>時效：</b>2026 年資料以撰稿時（2026 年 11 月）可取得的公開資料為準。</li>
         </ul>
+        </details>
       </div>
 
       <div class="sources">
