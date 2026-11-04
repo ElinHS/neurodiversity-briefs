@@ -550,6 +550,17 @@
   .mh-links::-webkit-scrollbar{ display:none; }
 }
 @media(max-width:560px){ .mh-logo{ gap:8px; } .mh-slogan{ font-size:14px; letter-spacing:.04em; } }
+  /* 角色比較表 */
+  .role-cmp table{ width:100%; border-collapse:collapse; table-layout:fixed; font-size:15px; line-height:1.7; }
+  .role-cmp th, .role-cmp td{ text-align:left; vertical-align:top; padding:12px 10px; border-bottom:1px solid var(--line); }
+  .role-cmp thead th{ font-size:14px; font-weight:900; line-height:1.5; color:var(--ink); border-bottom:1.5px solid var(--ink); }
+  .role-cmp thead th:nth-child(2){ color:var(--denim-deep); }
+  .role-cmp thead th:nth-child(3){ color:var(--accent-text); }
+  .role-cmp col.k, .role-cmp tbody th{ width:5.5em; }
+  .role-cmp thead th:first-child{ width:5.5em; }
+  .role-cmp tbody th{ font-size:13px; font-weight:700; color:var(--grey); padding-left:0; }
+  .role-cmp td{ color:var(--ink-soft); }
+  @media(max-width:560px){ .role-cmp table{ font-size:14px; } .role-cmp th, .role-cmp td{ padding:10px 6px; } .role-cmp thead th:first-child, .role-cmp tbody th{ width:4.2em; } }
 </style>
 </head>
 <body>
@@ -669,6 +680,21 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
         <div class="block"><div class="k">專業從哪裡來</div><p>沒有受過特教訓練的新進人員，先到學校實習一段時間，再接受教育部資助的一年基礎培訓，結業後取得專業認證，並要在教育部服務兩年。</p></div>
         <p class="verified">資料來源：新加坡教育部職缺頁「SEN Officer」（2026 年 10 月更新）</p>
       </div>
+
+      <figure class="fig role-cmp">
+        <p class="fig-ttl">SEN 專員和台灣特教老師，有什麼不同？</p>
+        <table>
+          <thead><tr><th scope="col"></th><th scope="col">新加坡<br>SEN 專員</th><th scope="col">台灣<br>特教老師</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">身分</th><td>非教學職位</td><td>正式教師，要有特教教師證書</td></tr>
+            <tr><th scope="row">教學</th><td>不教學科；進班協助、帶小組</td><td>要上課：分組教學、調整評量</td></tr>
+            <tr><th scope="row">重心</th><td>介入支持、給老師建議、和家長合作</td><td>鑑定安置、IEP、輔導與轉銜</td></tr>
+            <tr><th scope="row">培訓</th><td>學校實習後，再受一年全薪培訓</td><td>修師資課程、考教師資格、實習，再考教師甄試</td></tr>
+            <tr><th scope="row">服務對象</th><td>主流學校有特教需求的學生</td><td>普通班到特教班，各類別、各程度</td></tr>
+          </tbody>
+        </table>
+        <figcaption>台灣的工作內容，以《臺北市高級中等教育階段身心障礙分散式資源班運作原則》為例。資料來源：新加坡教育部職缺頁、國會答詢；《師資培育法》。</figcaption>
+      </figure>
       <p>所以，孩子被安排進小班，用意不是把他「分出去」，而是學校把一部分的支持，交給有時間、有訓練的人。接下來的問題是：支持要從什麼時候開始？在這一點上，新加坡的答案和台灣很不一樣。</p>
 
       <!-- 02 -->
@@ -862,6 +888,7 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
           <li><b>轉述：</b>第 05 章一年級導師打算退休、老師不敢建議評估兩段，依《親子天下》報導轉述；第 04 章受訪者的回憶，由英文研究報告譯述。</li>
           <li><b>研究限制：</b>第 04 章兩項研究的受訪者分別為 22 位與 11 位成年人，回顧的是過去的求學經驗，不能代表今天的新加坡學校；新加坡國立大學研究的團隊成員皆非身障者（作者自述）。學業分流與菁英主義的論點，僅讀到論文摘要。</li>
           <li><b>換算：</b>「每 100 個學生有 7 個」由 7% 換算；「將近翻倍」由約 450 人與約 820 人換算（約 1.8 倍）。</li>
+          <li><b>角色比較表：</b>台灣特教老師的工作內容，只找到臺北市高中階段資源班的規定，國中小未查到同樣具體的全國規定，因此以臺北市為例。</li>
           <li><b>分層支持系統：</b>依少數學校網站的說明整理，未查到教育部對全國學校的統一規定。</li>
           <li><b>推論：</b>「陪讀自費可能影響孩子能不能留在主流學校」是依制度設計所做的推論，目前查無統計。</li>
           <li><b>尚未查到：</b>TRANSIT 學生每天在小班的時間；台灣家長自費陪讀的全國統計。</li>
@@ -873,7 +900,7 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
       </div>
 
       <div class="sources">
-        <details><summary>參考來源（24 筆）</summary>
+        <details><summary>參考來源（27 筆）</summary>
         <ol>
           <li>新加坡教育部國會答詢 — <a href="https://www.moe.gov.sg/news/parliamentary-replies/20260302-proportion-of-sen-students-in-mainstream-schools-and-ensuring-adequate-training-for-teachers">主流學校 SEN 學生比例與教師訓練（2026-03-02）</a></li>
           <li>新加坡教育部家長手冊 — <a href="https://www.moe.gov.sg/special-educational-needs">Which school for my child? A Guide for Parents of Children with Special Educational Needs（2025）</a></li>
@@ -899,6 +926,9 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
           <li>教育部 — <a href="https://edu.law.moe.gov.tw/LawContent.aspx?id=GL002281">《教育部國民及學前教育署補助高級中等以下學校及幼兒園進用特教學生助理人員作業要點》（114 年 10 月 17 日修正）</a></li>
           <li>新加坡教育部 — <a href="https://www.moe.gov.sg/special-educational-needs/school-support/primary-schools">主流小學的特教支援</a></li>
           <li>新加坡教育部 — <a href="https://www.moe.gov.sg/careers/non-teaching-careers/allied-educators/sen-officer">職缺頁：SEN Officer（2026-10-06 更新）</a></li>
+          <li>新加坡教育部 — <a href="https://moe.gov.sg/news/forum-letter-replies/20180326-support-programmes-available-for-small-groups-of-students-with-dyslexia">論壇投書回覆：讀寫障礙學生的小組支持（2018-03-26）</a></li>
+          <li>教育部 — <a href="https://edu.law.moe.gov.tw/LawContent.aspx?id=FL008769">《師資培育法》（108 年 12 月 11 日修正）</a></li>
+          <li>臺北市政府 — <a href="https://laws.gov.taipei/law/LawSearch/LawArticleContent/FL107156">《臺北市高級中等教育階段身心障礙分散式資源班運作原則》（115 年 10 月 2 日）</a></li>
         </ol>
         </details>
       </div>
