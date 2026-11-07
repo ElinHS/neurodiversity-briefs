@@ -579,6 +579,20 @@
   .team.ef .member svg{ max-width:56px; margin:0 auto 10px; }
   .team.ef h5{ font-size:15px; letter-spacing:.08em; }
   .team.ef p, .article .team.ef p{ font-size:12.5px; color:var(--grey); }
+  .ex2{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:28px; }
+  .ex2 .ex{ border-top:2px solid var(--ink); padding-top:14px; }
+  .ex2 .pain{ display:grid; grid-template-columns:36px 1fr; gap:10px; align-items:start; margin-bottom:14px; }
+  .ex2 .pain svg{ width:36px; height:36px; }
+  .ex2 .pain span{ font-family:var(--hand); font-size:17px; line-height:1.8; color:var(--ink); }
+  .ex2 dl{ margin:0; }
+  .ex2 dl > div{ display:grid; grid-template-columns:5.2em 1fr; gap:8px; padding:9px 12px; border-radius:8px; font-size:14px; line-height:1.75; }
+  .ex2 dl > div + div{ margin-top:6px; }
+  .ex2 dt{ font-weight:900; color:var(--accent-text); }
+  .ex2 dd{ margin:0; color:var(--ink-soft); }
+  .ex2 dl > div:first-child{ background:#F6EBE1; }
+  .ex2 dl > div.mv{ background:#E7ECF0; } .ex2 dl > div.mv dt{ color:#4E6378; }
+  .ex2 dl > div.do{ background:#FFFFFF; box-shadow:inset 0 0 0 1px var(--line); } .ex2 dl > div.do dt{ color:var(--ink); }
+  @media(max-width:600px){ .ex2{ grid-template-columns:1fr; gap:24px; } }
   /* ===== 雙國對照表、行動卡 ===== */
   .vs table{ width:100%; border-collapse:collapse; table-layout:fixed; font-size:15px; line-height:1.7; }
   .vs th, .vs td{ text-align:left; vertical-align:top; padding:12px 10px; border-bottom:1px solid var(--line); }
@@ -621,12 +635,6 @@
   .decide .yes{ background:#F6EBE1; } .decide .no{ background:#E7ECF0; }
   .decide .yes b, .decide .no b{ display:block; font-size:19px; font-weight:900; }
   .decide .yes b{ color:var(--accent-text); } .decide .no b{ color:#4E6378; }
-  .ex3{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:24px; }
-  .ex3 .ex{ border-top:2px solid var(--ink); padding:12px 0 0; }
-  .ex3 .k{ display:block; font-size:15px; font-weight:900; color:var(--ink); margin-bottom:6px; }
-  .ex3 p, .article .ex3 p{ margin:0 0 6px; font-size:14px; line-height:1.75; color:var(--ink-soft); }
-  .ex3 p b{ color:var(--accent-text); }
-  @media(max-width:600px){ .ex3{ grid-template-columns:1fr; gap:4px; } .decide .q{ font-size:16px; } }
 </style>
 </head>
 <body>
@@ -853,12 +861,25 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
             <div class="no"><b>不是</b>先把門檻移開</div>
           </div>
         </div>
-        <div class="ex3">
-          <div class="ex"><span class="k">讀寫有困難</span><p><b>卡在：</b>讀字、打字</p><p><b>可以：</b>用聽讀或語音輸入。如果作業就是練認字，就不換。</p></div>
-          <div class="ex"><span class="k">不知從哪開始</span><p><b>卡在：</b>規劃、啟動</p><p><b>可以：</b>請 AI 或大人把步驟拆小，每一步讓孩子自己做。</p></div>
-          <div class="ex"><span class="k">喜歡直接的資訊</span><p><b>卡在：</b>被一直反問</p><p><b>可以：</b>先讓 AI 說清楚，再請孩子用自己的話說一次。</p></div>
+        <div class="ex2">
+          <div class="ex">
+            <div class="pain"><svg viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30 L26 14 L30 18 L14 34 H10 Z"/><path d="M23 17 L27 21"/></g><circle cx="31" cy="9" r="2.5" fill="#8A5636"/></svg><span>晚上九點，作文本還是空白。孩子說他知道要寫什麼，一拿筆就卡住。</span></div>
+            <dl>
+              <div><dt>要練的</dt><dd>把想法說清楚、排好順序</dd></div>
+              <div class="mv"><dt>先移開</dt><dd>寫字、拼字</dd></div>
+              <div class="do"><dt>可以這樣做</dt><dd>先讓孩子用說的，語音輸入成草稿；再請他自己挑句子、改順序。</dd></div>
+            </dl>
+          </div>
+          <div class="ex">
+            <div class="pain"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="21" r="13" fill="none" stroke="#1C1917" stroke-width="2"/><path d="M20 13 V21 L26 24" fill="none" stroke="#8A5636" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>坐在書桌前半小時，數學作業一題都還沒開始，削鉛筆、翻課本、喝水。</span></div>
+            <dl>
+              <div><dt>要練的</dt><dd>自己解題</dd></div>
+              <div class="mv"><dt>先移開</dt><dd>不知道從哪裡開始</dd></div>
+              <div class="do"><dt>可以這樣做</dt><dd>請 AI 或大人把作業拆成三小步，做完一步打一個勾；題目還是由孩子自己解。</dd></div>
+            </dl>
+          </div>
         </div>
-        <figcaption>依學習科學研究整理的建議，不是新加坡官方做法。孩子會長大，卡住的地方也會變，這個判斷要一直調整。</figcaption>
+        <figcaption>兩個例子是假設情境；做法依學習科學研究整理，不是新加坡官方做法。孩子會長大，卡住的地方也會變，這個判斷要一直調整。</figcaption>
       </figure>
       <h3 class="sub">第四步｜在 IEP 會議上說出來</h3>
       <p>在家觀察到的卡關點，可以帶到開學前的 IEP（個別化教育計畫）會議。特教法規定學校要邀請家長參與 IEP，IEP 也要寫明孩子需要的「支持策略」。法規沒有提到 AI，要寫什麼、怎麼寫，由家長和學校團隊一起討論。</p>
@@ -974,7 +995,7 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
           <li><b>情境：</b>開場與第 04 章的「假設情境」為虛構，人物與細節不是真人真事；情境中的制度（學習支援計畫、讀寫障礙篩檢、小四使用 AI 學習助理）皆有出處。</li>
           <li><b>譯述與轉述：</b>部長的說法依新加坡教育部國會答覆原文（英文）譯述；陳文莉的主張引自 NIE 新聞稿；DAS 的說法為一位專家的投書，不代表協會立場。</li>
           <li><b>研究限制：</b>7.5 歲與 10.5 歲為大腦皮質一半位置達到最厚的年齡中位數，是群體數字，研究者強調不能用來判斷個別孩子，也不是直接測量執行功能。自閉症成人的研究只有 11 人，情境是職場溝通建議，受訪者不是孩子。支持紙本閱讀的後設分析排除了閱讀困難者。AI 模擬學生的兩篇研究為尚未正式審查的預印本，也沒有測試新加坡的做法。</li>
-          <li><b>推論與建議：</b>第 02 章「晚一點給、早一點幫」是依研究提出的兩種推論，尚無研究直接比較。第 04 章的判斷流程與三個例子，是依學習科學研究整理的建議，不是新加坡官方做法。</li>
+          <li><b>推論與建議：</b>第 02 章「晚一點給、早一點幫」是依研究提出的兩種推論，尚無研究直接比較。第 04 章的判斷流程依學習科學研究整理，不是新加坡官方做法；流程下方的兩個生活例子為假設情境。</li>
           <li><b>澄清：</b>網路上常說新加坡為了 AI 取消期中考；取消期中考是 2022 年 3 月宣布，早於 ChatGPT 推出，兩者沒有因果關係。</li>
           <li><b>換算：</b>「新加坡小四約 10 歲」依學制推算。</li>
           <li><b>尚未查到：</b>小一到小三讀寫障礙孩子可以使用的輔具清單；特教學生遇到 AI 年齡線時，是否有個別例外或調整的流程；新加坡應考安排是否涵蓋含 AI 功能的輔具；多所學校轉發的 AI 家長指南的發布單位。</li>
