@@ -579,6 +579,36 @@
   .team.ef .member svg{ max-width:56px; margin:0 auto 10px; }
   .team.ef h5{ font-size:15px; letter-spacing:.08em; }
   .team.ef p, .article .team.ef p{ font-size:12.5px; color:var(--grey); }
+  /* ===== 雙國對照表、行動卡 ===== */
+  .vs table{ width:100%; border-collapse:collapse; table-layout:fixed; font-size:15px; line-height:1.7; }
+  .vs th, .vs td{ text-align:left; vertical-align:top; padding:12px 10px; border-bottom:1px solid var(--line); }
+  .vs thead th{ font-size:14px; font-weight:900; color:var(--ink); border-bottom:1.5px solid var(--ink); }
+  .vs thead th:first-child{ width:7.5em; } .vs thead th:last-child{ width:6.5em; }
+  .vs thead th.sg{ color:var(--accent-text); } .vs thead th.tw{ color:#4E6378; }
+  .vs tbody th{ font-size:14px; font-weight:900; color:var(--ink); }
+  .vs td{ color:var(--ink-soft); }
+  .vs td.sg{ background:#F6EBE1; } .vs td.tw{ background:#E7ECF0; }
+  .vs tbody tr + tr td.sg, .vs tbody tr + tr td.tw{ border-top:0; }
+  .jg{ display:inline-block; font-size:12px; font-weight:700; letter-spacing:.04em; padding:2px 10px; border-radius:999px; white-space:nowrap; }
+  .jg.a{ background:var(--accent-text); color:#FFFFFF; } .jg.b{ background:#FFFFFF; color:var(--accent-text); box-shadow:inset 0 0 0 1.5px var(--accent-text); } .jg.c{ background:#1C1917; color:#FFFFFF; } .jg.none{ color:var(--grey); padding:2px 0; }
+  @media(max-width:600px){
+    .vs table, .vs tbody, .vs tr, .vs th, .vs td{ display:block; width:auto; }
+    .vs thead{ display:none; }
+    .vs tr{ position:relative; padding:14px 0; border-bottom:1px solid var(--line); }
+    .vs tbody th{ padding:0 90px 8px 0; border:0; font-size:15px; }
+    .vs td{ border:0; padding:8px 12px; font-size:14px; }
+    .vs td.sg{ border-radius:8px 8px 0 0; } .vs td.tw{ border-radius:0 0 8px 8px; }
+    .vs td.sg::before, .vs td.tw::before{ content:attr(data-l); display:block; font-size:12px; font-weight:900; }
+    .vs td.sg::before{ color:var(--accent-text); } .vs td.tw::before{ color:#4E6378; }
+    .vs td.j{ position:absolute; top:12px; right:0; padding:0; background:none; }
+  }
+  .act2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:16px 0 32px; }
+  .act{ border-top:2px solid var(--ink); padding-top:16px; }
+  .act svg{ display:block; width:40px; height:40px; margin-bottom:8px; }
+  .act .who{ display:block; font-size:15px; font-weight:900; color:var(--accent-text); margin-bottom:6px; }
+  .act p, .article .act p{ margin:0 0 8px; font-size:15px; line-height:1.85; color:var(--ink); }
+  .act p.law, .article .act p.law{ font-size:12.5px; color:var(--grey); }
+  @media(max-width:600px){ .act2{ grid-template-columns:1fr; gap:20px; } }
   /* ===== 新加坡 AI 篇：判斷流程、例子卡 ===== */
   .decide{ display:flex; flex-direction:column; align-items:center; gap:0; }
   .decide .q{ width:100%; max-width:440px; background:var(--panel); border:1.5px solid var(--ink); border-radius:12px; padding:14px 18px; font-size:17px; font-weight:900; line-height:1.6; text-align:center; color:var(--ink); }
@@ -838,42 +868,52 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
       <p class="sec-dek">兩地都用年紀畫線，哪些能借、哪些要小心</p>
       <p>台灣教育部《中小學數位教學指引 3.0》建議，13 歲以下要在老師指導下，使用為教育目的設計的 AI，例如因材網的「e 度」。新加坡的線管的是學校裡何時開始用教育用 AI，台灣的線區分的是市面 AI 和教育用 AI，兩者不能直接比寬嚴。</p>
 
-      <div class="compare">
-        <div class="twcard">
-          <h4>一、說清楚為什麼是這個年紀</h4>
-          <div class="row">
-            <div class="col"><span class="k">新加坡怎麼做｜值得借鏡</span><p>部長在國會用執行功能的發展，解釋為什麼是小四。</p></div>
-            <div class="col"><span class="k">台灣可以這樣開始</span><p>說明年齡建議時，一併說明依據與特殊情況怎麼處理。要注意的條件：依據是多數孩子的平均，不是每個孩子的起點。</p></div>
-          </div>
+      <figure class="fig">
+        <p class="fig-ttl">新加坡 vs 台灣：AI 年齡線怎麼畫</p>
+        <div class="vs">
+          <table>
+            <thead><tr><th scope="col">比較項目</th><th scope="col" class="sg">新加坡</th><th scope="col" class="tw">台灣</th><th scope="col">判斷</th></tr></thead>
+            <tbody>
+            <tr><th scope="row">年齡線</th><td class="sg" data-l="新加坡">小四起，在老師看顧下用教育用 AI</td><td class="tw" data-l="台灣">13 歲以下在老師指導下用教育用 AI，不直接用市面 AI</td><td class="j"><span class="jg none">—</span></td></tr>
+            <tr><th scope="row">為什麼是這個年紀</th><td class="sg" data-l="新加坡">部長用執行功能的發展說明</td><td class="tw" data-l="台灣">指引引用 UNESCO 建議與商用平台的年齡規定</td><td class="j"><span class="jg a">值得借鏡</span></td></tr>
+            <tr><th scope="row">平台 AI</th><td class="sg" data-l="新加坡">用提問引導思考，老師可以限制互動次數</td><td class="tw" data-l="台灣">因材網的學習夥伴「e 度」</td><td class="j"><span class="jg b">需要審慎</span></td></tr>
+            <tr><th scope="row">AI 政策裡的特教</th><td class="sg" data-l="新加坡">教育部的 AI 文件沒有提到</td><td class="tw" data-l="台灣">指引 3.0 只有一句老師檢核項目</td><td class="j"><span class="jg c">值得警惕</span></td></tr>
+            <tr><th scope="row">考試輔具與 AI</th><td class="sg" data-l="新加坡">考試局只寫到「輔助科技」</td><td class="tw" data-l="台灣">考試服務辦法沒有提到 AI</td><td class="j"><span class="jg c">值得警惕</span></td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="twcard">
-          <h4>二、「只提問、不給答案」的 AI</h4>
-          <div class="row">
-            <div class="col"><span class="k">新加坡怎麼做｜需要審慎</span><p>這套做法靠的是全國統一的學習平台，加上老師看顧。</p></div>
-            <div class="col"><span class="k">台灣可以這樣開始</span><p>家長和老師使用網路上流傳的提示詞前，先看孩子會不會被追問卡住。要注意的條件：對神經多樣性孩子，證據還不夠。</p></div>
-          </div>
+        <figcaption>資料來源：新加坡教育部國會答覆（2026-05-06）、回覆投書（2026-09-18）、考試局與教育部回覆投書（2025-12-02）；台灣教育部《中小學數位教學指引 3.0》、《身心障礙學生考試服務辦法》。</figcaption>
+      </figure>
+
+      <h3 class="sub">台灣可以這樣開始</h3>
+      <ul class="checklist">
+        <li><b>為什麼是這個年紀：</b>說明年齡建議時，一併說明依據，以及特殊情況怎麼處理。要注意的是，依據來自多數孩子的平均。</li>
+        <li><b>平台 AI：</b>家長和老師使用網路上流傳的提示詞前，先看孩子會不會被追問卡住。對神經多樣性孩子，這類設計的證據還不夠。</li>
+        <li><b>AI 政策裡的特教：</b>在 AI 教育指引裡，補上特教學生的使用與調整原則。</li>
+        <li><b>考試輔具與 AI：</b>考試單位先公告，含 AI 功能的輔具在考場怎麼處理。</li>
+      </ul>
+
+      <h3 class="sub">帶得走的一件事</h3>
+      <div class="act2">
+        <div class="act">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="16" r="6"/><path d="M8 38 a10 10 0 0 1 20 0"/><path d="M30 12 H42 V26 H35 L31 30 V26 H30 Z"/></g><circle cx="36" cy="19" r="1.8" fill="#8A5636"/></svg>
+          <span class="who">給家長</span>
+          <p>開學前的 IEP 會議，問一句：「孩子用科技或 AI 學習時，需要哪些支持？可以寫進支持策略嗎？」</p>
+          <p class="law">依據：特教法第 31 條、施行細則第 10 條</p>
         </div>
-        <div class="twcard">
-          <h4>三、AI 政策沒談到特教</h4>
-          <div class="row">
-            <div class="col"><span class="k">新加坡怎麼做｜值得警惕</span><p>教育部的 AI 文件沒有提到特教學生。</p></div>
-            <div class="col"><span class="k">台灣可以這樣開始</span><p>台灣的指引 3.0 談到特教只有一句老師檢核項目。可以在 AI 教育指引裡，補上特教學生的使用與調整原則。</p></div>
-          </div>
+        <div class="act">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="28" height="34" rx="3"/><path d="M16 18 H32 M16 25 H32 M16 32 H26"/></g><path d="M30 31 l3 3 l6 -7" fill="none" stroke="#8A5636" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="who">給老師</span>
+          <p>出作業時先說清楚「這次要練什麼」，跟練習無關的門檻，例如打字、讀很長的題目，提供替代方式。</p>
         </div>
       </div>
 
-      <h3 class="sub">帶得走的一件事</h3>
-      <ul class="checklist">
-        <li><b>給家長：</b>開學前的 IEP 會議，問一句「孩子用科技或 AI 學習時，需要哪些支持？可以寫進支持策略嗎？」</li>
-        <li><b>給老師：</b>出作業時先說清楚「這次要練什麼」，跟練習無關的門檻（例如打字、讀很長的題目），提供替代方式。</li>
-      </ul>
       <p><b>給政策制定者的三個問題：</b></p>
       <ul class="checklist">
         <li>特教學生能不能依 IEP，調整使用輔助功能的時間？</li>
-        <li>考試遇到內建 AI 的輔具，要怎麼判斷？</li>
+        <li>年齡之外，還可以用哪些觀察來判斷孩子準備好用 AI？</li>
         <li>提問式 AI 對神經多樣性學生有沒有效，有沒有被評估？</li>
       </ul>
-
 
       <div class="closing-note">
         <h3>給正在陪孩子學習的你</h3>
