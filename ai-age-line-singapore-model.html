@@ -574,6 +574,11 @@
   .lane li b{ color:var(--ink); }
   @media(max-width:560px){ .lanes{ grid-template-columns:1fr; gap:12px; } }
 
+  /* ===== 新加坡 AI 篇：執行功能極簡圖示 ===== */
+  .team.ef .member{ border-top:1px solid var(--ink); padding-top:18px; }
+  .team.ef .member svg{ max-width:56px; margin:0 auto 10px; }
+  .team.ef h5{ font-size:15px; letter-spacing:.08em; }
+  .team.ef p, .article .team.ef p{ font-size:12.5px; color:var(--grey); }
   /* ===== 新加坡 AI 篇：判斷流程、例子卡 ===== */
   .decide{ display:flex; flex-direction:column; align-items:center; gap:0; }
   .decide .q{ width:100%; max-width:440px; background:var(--panel); border:1.5px solid var(--ink); border-radius:12px; padding:14px 18px; font-size:17px; font-weight:900; line-height:1.6; text-align:center; color:var(--ink); }
@@ -660,21 +665,21 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
 
       <figure class="fig">
         <p class="fig-ttl">什麼是執行功能？大腦裡的「管理者」</p>
-        <div class="team">
+        <div class="team ef">
           <div class="member">
-            <svg viewBox="0 0 104 104" aria-hidden="true"><circle cx="52" cy="52" r="50" fill="#F3EAD6"/><rect x="30" y="24" width="44" height="58" rx="5" fill="#FFFFFF" stroke="#1C1917" stroke-width="3"/><rect x="42" y="18" width="20" height="10" rx="3" fill="#8A5636"/><rect x="38" y="40" width="8" height="8" rx="2" fill="#DCA782"/><rect x="50" y="42" width="18" height="4" rx="2" fill="#1C1917"/><rect x="38" y="54" width="8" height="8" rx="2" fill="#DCA782"/><rect x="50" y="56" width="18" height="4" rx="2" fill="#1C1917"/><rect x="38" y="68" width="8" height="8" rx="2" fill="#C7D2DC"/><rect x="50" y="70" width="14" height="4" rx="2" fill="#57534E"/></svg>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="14" width="8" height="8" rx="1"/><path d="M28 18 H52"/><rect x="12" y="28" width="8" height="8" rx="1"/><path d="M28 32 H52"/><rect x="12" y="42" width="8" height="8" rx="1"/><path d="M28 46 H44"/></g><path d="M13.5 18 l2.5 2.5 l5 -6" fill="none" stroke="#8A5636" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <h5>規劃</h5><p>想好要做什麼、先做哪個</p>
           </div>
           <div class="member">
-            <svg viewBox="0 0 104 104" aria-hidden="true"><circle cx="52" cy="52" r="50" fill="#E7ECF0"/><rect x="34" y="22" width="5" height="62" rx="2" fill="#1C1917"/><path d="M39 26 H74 L66 38 L74 50 H39 Z" fill="#748DA4"/><circle cx="36.5" cy="84" r="6" fill="#8A5636"/></svg>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="20" fill="none" stroke="#1C1917" stroke-width="2"/><path d="M28 24 L40 32 L28 40 Z" fill="#8A5636"/></svg>
             <h5>開始做事</h5><p>不拖延，自己動手開始</p>
           </div>
           <div class="member">
-            <svg viewBox="0 0 104 104" aria-hidden="true"><circle cx="52" cy="52" r="50" fill="#F7EADF"/><rect x="22" y="64" width="20" height="18" rx="3" fill="#DCA782"/><rect x="42" y="48" width="20" height="34" rx="3" fill="#8A5636"/><rect x="62" y="32" width="20" height="50" rx="3" fill="#748DA4"/><text x="32" y="78" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">1</text><text x="52" y="70" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">2</text><text x="72" y="62" font-size="13" font-weight="900" fill="#FFFFFF" text-anchor="middle">3</text></svg>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 48 H24 V36 H36 V24 H48 V14" fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48" cy="14" r="4" fill="#8A5636"/></svg>
             <h5>記住步驟</h5><p>一邊做，一邊記得下一步</p>
           </div>
           <div class="member">
-            <svg viewBox="0 0 104 104" aria-hidden="true"><circle cx="52" cy="52" r="50" fill="#EEF0EB"/><rect x="34" y="34" width="36" height="40" rx="12" fill="#DCA782"/><rect x="34" y="20" width="8" height="26" rx="4" fill="#DCA782"/><rect x="44" y="16" width="8" height="28" rx="4" fill="#DCA782"/><rect x="54" y="18" width="8" height="26" rx="4" fill="#DCA782"/><rect x="64" y="24" width="7" height="22" rx="3.5" fill="#DCA782"/><rect x="40" y="72" width="24" height="12" rx="3" fill="#8A5636"/></svg>
+            <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="20" fill="none" stroke="#1C1917" stroke-width="2"/><path d="M27 24 V40 M37 24 V40" stroke="#8A5636" stroke-width="3" stroke-linecap="round"/></svg>
             <h5>忍住衝動</h5><p>先停一下，再決定怎麼做</p>
           </div>
         </div>
