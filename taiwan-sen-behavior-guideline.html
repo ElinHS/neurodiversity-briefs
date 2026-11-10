@@ -656,6 +656,27 @@
   .team.roles h5{ font-size:14.5px; }
   .act ol.ask{ margin:0; padding-left:1.3em; font-size:15px; line-height:1.85; color:var(--ink); }
   .act ol.ask li{ margin-bottom:6px; }
+
+  /* 圖⑤ 四道關卡 */
+  .gates .gate-row{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+  .gates .gate-row li{ position:relative; padding:0 10px; text-align:center; }
+  .gates .gate-row li:not(:last-child)::after{ content:""; position:absolute; top:28px; right:-6px; width:12px; height:12px; border-top:1.5px solid var(--ink); border-right:1.5px solid var(--ink); transform:rotate(45deg); }
+  .gates svg{ display:block; width:56px; height:56px; margin:0 auto 10px; }
+  .gates .g-no{ display:block; font-family:var(--serif); font-size:13px; color:var(--accent-text); letter-spacing:.1em; margin-bottom:2px; }
+  .gates h5{ margin:0 0 4px; font-size:15px; font-weight:900; color:var(--ink); }
+  .gates .gate-row p, .article .gates .gate-row p{ margin:0; font-size:13px; line-height:1.7; color:var(--ink-soft); }
+  .gates .gate-last{ margin-top:26px; padding:18px 20px 16px; background:#F6EBE1; border-top:2px solid var(--ink); }
+  .gates .gl-ttl, .article .gates .gl-ttl{ margin:0 0 10px; font-size:16px; font-weight:900; line-height:1.6; color:var(--ink); }
+  .gates .gate-last ul{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:4px 18px; }
+  .gates .gate-last li{ position:relative; padding-left:14px; font-size:14px; line-height:1.8; color:var(--ink); }
+  .gates .gate-last li::before{ content:""; position:absolute; left:0; top:.78em; width:7px; height:2px; background:var(--accent-text); }
+  @media(max-width:600px){
+    .gates .gate-row{ grid-template-columns:1fr; }
+    .gates .gate-row li{ display:grid; grid-template-columns:56px 1fr; column-gap:14px; text-align:left; padding:10px 0 22px; }
+    .gates .gate-row li svg{ grid-row:span 3; margin:0; }
+    .gates .gate-row li:not(:last-child)::after{ top:auto; bottom:6px; right:auto; left:22px; transform:rotate(135deg); }
+    .gates .gate-last ul{ grid-template-columns:1fr; }
+  }
 </style>
 </head>
 <body>
@@ -790,6 +811,38 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
 
       <p>很多家長最怕聽到孩子「被壓住」。2024 年的原則沒有談到這件事，新指引則畫出界線：老師要先試過安撫、拉開距離、讓其他同學離開，孩子仍然有立即危險時，才能用「必要且限制最少」的方式介入；碰觸孩子原則上由受過訓練的人來做，不能壓孩子的脖子、胸口或肚子，也不能拿來當處罰<sup class="fn"><a href="#n6">6</a></sup>。</p>
 
+      <figure class="fig gates" aria-label="身體介入前的四道關卡">
+        <p class="fig-ttl">身體介入之前，要先試過四件事</p>
+        <ol class="gate-row">
+          <li>
+            <svg viewBox="0 0 56 56" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14 H46 V36 H26 L17 44 V36 H10 Z"/></g><circle cx="21" cy="25" r="1.8" fill="#1C1917"/><circle cx="28" cy="25" r="1.8" fill="#1C1917"/><circle cx="35" cy="25" r="1.8" fill="#8A5636"/></svg>
+            <span class="g-no">1</span><h5>口語引導</h5><p>少、短、清楚，給簡單選擇</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 56 56" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="20" r="4"/><path d="M5 40 a7 7 0 0 1 14 0"/><circle cx="44" cy="20" r="4"/><path d="M37 40 a7 7 0 0 1 14 0"/></g><g fill="none" stroke="#8A5636" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 30 H34"/><path d="M25 27 L22 30 L25 33"/><path d="M31 27 L34 30 L31 33"/></g></svg>
+            <span class="g-no">2</span><h5>拉開距離</h5><p>降低刺激，不催促、不爭辯</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 56 56" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="14" width="26" height="28" rx="2"/><circle cx="17" cy="34" r="3.5"/><circle cx="25" cy="34" r="3.5"/><path d="M18 31 L26 20 M24 31 L16 20"/></g><g fill="none" stroke="#8A5636" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M38 28 H50"/><path d="M46 24 L50 28 L46 32"/></g></svg>
+            <span class="g-no">3</span><h5>移除危險物</h5><p>安全可行時，先拿走</p>
+          </li>
+          <li>
+            <svg viewBox="0 0 56 56" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 46 V10 H30 V46"/><path d="M6 46 H50"/><circle cx="25" cy="29" r="1.2"/></g><g fill="none" stroke="#8A5636" stroke-width="2" stroke-linecap="round"><circle cx="42" cy="22" r="3.5"/><path d="M36 38 a6 6 0 0 1 12 0"/></g></svg>
+            <span class="g-no">4</span><h5>讓同學離開</h5><p>就地保護或撤離其他學生</p>
+          </li>
+        </ol>
+        <div class="gate-last">
+          <p class="gl-ttl">仍有立即危險時，才能用「必要且限制最少」的方式介入</p>
+          <ul>
+            <li>原則上由受過訓練的人執行</li>
+            <li>不能壓脖子、胸口或肚子</li>
+            <li>危險解除就停止</li>
+            <li>不能拿來當處罰</li>
+          </ul>
+        </div>
+        <figcaption>資料來源：指引第三章 p.7、第六章 p.15。</figcaption>
+      </figure>
+
       <p>問題是，受過訓練的人在哪裡？懶太太自己是特教生家長，也兼職當特教助理員。她在臉書上寫道，助理員只要上滿 36 小時線上課程就能上陣，「並沒有學過防身教育」，時薪是 196 元<sup class="fn"><a href="#n7">7</a></sup>。</p>
 
       <!-- 04 -->
@@ -808,7 +861,7 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
       <h2 class="sec"><span class="no">05</span>老師受傷誰負責？</h2>
       <p class="sec-dek">指引還沒回答的三件事</p>
 
-      <p>讀完 22 頁，還有三件事沒有答案。第一，還沒完成鑑定的「疑似生」，指引沒有提到。第二，老師出手保護時算不算合法防衛，指引只說「仍需依個案事實與法規判斷」<sup class="fn"><a href="#n12">12</a></sup>，工會因此要求教育部列出「免責態樣」<sup class="fn"><a href="#n13">13</a></sup>。第三，人力和經費都沒有數字。懶太太說，她的學校其實有助理員名額，卻找不到人敢來應徵<sup class="fn"><a href="#n14">14</a></sup>。截至發稿，教育部還沒有公開回應工會的聲明。</p>
+      <p>讀完 22 頁，還有三件事沒有答案。第一，還沒完成鑑定的「疑似生」，指引沒有提到。第二，老師出手保護時算不算合法防衛，指引只說「仍需依個案事實與法規判斷」<sup class="fn"><a href="#n12">12</a></sup>，工會因此要求教育部列出「免責態樣」<sup class="fn"><a href="#n13">13</a></sup>。第三，人力和經費都沒有數字。懶太太提到，她的學校有名額，卻找不到人敢來應徵<sup class="fn"><a href="#n14">14</a></sup>；社群上也有其他第一線人員提到類似狀況。截至發稿，教育部還沒有公開回應工會的聲明。</p>
 
       <h3 class="sub">帶得走的一件事</h3>
       <div class="act2">
@@ -899,7 +952,7 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
           <li><b>情境：</b>三段「假設情境」為虛構，人物與細節不是真人真事；情境之後的制度與規定皆出自指引原文。</li>
           <li><b>指引版本：</b>本文引用的完整版取自新北市教育局網站，檔案標題為「易讀優化修訂版」，頁碼以此版本為準。</li>
           <li><b>轉述：</b>工會的主張轉述自聯合報、自由時報、中時新聞網的報導，目前沒有找到台灣教育產業工會公開的聲明全文。</li>
-          <li><b>個人經驗：</b>懶太太的說法來自她個人的臉書貼文，反映她自己與所在學校的經驗，不能代表所有學校。「36 小時線上課程」為她的說法，全國的訓練規定目前還沒查到。</li>
+          <li><b>個人經驗：</b>懶太太的說法來自她個人的臉書貼文，反映她自己與所在學校的經驗，不能代表所有學校。「36 小時線上課程」為她的說法，全國的訓練規定目前還沒查到。「社群上也有其他第一線人員提到類似狀況」為編輯觀察，未逐一查證。</li>
           <li><b>時薪：</b>196 元與 2026 年基本工資的時薪相同。</li>
           <li><b>2024 原則：</b>本文依各校轉知的公文內容整理，共 6 點。</li>
           <li><b>教育部回應：</b>截至 2026 年 11 月 9 日，還沒有查到教育部對工會聲明的公開回應。</li>
