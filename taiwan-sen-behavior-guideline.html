@@ -359,14 +359,14 @@
   /* 細線、短線、裝飾用淺 terracotta；文字一律用加深版 */
   .fact10 .n, .fact10.warn .n,
   .sources details > summary::after,
-  details.more > summary::after{ color:var(--accent-text); }
+  details.more > summary::after{ color:#8A5636; }
   details.more > summary::after{ border-color:var(--coral); }
   h2.sec .no{ -webkit-text-stroke-color:var(--coral); }
   .checklist li::before{ color:var(--coral); }
-  .sub-btn:hover{ border-color:var(--coral); color:var(--accent-text); }
-  .bmc-btn{ background:var(--accent-text); }
+  .sub-btn:hover{ border-color:var(--coral); color:#8A5636; }
+  .bmc-btn{ background:#8A5636; }
   .bmc-btn:hover{ background:#6E4329; }
-  .flow .step .dot{ background:var(--accent-text); }
+  .flow .step .dot{ background:#8A5636; }
   .flow .step:nth-child(2) .dot{ background:var(--denim-deep); }
   .flow .step:nth-child(3) .dot{ background:#6E7058; }
   .flow .step:nth-child(4) .dot{ background:var(--ink-soft); }
@@ -411,7 +411,7 @@
   .cmp-note{ font-size:13px; color:var(--grey); margin:0 0 8px; }
   .cmp-note .swipe{ display:none; }
   @media(max-width:600px){ .cmp-note .swipe{ display:inline; } }
-  .nf{ color:var(--accent-text); font-size:.92em; }
+  .nf{ color:#8A5636; font-size:.92em; }
 
   /* ===== 頂部導覽列：標語＋電子報／贊助 ===== */
   .masthead{ padding:14px 0; background:var(--bg); border-bottom:1px solid var(--line); }
@@ -421,10 +421,10 @@
   .masthead .tagline{ font-size:15px; color:var(--ink-soft); letter-spacing:.08em; white-space:nowrap; }
   .masthead .tagline i{ font-style:normal; color:var(--grey); margin:0 .6em; }
   .masthead .actions{ margin-left:auto; display:flex; gap:12px; flex:none; }
-  .nav-btn{ display:inline-flex; align-items:center; justify-content:center; height:40px; padding:0 22px; border-radius:999px; border:1.5px solid var(--accent-text); font-size:15px; font-weight:700; letter-spacing:.06em; text-decoration:none; white-space:nowrap; transition:background .15s ease, color .15s ease; }
-  .nav-btn.outline{ color:var(--accent-text); background:transparent; }
-  .nav-btn.outline:hover{ background:var(--accent-text); color:#fff; }
-  .nav-btn.solid{ color:#fff; background:var(--accent-text); }
+  .nav-btn{ display:inline-flex; align-items:center; justify-content:center; height:40px; padding:0 22px; border-radius:999px; border:1.5px solid #8A5636; font-size:15px; font-weight:700; letter-spacing:.06em; text-decoration:none; white-space:nowrap; transition:background .15s ease, color .15s ease; }
+  .nav-btn.outline{ color:#8A5636; background:transparent; }
+  .nav-btn.outline:hover{ background:#8A5636; color:#fff; }
+  .nav-btn.solid{ color:#fff; background:#8A5636; }
   .nav-btn.solid:hover{ background:#6E4329; border-color:#6E4329; }
   .nav-btn:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
   @media(max-width:860px){ .masthead .tagline{ display:none; } }
@@ -440,7 +440,7 @@
   /* 資料查證說明：預設收合 */
   .verify details > summary{ cursor:pointer; font-size:12px; font-weight:700; color:var(--grey); list-style:none; }
   .verify details > summary::-webkit-details-marker{ display:none; }
-  .verify details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:var(--accent-text); }
+  .verify details > summary::after{ content:"　點開查看 ＋"; font-weight:400; color:#8A5636; }
   .verify details[open] > summary::after{ content:"　收合 －"; }
   .verify details[open] > summary{ margin-bottom:12px; }
   .verify summary:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
@@ -456,7 +456,7 @@
   .fig svg.bars{ max-width:500px; }
   .tipbox{ margin:40px 0; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:24px; box-shadow:0 4px 16px rgba(46,36,28,.05); }
   .tipbox .tip-ttl, .article .tipbox .tip-ttl{ margin:0 0 4px; font-size:19px; font-weight:900; color:var(--ink); }
-  .tipbox .tip-grp, .article .tipbox .tip-grp{ margin:20px 0 8px; font-size:14px; font-weight:700; letter-spacing:.06em; color:var(--accent-text); }
+  .tipbox .tip-grp, .article .tipbox .tip-grp{ margin:20px 0 8px; font-size:14px; font-weight:700; letter-spacing:.06em; color:#8A5636; }
   .tipbox ul{ list-style:none; margin:0; padding:0; }
   .tipbox li{ display:grid; grid-template-columns:40px 1fr; gap:14px; padding:12px 0; border-bottom:1px solid var(--line); font-size:15px; line-height:1.85; color:var(--ink-soft); }
   .tipbox ul:last-child li:last-child{ border-bottom:0; padding-bottom:0; }
@@ -474,31 +474,31 @@
 .mh-issue{ border-left:1px solid #1C1917; padding:6px 0 6px 32px; display:flex; flex-direction:column; gap:8px; }
 .mh-ttl{ font-family:"Noto Serif TC",serif; font-size:15px; letter-spacing:.2em; color:var(--grey); }
 .mh-theme{ font-family:"Noto Serif TC",serif; font-size:21px; font-weight:700; color:var(--ink); text-decoration:none; letter-spacing:.06em; }
-.mh-theme span{ color:var(--accent-text); }
-.mh-theme:hover{ color:var(--accent-text); }
+.mh-theme span{ color:#8A5636; }
+.mh-theme:hover{ color:#8A5636; }
 .mh-no{ margin-left:auto; display:flex; align-items:flex-end; gap:6px; font-family:"Noto Serif TC",serif; color:#1C1917; line-height:.78; }
 .mh-no span{ font-size:30px; font-weight:700; padding-bottom:4px; }
 .mh-no b{ font-size:128px; font-weight:900; letter-spacing:-.02em; }
 .mh-nav{ display:flex; align-items:center; gap:16px; border-top:1px solid #1C1917; border-bottom:1px solid #1C1917; padding:12px 0; }
 .mh-links{ display:flex; align-items:center; gap:12px; font-family:"Noto Serif TC",serif; font-size:17px; white-space:nowrap; }
 .mh-links a{ color:var(--ink); text-decoration:none; padding:4px 2px; border-bottom:2px solid transparent; }
-.mh-links a:hover{ color:var(--accent-text); }
-.mh-links a[aria-current]{ color:var(--accent-text); font-weight:700; border-bottom-color:var(--coral); }
+.mh-links a:hover{ color:#8A5636; }
+.mh-links a[aria-current]{ color:#8A5636; font-weight:700; border-bottom-color:var(--coral); }
 .mh-links i{ font-style:normal; color:var(--grey); }
 .mh-act{ margin-left:auto; display:flex; align-items:center; gap:18px; flex:none; }
 .mh-sub,.mh-don{ white-space:nowrap; }
 .mh-act-m{ display:none; }
-.mh-sub{ background:var(--accent-text); color:#fff; font-weight:700; font-size:15px; letter-spacing:.06em; padding:8px 18px; border-radius:999px; text-decoration:none; }
+.mh-sub{ background:#8A5636; color:#fff; font-weight:700; font-size:15px; letter-spacing:.06em; padding:8px 18px; border-radius:999px; text-decoration:none; }
 .mh-sub:hover{ background:#6E4329; }
 .mh-don{ color:var(--ink-soft); font-size:15px; text-decoration:none; letter-spacing:.06em; }
-.mh-don:hover{ color:var(--accent-text); }
+.mh-don:hover{ color:#8A5636; }
 .mh a:focus-visible{ outline:3px solid var(--coral); outline-offset:3px; }
 /* 捲動後的精簡列 */
 .mh-mini{ position:fixed; top:0; left:0; right:0; z-index:50; background:var(--bg); border-bottom:1px solid #1C1917; box-shadow:0 2px 12px rgba(46,36,28,.06); transform:translateY(-100%); transition:transform .25s ease; }
 .mh-mini.on{ transform:none; }
 .mh-mini-in{ max-width:1080px; margin:0 auto; padding:10px 24px; display:flex; align-items:center; gap:16px; }
 .mh-mini-logo img{ display:block; height:34px; width:auto; }
-.mh-mini-no{ font-family:"Noto Serif TC",serif; font-size:14px; font-weight:700; letter-spacing:.08em; color:var(--accent-text); padding-left:16px; border-left:1px solid #1C1917; white-space:nowrap; }
+.mh-mini-no{ font-family:"Noto Serif TC",serif; font-size:14px; font-weight:700; letter-spacing:.08em; color:#8A5636; padding-left:16px; border-left:1px solid #1C1917; white-space:nowrap; }
 .mh-mini-act{ margin-left:auto; display:flex; align-items:center; gap:16px; }
 @media (prefers-reduced-motion:reduce){ .mh-mini{ transition:none; } }
 /* 分類標籤：底色與文字互換 */
@@ -555,7 +555,7 @@
   .role-cmp th, .role-cmp td{ text-align:left; vertical-align:top; padding:12px 10px; border-bottom:1px solid var(--line); }
   .role-cmp thead th{ font-size:14px; font-weight:900; line-height:1.5; color:var(--ink); border-bottom:1.5px solid var(--ink); }
   .role-cmp thead th:nth-child(2){ color:var(--denim-deep); }
-  .role-cmp thead th:nth-child(3){ color:var(--accent-text); }
+  .role-cmp thead th:nth-child(3){ color:#8A5636; }
   .role-cmp col.k, .role-cmp tbody th{ width:5.5em; }
   .role-cmp thead th:first-child{ width:5.5em; }
   .role-cmp tbody th{ font-size:13px; font-weight:700; color:var(--grey); padding-left:0; }
@@ -587,7 +587,7 @@
   .ex2 dl{ margin:0; }
   .ex2 dl > div{ display:grid; grid-template-columns:5.2em 1fr; gap:8px; padding:9px 12px; border-radius:8px; font-size:14px; line-height:1.75; }
   .ex2 dl > div + div{ margin-top:6px; }
-  .ex2 dt{ font-weight:900; color:var(--accent-text); }
+  .ex2 dt{ font-weight:900; color:#8A5636; }
   .ex2 dd{ margin:0; color:var(--ink-soft); }
   .ex2 dl > div:first-child{ background:#F6EBE1; }
   .ex2 dl > div.mv{ background:#E7ECF0; } .ex2 dl > div.mv dt{ color:#4E6378; }
@@ -598,13 +598,13 @@
   .vs th, .vs td{ text-align:left; vertical-align:top; padding:12px 10px; border-bottom:1px solid var(--line); }
   .vs thead th{ font-size:14px; font-weight:900; color:var(--ink); border-bottom:1.5px solid var(--ink); }
   .vs thead th:first-child{ width:7.5em; } .vs thead th:last-child{ width:6.5em; }
-  .vs thead th.sg{ color:var(--accent-text); } .vs thead th.tw{ color:#4E6378; }
+  .vs thead th.sg{ color:#8A5636; } .vs thead th.tw{ color:#4E6378; }
   .vs tbody th{ font-size:14px; font-weight:900; color:var(--ink); }
   .vs td{ color:var(--ink-soft); }
   .vs td.sg{ background:#F6EBE1; } .vs td.tw{ background:#E7ECF0; }
   .vs tbody tr + tr td.sg, .vs tbody tr + tr td.tw{ border-top:0; }
   .jg{ display:inline-block; font-size:12px; font-weight:700; letter-spacing:.04em; padding:2px 10px; border-radius:999px; white-space:nowrap; }
-  .jg.a{ background:var(--accent-text); color:#FFFFFF; } .jg.b{ background:#FFFFFF; color:var(--accent-text); box-shadow:inset 0 0 0 1.5px var(--accent-text); } .jg.c{ background:#1C1917; color:#FFFFFF; } .jg.none{ color:var(--grey); padding:2px 0; }
+  .jg.a{ background:#8A5636; color:#FFFFFF; } .jg.b{ background:#FFFFFF; color:#8A5636; box-shadow:inset 0 0 0 1.5px #8A5636; } .jg.c{ background:#1C1917; color:#FFFFFF; } .jg.none{ color:var(--grey); padding:2px 0; }
   @media(max-width:600px){
     .vs table, .vs tbody, .vs tr, .vs th, .vs td{ display:block; width:auto; }
     .vs thead{ display:none; }
@@ -613,20 +613,20 @@
     .vs td{ border:0; padding:8px 12px; font-size:14px; }
     .vs td.sg{ border-radius:8px 8px 0 0; } .vs td.tw{ border-radius:0 0 8px 8px; }
     .vs td.sg::before, .vs td.tw::before{ content:attr(data-l); display:block; font-size:12px; font-weight:900; }
-    .vs td.sg::before{ color:var(--accent-text); } .vs td.tw::before{ color:#4E6378; }
+    .vs td.sg::before{ color:#8A5636; } .vs td.tw::before{ color:#4E6378; }
     .vs td.j{ position:absolute; top:12px; right:0; padding:0; background:none; }
   }
   .act2{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:16px 0 32px; }
   .act{ border-top:2px solid var(--ink); padding-top:16px; }
   .act svg{ display:block; width:40px; height:40px; margin-bottom:8px; }
-  .act .who{ display:block; font-size:15px; font-weight:900; color:var(--accent-text); margin-bottom:6px; }
+  .act .who{ display:block; font-size:15px; font-weight:900; color:#8A5636; margin-bottom:6px; }
   .act p, .article .act p{ margin:0 0 8px; font-size:15px; line-height:1.85; color:var(--ink); }
   .act p.law, .article .act p.law{ font-size:12.5px; color:var(--grey); }
   @media(max-width:600px){ .act2{ grid-template-columns:1fr; gap:20px; } }
   /* ===== 新加坡 AI 篇：判斷流程、例子卡 ===== */
   .decide{ display:flex; flex-direction:column; align-items:center; gap:0; }
   .decide .q{ width:100%; max-width:440px; background:var(--panel); border:1.5px solid var(--ink); border-radius:12px; padding:14px 18px; font-size:17px; font-weight:900; line-height:1.6; text-align:center; color:var(--ink); }
-  .decide .qn{ display:block; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--accent-text); }
+  .decide .qn{ display:block; font-size:12px; font-weight:700; letter-spacing:.08em; color:#8A5636; }
   .decide .arrow{ width:2px; height:22px; background:var(--ink); position:relative; }
   .decide .arrow::after{ content:""; position:absolute; bottom:-6px; left:-5px; border-left:6px solid transparent; border-right:6px solid transparent; border-top:8px solid var(--ink); }
   .decide .branch{ width:100%; max-width:440px; display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:22px; position:relative; }
@@ -634,12 +634,12 @@
   .decide .yes, .decide .no{ border-radius:12px; padding:12px 14px; font-size:15px; line-height:1.6; text-align:center; color:var(--ink); }
   .decide .yes{ background:#F6EBE1; } .decide .no{ background:#E7ECF0; }
   .decide .yes b, .decide .no b{ display:block; font-size:19px; font-weight:900; }
-  .decide .yes b{ color:var(--accent-text); } .decide .no b{ color:#4E6378; }
+  .decide .yes b{ color:#8A5636; } .decide .no b{ color:#4E6378; }
 
   /* ===== No.09 台灣特別篇：註腳、燈號圖、八角色、提問清單 ===== */
   .hero h1 .nb{ display:inline-block; }
   sup.fn{ font-size:.62em; line-height:0; margin-left:1px; }
-  sup.fn a{ color:var(--accent-text); text-decoration:none; font-weight:700; }
+  sup.fn a{ color:#8A5636; text-decoration:none; font-weight:700; }
   sup.fn a:hover{ text-decoration:underline; }
   .lights{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
   .lights li{ border-top:1px solid var(--ink); padding-top:14px; text-align:center; }
@@ -662,20 +662,75 @@
   .gates .gate-row li{ position:relative; padding:0 10px; text-align:center; }
   .gates .gate-row li:not(:last-child)::after{ content:""; position:absolute; top:28px; right:-6px; width:12px; height:12px; border-top:1.5px solid var(--ink); border-right:1.5px solid var(--ink); transform:rotate(45deg); }
   .gates svg{ display:block; width:56px; height:56px; margin:0 auto 10px; }
-  .gates .g-no{ display:block; font-family:var(--serif); font-size:13px; color:var(--accent-text); letter-spacing:.1em; margin-bottom:2px; }
+  .gates .g-no{ display:block; font-family:"Noto Serif TC",serif; font-size:13px; color:#8A5636; letter-spacing:.1em; margin-bottom:2px; }
   .gates h5{ margin:0 0 4px; font-size:15px; font-weight:900; color:var(--ink); }
   .gates .gate-row p, .article .gates .gate-row p{ margin:0; font-size:13px; line-height:1.7; color:var(--ink-soft); }
   .gates .gate-last{ margin-top:26px; padding:18px 20px 16px; background:#F6EBE1; border-top:2px solid var(--ink); }
   .gates .gl-ttl, .article .gates .gl-ttl{ margin:0 0 10px; font-size:16px; font-weight:900; line-height:1.6; color:var(--ink); }
   .gates .gate-last ul{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:4px 18px; }
   .gates .gate-last li{ position:relative; padding-left:14px; font-size:14px; line-height:1.8; color:var(--ink); }
-  .gates .gate-last li::before{ content:""; position:absolute; left:0; top:.78em; width:7px; height:2px; background:var(--accent-text); }
+  .gates .gate-last li::before{ content:""; position:absolute; left:0; top:.78em; width:7px; height:2px; background:#8A5636; }
   @media(max-width:600px){
     .gates .gate-row{ grid-template-columns:1fr; }
     .gates .gate-row li{ display:grid; grid-template-columns:56px 1fr; column-gap:14px; text-align:left; padding:10px 0 22px; }
     .gates .gate-row li svg{ grid-row:span 3; margin:0; }
     .gates .gate-row li:not(:last-child)::after{ top:auto; bottom:6px; right:auto; left:22px; transform:rotate(135deg); }
     .gates .gate-last ul{ grid-template-columns:1fr; }
+  }
+
+  /* ===== No.09 實心圖示插圖 ===== */
+  .docs-cmp .dc-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .docs-cmp .dc{ border-top:2px solid var(--ink); padding:18px 6px 4px; }
+  .docs-cmp .dc.now{ background:#F6EBE1; padding:18px 16px 10px; }
+  .docs-cmp svg{ display:block; width:84px; height:76px; margin:0 0 12px; }
+  .docs-cmp h5{ margin:0 0 10px; font-size:16px; font-weight:900; }
+  .docs-cmp dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:6px 12px; font-size:14px; line-height:1.7; }
+  .docs-cmp dt{ color:#57534E; }
+  .docs-cmp dd{ margin:0; color:var(--ink); }
+  .thermo .th-bar{ display:grid; grid-template-columns:repeat(3,1fr); height:16px; }
+  .thermo .th-bar .g{ background:#B5BE9C; } .thermo .th-bar .y{ background:#E3C489; } .thermo .th-bar .r{ background:#8A5636; }
+  .thermo .th-steps{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); }
+  .thermo .th-steps li{ padding:12px 12px 0 0; }
+  .thermo h5{ margin:0 0 4px; font-size:15px; font-weight:900; color:var(--ink); }
+  .thermo p, .article .thermo p{ margin:0; font-size:13px; line-height:1.7; color:var(--ink-soft); }
+  .thermo .th-side{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:22px; padding-top:18px; border-top:1px solid var(--line); }
+  .thermo .th-side > div{ display:grid; grid-template-columns:48px 1fr; gap:12px; align-items:center; }
+  .thermo .th-side svg{ width:48px; height:48px; }
+  .scard .sc-card{ background:#fff; border:2px solid var(--ink); max-width:560px; }
+  .scard .sc-head{ background:var(--ink); color:#F8F2E6; padding:10px 16px; display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; }
+  .scard .sc-head span{ font-weight:900; font-size:16px; letter-spacing:.04em; }
+  .scard .sc-head em{ font-style:normal; font-size:12px; opacity:.85; }
+  .scard .sc-row{ display:grid; grid-template-columns:40px 1fr; gap:14px; padding:14px 16px; border-top:1px solid var(--line); align-items:start; }
+  .scard .sc-row:first-of-type{ border-top:0; }
+  .scard .sc-row svg{ width:40px; height:40px; }
+  .scard h5{ margin:0 0 2px; font-size:15px; font-weight:900; }
+  .scard .sc-row p, .article .scard .sc-row p{ margin:0; font-size:14px; line-height:1.75; color:var(--ink-soft); }
+  .plan .plan-svg{ display:block; width:100%; max-width:560px; height:auto; margin:0 auto 14px; }
+  .plan .plan-legend{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:0 22px; }
+  .plan .plan-legend li{ display:grid; grid-template-columns:28px 1fr; gap:10px; padding:10px 0; border-top:1px solid var(--line); }
+  .plan .rn{ width:24px; height:24px; border-radius:50%; background:var(--ink); color:#F8F2E6; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; margin-top:2px; }
+  .plan li.hi .rn{ background:#8A5636; }
+  .plan h5{ margin:0; font-size:14.5px; font-weight:900; }
+  .plan .plan-legend p, .article .plan .plan-legend p{ margin:0; font-size:13px; line-height:1.7; color:var(--ink-soft); }
+  .backsch .bs-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .backsch .bs{ border-top:2px solid var(--ink); padding:14px 14px 6px; }
+  .backsch .bs.yes{ background:#E7ECF0; } .backsch .bs.no{ background:#F6EBE1; }
+  .backsch h5{ margin:0 0 8px; font-size:16px; font-weight:900; }
+  .backsch ul{ list-style:none; margin:0; padding:0; }
+  .backsch li{ display:grid; grid-template-columns:24px 1fr; gap:10px; padding:7px 0; font-size:14.5px; line-height:1.7; align-items:start; }
+  .backsch li svg{ width:22px; height:22px; margin-top:3px; }
+  .three .three-grid{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .three li{ border-top:2px solid var(--ink); padding-top:16px; }
+  .three svg{ display:block; width:52px; height:52px; margin-bottom:10px; }
+  .three h5{ margin:0 0 4px; font-size:15.5px; font-weight:900; }
+  .three p, .article .three p{ margin:0; font-size:13.5px; line-height:1.75; color:var(--ink-soft); }
+  @media(max-width:600px){
+    .docs-cmp .dc-grid, .backsch .bs-grid, .plan .plan-legend, .thermo .th-side{ grid-template-columns:1fr; }
+    .thermo .th-steps li{ padding-right:6px; }
+    .thermo .th-steps h5{ font-size:13.5px; } .thermo .th-steps p{ font-size:12.5px; }
+    .three .three-grid{ grid-template-columns:1fr; gap:0; }
+    .three li{ display:grid; grid-template-columns:52px 1fr; gap:2px 14px; padding:14px 0; }
+    .three li svg{ grid-row:span 2; margin:0; }
   }
 </style>
 </head>
@@ -742,18 +797,29 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
       <p class="sec-dek">教學現場的說明書為何引發標籤化疑慮？</p>
       <p>其實兩年前，教育部就處理過這個問題。2024 年 3 月，國教署發過一份「情緒行為障礙學生教學現場處遇原則」，內容只有 6 點，多半是提醒：落實個別化教育計畫（IEP，學校為每位特教生量身訂的支持計畫）、事發時給孩子安靜的空間和專人陪伴<sup class="fn"><a href="#n2">2</a></sup>。到了今年，新指引擴充成 22 頁。</p>
 
-      <figure class="fig">
-        <p class="fig-ttl">2024 處遇原則 vs 2026 處遇參考指引</p>
-        <div class="role-cmp">
-          <table>
-            <thead><tr><th scope="col">項目</th><th scope="col">2024 處遇原則</th><th scope="col">2026 處遇參考指引</th></tr></thead>
-            <tbody>
-              <tr><th scope="row">對象</th><td>情緒行為障礙學生</td><td>特殊教育學生</td></tr>
-              <tr><th scope="row">篇幅</th><td>6 點</td><td>22 頁，6 章＋5 個附錄</td></tr>
-              <tr><th scope="row">身體介入、報警、返校</th><td>沒有規定</td><td>都有原則</td></tr>
-              <tr><th scope="row">家長、教師權益</th><td>沒有提到</td><td>各有專章</td></tr>
-            </tbody>
-          </table>
+      <figure class="fig docs-cmp" aria-label="2024 處遇原則與 2026 處遇參考指引對照">
+        <p class="fig-ttl">從 6 點原則，到 22 頁指引</p>
+        <div class="dc-grid">
+          <div class="dc">
+            <svg viewBox="0 0 84 76" aria-hidden="true"><rect x="20" y="8" width="44" height="58" rx="2" fill="#1C1917"/><rect x="28" y="17.0" width="28" height="3" fill="#F8F2E6"/><rect x="28" y="24.5" width="22" height="3" fill="#F8F2E6"/><rect x="28" y="32.0" width="28" height="3" fill="#F8F2E6"/><rect x="28" y="39.5" width="22" height="3" fill="#F8F2E6"/><rect x="28" y="47.0" width="28" height="3" fill="#F8F2E6"/><rect x="28" y="54.5" width="22" height="3" fill="#F8F2E6"/></svg>
+            <h5>2024 處遇原則</h5>
+            <dl>
+              <dt>篇幅</dt><dd>6 點</dd>
+              <dt>對象</dt><dd>情緒行為障礙學生</dd>
+              <dt>身體介入、報警、返校</dt><dd>沒有規定</dd>
+              <dt>家長、教師權益</dt><dd>沒有提到</dd>
+            </dl>
+          </div>
+          <div class="dc now">
+            <svg viewBox="0 0 84 76" aria-hidden="true"><rect x="30" y="4" width="44" height="58" rx="2" fill="#C2C3A8"/><rect x="24" y="9" width="44" height="58" rx="2" fill="#8C8D73"/><rect x="18" y="14" width="44" height="58" rx="2" fill="#1C1917"/><rect x="62" y="18" width="6" height="5" fill="#8A5636"/><rect x="62" y="26" width="6" height="5" fill="#8A5636"/><rect x="62" y="34" width="6" height="5" fill="#8A5636"/><rect x="62" y="42" width="6" height="5" fill="#8A5636"/><rect x="62" y="50" width="6" height="5" fill="#8A5636"/><rect x="62" y="58" width="6" height="5" fill="#8A5636"/><rect x="26" y="24" width="26" height="3" fill="#F8F2E6"/><rect x="26" y="32" width="26" height="3" fill="#F8F2E6"/><rect x="26" y="40" width="26" height="3" fill="#F8F2E6"/><rect x="26" y="48" width="26" height="3" fill="#F8F2E6"/><rect x="26" y="56" width="26" height="3" fill="#F8F2E6"/></svg>
+            <h5>2026 處遇參考指引</h5>
+            <dl>
+              <dt>篇幅</dt><dd>22 頁，6 章＋5 個附錄</dd>
+              <dt>對象</dt><dd><b>特殊教育學生</b></dd>
+              <dt>身體介入、報警、返校</dt><dd>都有原則</dd>
+              <dt>家長、教師權益</dt><dd>各有專章</dd>
+            </dl>
+          </div>
         </div>
         <figcaption>資料來源：國教署 113 年 3 月 26 日函、115 年 10 月 27 日函附件。</figcaption>
       </figure>
@@ -770,20 +836,34 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
 
       <p>新指引用紅綠燈來描述孩子的狀態，這就是「黃燈」。聲音變大、拒絕指令，都是孩子快撐不住的訊號。這時老師要先停下催促和說理，退開一點距離，用簡短的句子回應，讓孩子去休息；如果還是沒用，就馬上找人幫忙<sup class="fn"><a href="#n3">3</a></sup>。同樣的情況，2024 年的原則只寫了一句話。</p>
 
-      <figure class="fig">
-        <p class="fig-ttl">新指引的五個燈號</p>
-        <ol class="lights">
-          <li><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#B5BE9C"/></svg><h5>綠燈</h5><p>情緒穩定，維持規律、給正向回饋</p></li>
-          <li><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#E3C489"/></svg><h5>黃燈</h5><p>出現預警，停止催促，協助降溫</p></li>
-          <li><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#8A5636"/></svg><h5>紅燈</h5><p>有立即危險，求援、保護其他學生</p></li>
-          <li><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="16" fill="none" stroke="#57534E" stroke-width="2" stroke-dasharray="4 3"/><path d="M15 15 L25 25 M25 15 L15 25" stroke="#57534E" stroke-width="2" stroke-linecap="round"/></svg><h5>失聯</h5><p>離開教室或校園，立即通報、協尋</p></li>
-          <li><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="#748DA4"/></svg><h5>回復常態</h5><p>低刺激空間，信任的人陪伴</p></li>
+      <figure class="fig thermo" aria-label="新指引的燈號">
+        <p class="fig-ttl">新指引的燈號：從平穩到緊急</p>
+        <div class="th-bar" aria-hidden="true"><span class="g"></span><span class="y"></span><span class="r"></span></div>
+        <ol class="th-steps">
+          <li><h5>綠燈｜維持平穩</h5><p>情緒穩定，維持規律、給正向回饋</p></li>
+          <li><h5>黃燈｜啟動降溫</h5><p>出現預警，停止催促，協助降溫</p></li>
+          <li><h5>紅燈｜緊急處遇</h5><p>有立即危險，求援、保護其他學生</p></li>
         </ol>
-        <figcaption>資料來源：指引第三章，p.6。指引寫明，燈號只用來判斷學生需要的支持。</figcaption>
+        <div class="th-side">
+          <div><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="none" stroke="#1C1917" stroke-width="3" stroke-dasharray="6 5"/><circle cx="28.0" cy="17.2" r="5.2" fill="#1C1917"/><path d="M19.9 41.4 V30.0 a4.8 4.8 0 0 1 4.8 -4.8 H31.3 a4.8 4.8 0 0 1 4.8 4.8 V41.4 Z" fill="#1C1917"/></svg><div><h5>失聯</h5><p>離開教室或校園，立即通報、協尋</p></div></div>
+          <div><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="#748DA4"/><circle cx="28.0" cy="17.2" r="5.2" fill="#F8F2E6"/><path d="M19.9 41.4 V30.0 a4.8 4.8 0 0 1 4.8 -4.8 H31.3 a4.8 4.8 0 0 1 4.8 4.8 V41.4 Z" fill="#F8F2E6"/></svg><div><h5>回復常態</h5><p>低刺激空間，信任的人陪伴</p></div></div>
+        </div>
+        <figcaption>資料來源：指引第三章，p.6。指引寫明，燈號只用來判斷學生需要的支持，不用來評價學生。</figcaption>
       </figure>
 
       <p>指引也特別寫明，燈號「不作為評價學生之用」。它還建議為支持需求較高的孩子準備一張「一頁式支持卡」，寫下哪些情境讓他緊繃、哪些方法能讓他安定下來，代課老師一看就能接手<sup class="fn"><a href="#n4">4</a></sup>。</p>
 
+<figure class="fig scard" aria-label="一頁式支持卡示意">
+        <p class="fig-ttl">一頁式支持卡長什麼樣子？</p>
+        <div class="sc-card">
+          <div class="sc-head"><span>一頁式支持卡</span><em>只給工作人員．不公開張貼</em></div>
+          <div class="sc-row"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M28 6 L52 48 H4 Z" fill="#1C1917"/><rect x="26" y="20" width="4" height="15" fill="#F8F2E6"/><rect x="26" y="39" width="4" height="4" fill="#F8F2E6"/></svg><div><h5>容易緊繃的情境</h5><p>作息突然變動、等待太久、被公開糾正、噪音或人太多</p></div></div>
+          <div class="sc-row"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M12 30 a16 16 0 0 1 32 0" fill="none" stroke="#1C1917" stroke-width="4"/><rect x="6" y="28" width="12" height="18" rx="5" fill="#8A5636"/><rect x="38" y="28" width="12" height="18" rx="5" fill="#8A5636"/></svg><div><h5>有效的安撫方式</h5><p>短暫休息、耳罩、喝水、低刺激空間；「需要我幫忙，還是先休息？」</p></div></div>
+          <div class="sc-row"><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="22" fill="#1C1917"/><rect x="14" y="25" width="28" height="6" fill="#F8F2E6"/></svg><div><h5>要避免的做法</h5><p>一直催促、多人同時說話、逼問原因、要他立刻道歉</p></div></div>
+          <div class="sc-row"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M14 8 h9 l4 11 -6 4 a28 28 0 0 0 12 12 l4 -6 11 4 v9 a4 4 0 0 1 -4 4 C25 46 10 31 10 12 a4 4 0 0 1 4 -4 Z" fill="#1C1917"/></svg><div><h5>找誰求援</h5><p>校內分機或按鈕；寫明什麼情況打 119、110</p></div></div>
+        </div>
+        <figcaption>資料來源：指引附錄 B「學生一頁式支持卡參考範例」，內容節錄改寫。</figcaption>
+      </figure>
       <!-- 03 -->
       <h2 class="sec"><span class="no">03</span>紅燈：一個老師擋不住，誰來幫忙？</h2>
       <p class="sec-dek">8 個角色分工，身體介入有了界線</p>
@@ -794,19 +874,11 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
 
       <p>到了自傷、傷人或丟東西的「紅燈」，指引把現場分成 8 個角色：由主管指揮，孩子信任的一位大人專心陪他，其他人帶開同學、處理傷勢、聯絡家長，不在旁邊追問，也不拿手機錄影<sup class="fn"><a href="#n5">5</a></sup>。</p>
 
-      <figure class="fig">
-        <p class="fig-ttl">紅燈時的 8 個角色</p>
-        <div class="team roles">
-          <div class="member"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="9" fill="#1C1917"/><path d="M14 54 a18 18 0 0 1 36 0 Z" fill="#1C1917"/></svg><h5>現場指揮者</h5><p>校長或指定主管，調度人力</p></div>
-          <div class="member"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="9" fill="#8A5636"/><path d="M14 54 a18 18 0 0 1 36 0 Z" fill="#8A5636"/></svg><h5>主責互動者</h5><p>孩子信任的人，專心陪他降溫</p></div>
-          <div class="member"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="9" fill="#C2C3A8"/><path d="M14 54 a18 18 0 0 1 36 0 Z" fill="#C2C3A8"/></svg><h5>任課老師</h5><p>拉開距離、求援，必要時交棒</p></div>
-          <div class="member"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="9" fill="#C2C3A8"/><path d="M14 54 a18 18 0 0 1 36 0 Z" fill="#C2C3A8"/></svg><h5>班級接管者</h5><p>照顧其他同學，安排撤離</p></div>
-          <div class="member"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="9" fill="#C2C3A8"/><path d="M14 54 a18 18 0 0 1 36 0 Z" fill="#C2C3A8"/></svg><h5>健康照護者</h5><p>評估傷勢，準備用藥資訊</p></div>
-          <div class="member"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="9" fill="#C2C3A8"/><path d="M14 54 a18 18 0 0 1 36 0 Z" fill="#C2C3A8"/></svg><h5>對外聯絡者</h5><p>用事實告知家長，不猜原因</p></div>
-          <div class="member"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="9" fill="#C2C3A8"/><path d="M14 54 a18 18 0 0 1 36 0 Z" fill="#C2C3A8"/></svg><h5>紀錄與通報</h5><p>記下時間軸，辦理法定通報</p></div>
-          <div class="member"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="22" r="9" fill="#C2C3A8"/><path d="M14 54 a18 18 0 0 1 36 0 Z" fill="#C2C3A8"/></svg><h5>環境與後勤</h5><p>管制圍觀，引導救護動線</p></div>
-        </div>
-        <figcaption>資料來源：指引第三章，p.8。示意圖。</figcaption>
+      <figure class="fig plan" aria-label="紅燈時的 8 個角色">
+        <p class="fig-ttl">紅燈時，現場的 8 個角色</p>
+        <svg viewBox="100 0 440 230" class="plan-svg" aria-hidden="true"><rect x="120" y="20" width="300" height="190" fill="none" stroke="#1C1917" stroke-width="4"/><rect x="190" y="14" width="160" height="10" fill="#1C1917"/><rect x="410" y="150" width="14" height="44" fill="#F8F2E6"/><path d="M420 150 v44" stroke="#1C1917" stroke-width="2" stroke-dasharray="4 4"/><rect x="150" y="70" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="208" y="70" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="266" y="70" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="324" y="70" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="150" y="116" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="266" y="116" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="324" y="116" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="150" y="162" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="208" y="162" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="266" y="162" width="34" height="20" rx="2" fill="#C2C3A8"/><rect x="324" y="162" width="34" height="20" rx="2" fill="#C2C3A8"/><circle cx="225" cy="126" r="11" fill="none" stroke="#8A5636" stroke-width="3" stroke-dasharray="4 3"/><text x="225" y="160" text-anchor="middle" font-size="13" fill="#8A5636" font-family="Noto Sans TC, sans-serif">孩子</text><circle cx="196" cy="126" r="13" fill="#8A5636"/><text x="196" y="131" text-anchor="middle" font-size="15" font-weight="700" fill="#F8F2E6" font-family="Noto Sans TC, sans-serif">2</text><circle cx="270" cy="44" r="13" fill="#1C1917"/><text x="270" y="49" text-anchor="middle" font-size="15" font-weight="700" fill="#F8F2E6" font-family="Noto Sans TC, sans-serif">3</text><circle cx="386" cy="120" r="13" fill="#1C1917"/><text x="386" y="125" text-anchor="middle" font-size="15" font-weight="700" fill="#F8F2E6" font-family="Noto Sans TC, sans-serif">4</text><circle cx="448" cy="128" r="13" fill="#1C1917"/><text x="448" y="133" text-anchor="middle" font-size="15" font-weight="700" fill="#F8F2E6" font-family="Noto Sans TC, sans-serif">1</text><circle cx="448" cy="176" r="13" fill="#1C1917"/><text x="448" y="181" text-anchor="middle" font-size="15" font-weight="700" fill="#F8F2E6" font-family="Noto Sans TC, sans-serif">5</text><circle cx="492" cy="70" r="13" fill="#1C1917"/><text x="492" y="75" text-anchor="middle" font-size="15" font-weight="700" fill="#F8F2E6" font-family="Noto Sans TC, sans-serif">6</text><circle cx="492" cy="110" r="13" fill="#1C1917"/><text x="492" y="115" text-anchor="middle" font-size="15" font-weight="700" fill="#F8F2E6" font-family="Noto Sans TC, sans-serif">7</text><circle cx="492" cy="190" r="13" fill="#1C1917"/><text x="492" y="195" text-anchor="middle" font-size="15" font-weight="700" fill="#F8F2E6" font-family="Noto Sans TC, sans-serif">8</text><path d="M386 136 v18 h18" fill="none" stroke="#1C1917" stroke-width="2" stroke-dasharray="3 3"/><path d="M400 150 l6 4 -6 4" fill="none" stroke="#1C1917" stroke-width="2"/><text x="470" y="34" font-size="13" fill="#1C1917" font-family="Noto Sans TC, sans-serif">走廊</text></svg>
+        <ol class="plan-legend"><li><span class="rn">1</span><div><h5>現場指揮者</h5><p>校長或指定主管，統整風險、調度人力</p></div></li><li class="hi"><span class="rn">2</span><div><h5>主責互動者</h5><p>孩子信任的人，專心陪他降溫</p></div></li><li><span class="rn">3</span><div><h5>任課老師</h5><p>拉開距離、求援；受傷或衝突時交棒</p></div></li><li><span class="rn">4</span><div><h5>班級接管者</h5><p>照顧其他同學，就地保護或撤離</p></div></li><li><span class="rn">5</span><div><h5>健康照護者</h5><p>評估傷勢，準備健康與用藥資訊</p></div></li><li><span class="rn">6</span><div><h5>對外聯絡者</h5><p>用事實告知家長，不猜原因</p></div></li><li><span class="rn">7</span><div><h5>紀錄與通報</h5><p>記下時間軸，辦理法定通報</p></div></li><li><span class="rn">8</span><div><h5>環境與後勤</h5><p>管制圍觀，引導救護動線</p></div></li></ol>
+        <figcaption>資料來源：指引第三章，p.8。位置為示意，實際依學校空間與事前分工。</figcaption>
       </figure>
 
       <p>很多家長最怕聽到孩子「被壓住」。2024 年的原則沒有談到這件事，新指引則畫出界線：老師要先試過安撫、拉開距離、讓其他同學離開，孩子仍然有立即危險時，才能用「必要且限制最少」的方式介入；碰觸孩子原則上由受過訓練的人來做，不能壓孩子的脖子、胸口或肚子，也不能拿來當處罰<sup class="fn"><a href="#n6">6</a></sup>。</p>
@@ -823,7 +895,7 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
             <span class="g-no">2</span><h5>拉開距離</h5><p>降低刺激，不催促、不爭辯</p>
           </li>
           <li>
-            <svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="13" cy="38" r="6" fill="none" stroke="#1C1917" stroke-width="4"/><circle cx="29" cy="38" r="6" fill="none" stroke="#1C1917" stroke-width="4"/><path d="M16 33 L31 10 L33 12 L19 34 Z M26 33 L11 10 L9 12 L23 34 Z" fill="#1C1917"/><path d="M38 24 H50" stroke="#8A5636" stroke-width="3" stroke-linecap="round"/><path d="M46 18 L53 24 L46 30 Z" fill="#8A5636"/></svg>
+            <svg viewBox="0 0 56 56" aria-hidden="true"><path d="M6 34 L30 24 L40 30 L16 40 Z" fill="#1C1917"/><path d="M30 24 L44 18 L46 22 L40 30 Z" fill="#F8F2E6" stroke="#1C1917" stroke-width="2.5" stroke-linejoin="round"/><rect x="12" y="33" width="10" height="2.5" transform="rotate(-22 17 34)" fill="#F8F2E6"/><path d="M38 40 H50" stroke="#8A5636" stroke-width="3" stroke-linecap="round"/><path d="M46 34 L53 40 L46 46 Z" fill="#8A5636"/></svg>
             <span class="g-no">3</span><h5>移除危險物</h5><p>安全可行時，先拿走</p>
           </li>
           <li>
@@ -857,16 +929,33 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
 
       <p>不過，第一線也有說不出的難處。懶太太寫：「我們無法強制家長帶孩子就醫」<sup class="fn"><a href="#n9">9</a></sup>。指引希望家長成為學校的合作夥伴<sup class="fn"><a href="#n10">10</a></sup>，但遇到家長不同意學校做法時，指引能給的只有溝通腳本<sup class="fn"><a href="#n11">11</a></sup>。</p>
 
+<figure class="fig backsch" aria-label="孩子回校的條件">
+        <p class="fig-ttl">孩子回學校：該有的，與不該被加上的</p>
+        <div class="bs-grid">
+          <div class="bs yes"><h5>學校應該做的</h5><ul><li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#1C1917"/><path d="M8 14 l4 4 8 -9" fill="none" stroke="#F8F2E6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>同時安排課業銜接和回校時間</span></li><li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#1C1917"/><path d="M8 14 l4 4 8 -9" fill="none" stroke="#F8F2E6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>短期支持要有目的、期間，和回到原班的計畫</span></li><li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#1C1917"/><path d="M8 14 l4 4 8 -9" fill="none" stroke="#F8F2E6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>重大調整經 IEP、個案會議或鑑輔會討論</span></li></ul></div>
+          <div class="bs no"><h5>不該被加上的條件</h5><ul><li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#8A5636"/><path d="M9 9 l10 10 M19 9 l-10 10" stroke="#F8F2E6" stroke-width="3" stroke-linecap="round"/></svg><span>把看醫生、吃藥當成回校的唯一條件</span></li><li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#8A5636"/><path d="M9 9 l10 10 M19 9 l-10 10" stroke="#F8F2E6" stroke-width="3" stroke-linecap="round"/></svg><span>要孩子先道歉或賠償，才能回班</span></li><li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#8A5636"/><path d="M9 9 l10 10 M19 9 l-10 10" stroke="#F8F2E6" stroke-width="3" stroke-linecap="round"/></svg><span>臨時措施變成無期限停學、拒絕入校</span></li><li><svg viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="12" fill="#8A5636"/><path d="M9 9 l10 10 M19 9 l-10 10" stroke="#F8F2E6" stroke-width="3" stroke-linecap="round"/></svg><span>由單一人員決定重大調整</span></li></ul></div>
+        </div>
+        <figcaption>資料來源：指引第三章，p.9。</figcaption>
+      </figure>
       <!-- 05 -->
       <h2 class="sec"><span class="no">05</span>老師受傷誰負責？</h2>
       <p class="sec-dek">指引還沒回答的三件事</p>
 
       <p>讀完 22 頁，還有三件事沒有答案。第一，還沒完成鑑定的「疑似生」，指引沒有提到。第二，老師出手保護時算不算合法防衛，指引只說「仍需依個案事實與法規判斷」<sup class="fn"><a href="#n12">12</a></sup>，工會因此要求教育部列出「免責態樣」<sup class="fn"><a href="#n13">13</a></sup>。第三，人力和經費都沒有數字。懶太太提到，她的學校有名額，卻找不到人敢來應徵<sup class="fn"><a href="#n14">14</a></sup>；社群上也有其他第一線人員提到類似狀況。截至發稿，教育部還沒有公開回應工會的聲明。</p>
 
+<figure class="fig three" aria-label="指引還沒回答的三件事">
+        <p class="fig-ttl">指引還沒回答的三件事</p>
+        <ol class="three-grid">
+          <li><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="24" fill="#1C1917"/><path d="M20 22 a8 8 0 1 1 12 7 c-3 2 -4 3 -4 7" fill="none" stroke="#F8F2E6" stroke-width="4.5" stroke-linecap="round"/><circle cx="28" cy="43" r="3" fill="#F8F2E6"/></svg><h5>疑似生</h5><p>還沒完成鑑定的孩子，指引沒有提到</p></li>
+          <li><svg viewBox="0 0 56 56" aria-hidden="true"><rect x="26" y="8" width="4" height="40" fill="#1C1917"/><rect x="16" y="46" width="24" height="5" rx="1" fill="#1C1917"/><rect x="8" y="13" width="40" height="4" fill="#1C1917"/><path d="M4 32 L12 17 L20 32 Z" fill="none" stroke="#1C1917" stroke-width="2"/><path d="M2 32 h20 a10 6 0 0 1 -20 0 Z" fill="#8A5636"/><path d="M36 28 L44 17 L52 28 Z" fill="none" stroke="#1C1917" stroke-width="2"/><path d="M34 28 h20 a10 6 0 0 1 -20 0 Z" fill="#1C1917"/></svg><h5>老師的法律風險</h5><p>是否算合法防衛，「仍需依個案判斷」</p></li>
+          <li><svg viewBox="0 0 56 56" aria-hidden="true"><rect x="4" y="8" width="5" height="44" fill="#1C1917"/><rect x="4" y="28" width="26" height="6" fill="#1C1917"/><rect x="25" y="34" width="5" height="18" fill="#1C1917"/><circle cx="44" cy="17" r="6" fill="none" stroke="#8A5636" stroke-width="2.5" stroke-dasharray="3 2.5"/><path d="M34 46 v-9 a10 8 0 0 1 20 0 v9" fill="none" stroke="#8A5636" stroke-width="2.5" stroke-dasharray="3 2.5"/></svg><h5>人力與經費</h5><p>沒有數字；有名額，也可能沒人來</p></li>
+        </ol>
+        <figcaption>資料來源：指引全文、p.15；第一線人員經驗見註 14。</figcaption>
+      </figure>
       <h3 class="sub">帶得走的一件事</h3>
       <div class="act2">
         <div class="act">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="16" r="6"/><path d="M8 38 a10 10 0 0 1 20 0"/><path d="M30 12 H42 V26 H35 L31 30 V26 H30 Z"/></g><circle cx="36" cy="19" r="1.8" fill="#8A5636"/></svg>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="17.0" cy="14.3" r="6.3" fill="#1C1917"/><path d="M7.2 43.6 V29.8 a5.8 5.8 0 0 1 5.8 -5.8 H21.0 a5.8 5.8 0 0 1 5.8 5.8 V43.6 Z" fill="#1C1917"/><path d="M28 8 H46 V24 H38 L33 29 V24 H28 Z" fill="#8A5636"/></svg>
           <span class="who">給家長</span>
           <p>指引只是參考，你可以在 IEP 會議上，用「請問」的方式提出來：</p>
           <ol class="ask">
@@ -876,7 +965,7 @@ new IntersectionObserver(function(e){var on=!e[0].isIntersecting;m.classList.tog
           </ol>
         </div>
         <div class="act">
-          <svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="#1C1917" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="8" width="28" height="34" rx="3"/><path d="M16 18 H32 M16 25 H32 M16 32 H26"/></g><path d="M30 31 l3 3 l6 -7" fill="none" stroke="#8A5636" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="6" width="32" height="38" rx="3" fill="#1C1917"/><rect x="14" y="14" width="20" height="3" fill="#F8F2E6"/><rect x="14" y="22" width="20" height="3" fill="#F8F2E6"/><rect x="14" y="30" width="12" height="3" fill="#F8F2E6"/><circle cx="38" cy="38" r="9" fill="#8A5636"/><path d="M34 38 l3 3 5 -6" fill="none" stroke="#F8F2E6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           <span class="who">給老師</span>
           <p>孩子亮黃燈時，先停下說理，改用短句和選項。指引附錄 B 就有一句範例：「需要我幫忙，還是先休息？」</p>
         </div>
